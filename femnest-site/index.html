@@ -151,51 +151,45 @@
       </div>
     </section>
 
-    <!-- ================= TESTIMONIALS =================
-         PLACEHOLDER CONTENT — the three quotes below are bracketed
-         placeholders, not real testimonials. Replace each [bracketed]
-         name/context/quote with a real one from a waitlist member, event
-         attendee, or survey response before this goes live. See
-         README.md "Testimonials" for how to swap these in. -->
-    <section class="section section--alt">
+    <!-- ================= COMMUNITY VOICES (marquee) =================
+         Real, anonymized responses from FemNEST's community research —
+         not attributed testimonials (no names are real people we can
+         identify here), but proof of what's missing. See README.md
+         "Community voices" for how to add, edit, or remove a quote.
+         Two rows scroll in opposite directions (pure CSS, no JS);
+         hover a row to pause it and read. Falls back to a static
+         wrapped list under prefers-reduced-motion — see css/styles.css. -->
+    <section class="section section--dark">
       <div class="container">
         <div class="section__header" data-reveal>
-          <span class="section__kicker">In their words</span>
-          <h2>What the room is saying</h2>
+          <span class="section__kicker">In their own words</span>
+          <h2>What women keep telling us</h2>
+          <p>Real, anonymized answers from FemNEST's community research — not testimonials, but proof of the gap.</p>
         </div>
-        <div class="card-grid">
-          <div class="testimonial-card" data-reveal>
-            <span class="testimonial-card__quote-mark" aria-hidden="true">&ldquo;</span>
-            <p class="testimonial-card__quote">[Add a real quote from a waitlist member here — what made her join, or what she's hoping FemNEST helps with.]</p>
-            <div class="testimonial-card__byline">
-              <span class="testimonial-card__avatar" style="background: var(--color-blue);" aria-hidden="true">[?]</span>
-              <div>
-                <p class="testimonial-card__name">[Member name]</p>
-                <p class="testimonial-card__context">[Waitlist member since Month Year]</p>
-              </div>
-            </div>
+      </div>
+      <div class="voices-marquee" data-reveal>
+        <div class="voices-track">
+          <div class="voices-track__set">
+            <p class="voice-pill">“<span class="highlight">1 extra day off per month</span> while being on your period — that would have really made a difference for me.”</p>
+            <p class="voice-pill">“Understanding fertility when you are <span class="highlight">25 not 35</span>. The cost of delaying having a child can be huge — mentally, financially and otherwise.”</p>
+            <p class="voice-pill">“You want more financial freedom and choices <span class="highlight">before your body quits</span> — but you also want a pension.”</p>
           </div>
-          <div class="testimonial-card" data-reveal>
-            <span class="testimonial-card__quote-mark" aria-hidden="true">&ldquo;</span>
-            <p class="testimonial-card__quote">[Add a real quote from a Femmes, Finances &amp; Freedom attendee here — what the room felt like.]</p>
-            <div class="testimonial-card__byline">
-              <span class="testimonial-card__avatar" style="background: var(--color-orange);" aria-hidden="true">[?]</span>
-              <div>
-                <p class="testimonial-card__name">[Attendee name]</p>
-                <p class="testimonial-card__context">[Event attendee, Month Year]</p>
-              </div>
-            </div>
+          <div class="voices-track__set" aria-hidden="true">
+            <p class="voice-pill">“<span class="highlight">1 extra day off per month</span> while being on your period — that would have really made a difference for me.”</p>
+            <p class="voice-pill">“Understanding fertility when you are <span class="highlight">25 not 35</span>. The cost of delaying having a child can be huge — mentally, financially and otherwise.”</p>
+            <p class="voice-pill">“You want more financial freedom and choices <span class="highlight">before your body quits</span> — but you also want a pension.”</p>
           </div>
-          <div class="testimonial-card" data-reveal>
-            <span class="testimonial-card__quote-mark" aria-hidden="true">&ldquo;</span>
-            <p class="testimonial-card__quote">[Add a real quote here — from a survey response, DM, or feedback form.]</p>
-            <div class="testimonial-card__byline">
-              <span class="testimonial-card__avatar" style="background: var(--color-ink-soft);" aria-hidden="true">[?]</span>
-              <div>
-                <p class="testimonial-card__name">[Name]</p>
-                <p class="testimonial-card__context">[Context]</p>
-              </div>
-            </div>
+        </div>
+        <div class="voices-track voices-track--reverse">
+          <div class="voices-track__set">
+            <p class="voice-pill">“Employers often don't believe I'm <span class="highlight">genuinely unfit to work</span> during my period, rather than lazy.”</p>
+            <p class="voice-pill">“Micro loans from women to women. No questions asked. Just <span class="highlight">TRUST &amp; FUND</span>.”</p>
+            <p class="voice-pill">“This gap is so significant that it inspired me to <span class="highlight">start building a women's health platform</span> of my own.”</p>
+          </div>
+          <div class="voices-track__set" aria-hidden="true">
+            <p class="voice-pill">“Employers often don't believe I'm <span class="highlight">genuinely unfit to work</span> during my period, rather than lazy.”</p>
+            <p class="voice-pill">“Micro loans from women to women. No questions asked. Just <span class="highlight">TRUST &amp; FUND</span>.”</p>
+            <p class="voice-pill">“This gap is so significant that it inspired me to <span class="highlight">start building a women's health platform</span> of my own.”</p>
           </div>
         </div>
       </div>

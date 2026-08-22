@@ -108,6 +108,7 @@ The site follows a "contemporary fintech meets lifestyle brand" direction — th
 - **Ticket-stub event cards**: see "Adding a new event" above.
 - **Count-up stat numbers**: each `.stat-card__number` carries a `data-value` attribute holding its real value (e.g. `data-value="29%"`). `animateStatNumber()` in `js/main.js` counts it up from 0 the moment its card scrolls into view. The visible text in the HTML is already the correct final value, so nothing breaks with JS disabled or under `prefers-reduced-motion` (which skips the animation outright).
 - **Parallax blobs**: `initParallax()` in `js/main.js` gives the `.blob` decorations a light vertical drift on scroll. Skipped under `prefers-reduced-motion`.
+- **Community voices marquee**: see "Community voices" below.
 
 All of this is additive CSS/JS — no build step, same file structure as before.
 
@@ -123,11 +124,19 @@ All of this is additive CSS/JS — no build step, same file structure as before.
   - **To add or swap a gallery photo**: drop a resized JPEG (long edge ~1200px keeps file size reasonable — there's no build step to do this automatically) into `assets/images/event/`, then add or edit an `<img>` line inside `.community-gallery` in `index.html`. Write real, specific alt text for each (what's happening in the shot), not a generic placeholder.
   - Only photos of people who were visibly comfortable being photographed at a public event were used; none show private information beyond a visible first-name badge. If any attendee ever asks for a photo to come down, remove that `<img>` line and its file.
 
-## Testimonials
+## Community voices
 
-The "What the room is saying" section on the homepage is **placeholder content** — three testimonial cards with bracketed placeholders (`[Member name]`, `[Add a real quote...]`, etc.), not real quotes. This needs real quotes from actual waitlist members, event attendees, or survey responses before publishing — using invented quotes as if real would be dishonest to site visitors.
+The "What women keep telling us" section (dark band, between the photo gallery and the waitlist CTA) is a two-row scrolling marquee of six real, anonymized quotes pulled from FemNEST's community research (survey/feedback responses). They are deliberately **not** presented as attributed customer testimonials — there's no name, avatar, or "member since" line attached to any of them, because we don't have permission to publish identifying information alongside them. They're framed honestly as proof of the gap FemNEST addresses, not endorsements.
 
-**To fill one in**: replace the bracketed text inside a `.testimonial-card` block in `index.html` — the quote in `.testimonial-card__quote`, the name in `.testimonial-card__name`, the context line (e.g. "Waitlist member since March 2026") in `.testimonial-card__context`, and the initials in `.testimonial-card__avatar` (also pick a background color for that avatar — any brand color works, see the `style="background: ..."` on the existing placeholders). If there are fewer than three real quotes available, delete the extra `.testimonial-card` block(s) rather than leaving placeholders live — the `.card-grid` layout reflows fine with one or two cards.
+**How it works**: two `.voices-track` rows scroll in opposite directions via a pure-CSS animation (`js` isn't involved at all). Each row's content is duplicated back-to-back (`.voices-track__set`, the second copy marked `aria-hidden="true"`) so the loop is seamless at exactly -50% translation — if you add or remove a quote, update **both** copies in that row identically, or the loop will jump. Hovering a row pauses it (so it's readable), and the whole thing collapses to a static, non-scrolling wrapped list under `prefers-reduced-motion` (see the media query near the bottom of `css/styles.css`) — no JS needed for that either.
+
+Within each quote, one key phrase is wrapped in `<span class="highlight">...</span>` — the same soft-marker highlight used in the hero headline — as a lightweight visual "highlight of words" rather than styling the whole sentence.
+
+**To add, edit, or remove a quote**:
+1. Find the matching `.voice-pill` paragraph in **both** `.voices-track__set` copies within the same `.voices-track` (the visible one and the `aria-hidden="true"` duplicate right after it).
+2. Edit, add, or delete the `<p class="voice-pill">` line in both places identically.
+3. Keep quotes real and anonymized — don't invent one, and don't attach a name/photo to one unless that person has explicitly agreed to be identified.
+4. If a quote runs long, it's fine to trim it down to its punchiest sentence or clause (as was done for several of the six currently live) as long as the trimmed version doesn't change its meaning — treat it like a pull-quote, not a paraphrase.
 
 ## Deploying
 
@@ -146,7 +155,7 @@ These were deliberately left as placeholders or defaults rather than invented. C
 - **Waitlist tool**: defaulted to linking out to campsite.bio/femnest (see "Waitlist" section above). Confirm this is right, or switch to a native form.
 - **Venue for Femmes, Finances & Freedom (31 Oct 2026)**: not yet booked — shown honestly as "Venue: to be announced" on `events.html` and the event page. Update once confirmed.
 - **Founder photo**: real photo now in place (see "Photography & imagery" above) — resolved.
-- **Testimonials**: all three cards in the "What the room is saying" section are bracketed placeholders, not real quotes (see "Testimonials" above). Needs 1-3 real quotes from waitlist members or event attendees before publishing.
+- **Community voices**: real, anonymized quotes now in place (see "Community voices" above) — resolved. No names/photos are attached to them by design.
 - **Logo**: the real FemNEST wordmark is now in use (see "Logo" section above) — this one's resolved. Only the browser favicon is still a placeholder, pending a square icon-only mark.
 - **Fonts**: currently Poppins/Lora as Google Fonts stand-ins for Archivo/Montserrat + Bitter, pending web licensing. See "Editing fonts" above.
 - **Statistics on the homepage ("Why now" section)**: re-verified via live search on 22 August 2026 before publishing, per the brief's instruction — now resolved to four confirmed, cited figures:
