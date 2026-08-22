@@ -508,13 +508,13 @@ p { margin: 0 0 1em; }
   padding: 120px 0;
 }
 
-.section--dark {
-  background: var(--color-ink);
+.section--voices {
+  background: var(--color-blue);
   color: var(--color-cream);
 }
 
-.section--dark h2,
-.section--dark h3 {
+.section--voices h2,
+.section--voices h3 {
   color: var(--color-cream);
 }
 
