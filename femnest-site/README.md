@@ -113,9 +113,9 @@ All of this is additive CSS/JS — no build step, same file structure as before.
 
 ## Photography & imagery
 
-The site currently uses **no real photos** — no founder headshot, no event photos, no stock imagery of people. One thing stands in for that, clearly marked as a placeholder in the code:
-
-- **Founder photo**: `.photo-placeholder` in the "Why FemNEST exists" section is a styled placeholder card (gradient background, "SG" monogram, "Photo coming soon" label) marking where a real founder headshot goes. **To swap in a real photo**: replace the `<div class="photo-placeholder">...</div>` block with `<img src="assets/images/serena-gasparini.jpg" alt="Serena Gasparini, founder of FemNEST" class="photo-placeholder-img" />` (add a `.photo-placeholder-img { width: 100%; max-width: 220px; aspect-ratio: 4/5; object-fit: cover; border-radius: var(--radius); margin-bottom: 20px; }` rule to `css/styles.css` to match the current sizing), and drop the actual image file in `assets/images/`.
+- **Founder photo**: real photo now in place. `assets/images/serena-gasparini.jpg` is a cropped/resized (440×550, ~4:5) version of the photo Serena supplied, shown via `.photo-placeholder-img` in the "Why FemNEST exists" section. Crop is framed on her upper body/face rather than the full original environmental shot, so she reads clearly at the card's display size (~220px wide).
+  - **To swap in a different photo later**: replace `assets/images/serena-gasparini.jpg` with the new file (same name, or update the `src` in `index.html`), ideally pre-cropped to roughly 4:5 and no wider than ~900px — no build step exists to resize images automatically.
+  - The `.photo-placeholder` / `.photo-placeholder__monogram` / `.photo-placeholder__label` classes are kept in `css/styles.css` as a reusable "photo coming soon" pattern for any *future* photo slot that doesn't have an image yet (e.g. event photos below) — see the founder section's git history for an example of the placeholder markup if needed again.
 
 (An earlier version of this homepage also had an abstract SVG hero illustration next to the headline — removed at Serena's request. The hero is text/gradient-blobs only now.)
 
@@ -143,7 +143,7 @@ These were deliberately left as placeholders or defaults rather than invented. C
 
 - **Waitlist tool**: defaulted to linking out to campsite.bio/femnest (see "Waitlist" section above). Confirm this is right, or switch to a native form.
 - **Venue for Femmes, Finances & Freedom (31 Oct 2026)**: not yet booked — shown honestly as "Venue: to be announced" on `events.html` and the event page. Update once confirmed.
-- **Founder photo**: still a styled placeholder, not a real photo (see "Photography & imagery" above). Needs a real headshot from Serena.
+- **Founder photo**: real photo now in place (see "Photography & imagery" above) — resolved.
 - **Testimonials**: all three cards in the "What the room is saying" section are bracketed placeholders, not real quotes (see "Testimonials" above). Needs 1-3 real quotes from waitlist members or event attendees before publishing.
 - **Logo**: the real FemNEST wordmark is now in use (see "Logo" section above) — this one's resolved. Only the browser favicon is still a placeholder, pending a square icon-only mark.
 - **Fonts**: currently Poppins/Lora as Google Fonts stand-ins for Archivo/Montserrat + Bitter, pending web licensing. See "Editing fonts" above.

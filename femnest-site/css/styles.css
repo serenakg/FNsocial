@@ -667,6 +667,18 @@ p { margin: 0 0 1em; }
   opacity: 0.85;
 }
 
+/* Real founder photo (replaces .photo-placeholder once one exists) —
+   same footprint as the placeholder it swapped out. */
+.photo-placeholder-img {
+  width: 100%;
+  max-width: 220px;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: var(--radius);
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-soft);
+}
+
 /* ---- Testimonials ---- */
 .testimonial-card {
   background: var(--color-white);
