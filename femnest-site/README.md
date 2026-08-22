@@ -113,10 +113,11 @@ All of this is additive CSS/JS — no build step, same file structure as before.
 
 ## Photography & imagery
 
-The site currently uses **no real photos** — no founder headshot, no event photos, no stock imagery of people. Two things stand in for them, both clearly marked as placeholders in the code:
+The site currently uses **no real photos** — no founder headshot, no event photos, no stock imagery of people. One thing stands in for that, clearly marked as a placeholder in the code:
 
-- **Hero illustration**: an original abstract SVG (a wave/nest motif echoing the logo, built only from the five brand colors) sits beside the headline on wide screens (`.hero__illustration` in `index.html`, hidden below 1080px). This is illustration, not a photo — it can stay indefinitely if a photographic hero never happens, or be swapped for a real image later.
 - **Founder photo**: `.photo-placeholder` in the "Why FemNEST exists" section is a styled placeholder card (gradient background, "SG" monogram, "Photo coming soon" label) marking where a real founder headshot goes. **To swap in a real photo**: replace the `<div class="photo-placeholder">...</div>` block with `<img src="assets/images/serena-gasparini.jpg" alt="Serena Gasparini, founder of FemNEST" class="photo-placeholder-img" />` (add a `.photo-placeholder-img { width: 100%; max-width: 220px; aspect-ratio: 4/5; object-fit: cover; border-radius: var(--radius); margin-bottom: 20px; }` rule to `css/styles.css` to match the current sizing), and drop the actual image file in `assets/images/`.
+
+(An earlier version of this homepage also had an abstract SVG hero illustration next to the headline — removed at Serena's request. The hero is text/gradient-blobs only now.)
 
 Event photos could go in `assets/images/` too (e.g. a small gallery on the event detail page after Femmes, Finances & Freedom actually happens) — no structure for that exists yet since there are no photos to put there.
 

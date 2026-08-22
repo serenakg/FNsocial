@@ -370,27 +370,6 @@ p { margin: 0 0 1em; }
   max-width: 760px;
 }
 
-/* Abstract brand illustration (not a photo) — an original wave/nest motif
-   built from the brand palette, echoing the logo. Sits beside the hero
-   text on wide screens; hidden below 1080px so it never competes with
-   the headline on tablet/mobile. Purely decorative, so aria-hidden. */
-.hero__illustration {
-  position: absolute;
-  z-index: 1;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  width: 300px;
-  height: 300px;
-  display: none;
-}
-
-@media (min-width: 1080px) {
-  .hero__illustration {
-    display: block;
-  }
-}
-
 /* Used on the dedicated Waitlist page to center the hero + CTA card
    instead of the usual left-aligned editorial hero layout. */
 .hero__inner--center {
