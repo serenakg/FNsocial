@@ -119,7 +119,9 @@ All of this is additive CSS/JS — no build step, same file structure as before.
 
 (An earlier version of this homepage also had an abstract SVG hero illustration next to the headline — removed at Serena's request. The hero is text/gradient-blobs only now.)
 
-Event photos could go in `assets/images/` too (e.g. a small gallery on the event detail page after Femmes, Finances & Freedom actually happens) — no structure for that exists yet since there are no photos to put there.
+- **Community gallery**: real photos from FemNEST's launch event now live in `assets/images/event/`, shown in a `.community-gallery` grid in the "Community first" section of `index.html`. Serena supplied 16 photos from the event; 6 were selected for variety (a candid conversation, an embrace, a panel moment, the room applauding, a quieter reflection moment, and Serena speaking) rather than using all of them, each resized to a 1200px-max-dimension JPEG. The grid uses `object-fit: cover` on a fixed aspect ratio, so any new photo added the same way will slot in cleanly regardless of its original orientation.
+  - **To add or swap a gallery photo**: drop a resized JPEG (long edge ~1200px keeps file size reasonable — there's no build step to do this automatically) into `assets/images/event/`, then add or edit an `<img>` line inside `.community-gallery` in `index.html`. Write real, specific alt text for each (what's happening in the shot), not a generic placeholder.
+  - Only photos of people who were visibly comfortable being photographed at a public event were used; none show private information beyond a visible first-name badge. If any attendee ever asks for a photo to come down, remove that `<img>` line and its file.
 
 ## Testimonials
 
