@@ -654,7 +654,7 @@ p { margin: 0 0 1em; }
   border-radius: var(--radius);
   box-shadow: var(--shadow-lift);
   padding: 36px;
-  max-width: 520px;
+  max-width: 720px;
   margin: 0 auto;
 }
 
@@ -716,8 +716,8 @@ p { margin: 0 0 1em; }
   background: var(--color-white);
   border-radius: var(--radius);
   box-shadow: var(--shadow-lift);
-  padding: 36px;
-  max-width: 520px;
+  padding: 48px;
+  max-width: 720px;
   margin: 0 auto;
   text-align: center;
   overflow: hidden;
