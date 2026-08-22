@@ -38,6 +38,8 @@
 
   <main id="main">
     <section class="hero" style="padding-bottom: 40px;">
+      <div class="blob blob--blue" aria-hidden="true"></div>
+      <div class="blob blob--orange" aria-hidden="true"></div>
       <div class="container hero__inner">
         <h1>Events</h1>
         <p class="hero__subhead">FemNEST is community before it's product — these gatherings are where that community meets, in person.</p>
@@ -46,36 +48,49 @@
 
     <!-- ================= EVENTS LIST =================
          Structured so more events can be added as cards over time.
-         Each event is one .event-card. Add a new card in the same shape
-         to list a future event; move a card into the "past events" note
-         style once it's happened (see the Galentine's Day card below for
-         the pattern — no RSVP button, just a recap). -->
+         Each event is one .event-card (ticket-stub layout: a .ticket-date
+         block, then .event-card__body with the details). Add a new card
+         in the same shape to list a future event; move a card into the
+         "past events" note style once it's happened (see the Galentine's
+         Day card below for the pattern — no RSVP button, just a recap). -->
     <section class="section section--alt">
       <div class="container">
         <div class="card-grid">
 
           <!-- Featured / upcoming event -->
-          <article class="event-card event-card--featured">
-            <span class="event-card__badge">Upcoming</span>
-            <h2>Femmes, Finances &amp; Freedom</h2>
-            <div class="event-card__meta">
-              <span>31 October 2026</span>
-              <span>Cyprus</span>
-              <span class="tbc">Venue: to be announced</span>
+          <article class="event-card event-card--featured" data-reveal>
+            <div class="ticket-date" aria-hidden="true">
+              <span class="ticket-date__month">Oct</span>
+              <span class="ticket-date__day">31</span>
             </div>
-            <p>FemNEST's second flagship gathering — building on the sold-out February launch. An evening on women, money, and the moments that change both.</p>
-            <a class="btn btn-primary" href="event-femmes-finances-freedom.html">Reserve Your Seat</a>
+            <div class="event-card__body">
+              <span class="event-card__badge">Upcoming</span>
+              <h2>Femmes, Finances &amp; Freedom</h2>
+              <div class="event-card__meta">
+                <span>31 October 2026</span>
+                <span>Cyprus</span>
+                <span class="tbc">Venue: to be announced</span>
+              </div>
+              <p>FemNEST's second flagship gathering — building on the sold-out February launch. An evening on women, money, and the moments that change both.</p>
+              <a class="btn btn-primary" href="event-femmes-finances-freedom.html">Reserve Your Seat</a>
+            </div>
           </article>
 
           <!-- Past event — credibility entry, no RSVP -->
-          <article class="event-card">
-            <span class="event-card__badge event-card__badge--past">Past event</span>
-            <h2>"Your Story is Our Story" — Galentine's Day Launch</h2>
-            <div class="event-card__meta">
-              <span>13 February 2026</span>
-              <span>Boka Coworking Centre, Paphos</span>
+          <article class="event-card" data-reveal>
+            <div class="ticket-date" aria-hidden="true">
+              <span class="ticket-date__month">Feb</span>
+              <span class="ticket-date__day">13</span>
             </div>
-            <p>FemNEST's launch event — 30+ women, an expert panel on financial empowerment, and the start of this community. Sold out.</p>
+            <div class="event-card__body">
+              <span class="event-card__badge event-card__badge--past">Past event</span>
+              <h2>"Your Story is Our Story" — Galentine's Day Launch</h2>
+              <div class="event-card__meta">
+                <span>13 February 2026</span>
+                <span>Boka Coworking Centre, Paphos</span>
+              </div>
+              <p>FemNEST's launch event — 30+ women, an expert panel on financial empowerment, and the start of this community. Sold out.</p>
+            </div>
           </article>
 
         </div>

@@ -92,8 +92,22 @@ Every page is a single self-contained `.html` file with plain text and HTML tags
 
 1. Duplicate `event.html` (the template) and rename it, e.g. `event-spring-mixer.html`. Don't duplicate `event-femmes-finances-freedom.html` — that one already has real content baked in.
 2. Fill in every `[PLACEHOLDER]` in the new file: event name, date/time, location (mark as "to be announced" if not confirmed — don't invent a venue), description, what-to-expect, and the RSVP button text/link.
-3. Add a new `<article class="event-card">` to `events.html`, matching the shape of the existing cards, linking to your new file.
-4. Once the event has happened, you can either remove its card or change it to match the "past event" style (see the Galentine's Day card in `events.html` for the pattern: swap the badge to `event-card__badge--past`, drop the RSVP button, keep it as a short recap).
+3. Add a new `<article class="event-card">` to `events.html`, matching the shape of the existing cards. Each card is a "ticket stub": a `.ticket-date` block (month + day, shown as the colored square on the left) followed by `.event-card__body` with the rest of the details. Set `data-reveal` on the `<article>` too, so it fades in on scroll like the others.
+4. Once the event has happened, you can either remove its card or change it to match the "past event" style (see the Galentine's Day card in `events.html` for the pattern: swap the badge to `event-card__badge--past`, drop the RSVP button, keep it as a short recap — the ticket-date block automatically turns grey instead of orange for non-featured cards).
+
+## Visual design system
+
+The site follows a "contemporary fintech meets lifestyle brand" direction — think confident color, soft depth, a little playful motion — built entirely from the five brand colors plus CSS, no extra images:
+
+- **Blobs**: large blurred circles (`.blob`, colored `.blob--blue` / `.blob--orange` / `.blob--green`) placed behind hero-style sections for a soft gradient-mesh backdrop. Add a couple of `<div class="blob blob--COLOR" aria-hidden="true"></div>` as the first children of any section with `position: relative; overflow: hidden` to reuse this.
+- **Tilted sections**: `.section--tilt` (used on "Why now" and "Community first") clips the section into a diagonal band instead of a flat rectangle, for visual rhythm between sections.
+- **Scroll reveal**: any element with the `data-reveal` attribute fades/slides in as it scrolls into view (handled by `initScrollReveal()` in `js/main.js`, respects `prefers-reduced-motion`). Add the attribute to a section header, card, or block to include it.
+- **Gradient text / stat numbers**: `.text-gradient` and `.stat-card__number` render text with a blue-to-orange gradient fill (`background-clip: text`) instead of a flat color, for a punchier "big number" feel.
+- **Highlight squiggle**: wrap a key phrase in `<span class="highlight">...</span>` to underline it with a soft orange marker-style highlight (used in the hero headline).
+- **Avatar stack**: `.avatar-stack` with a few `.avatar-stack__item` spans (colored circles with initials) — a "social proof" row with no real photos needed, used in the hero and easy to reuse elsewhere (e.g. a future testimonials section).
+- **Ticket-stub event cards**: see "Adding a new event" above.
+
+All of this is additive CSS/JS — no build step, same file structure as before.
 
 ## Deploying
 

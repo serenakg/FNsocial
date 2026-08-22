@@ -14,7 +14,43 @@ document.addEventListener('DOMContentLoaded', function () {
   initMobileNav();
   stampFooterYear();
   initNativeForms();
+  initScrollReveal();
 });
+
+/**
+ * Fades/slides in any element marked [data-reveal] as it enters the
+ * viewport (see the [data-reveal] rules in css/styles.css). Skips itself
+ * entirely under prefers-reduced-motion — those elements are just shown,
+ * no animation, no observer needed.
+ */
+function initScrollReveal() {
+  var targets = document.querySelectorAll('[data-reveal]');
+  if (!targets.length) return;
+
+  var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+    targets.forEach(function (el) {
+      el.classList.add('is-revealed');
+    });
+    return;
+  }
+
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
+  );
+
+  targets.forEach(function (el) {
+    observer.observe(el);
+  });
+}
 
 function initMobileNav() {
   var toggle = document.querySelector('.nav__toggle');
