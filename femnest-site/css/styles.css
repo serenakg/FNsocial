@@ -6,10 +6,10 @@
      everywhere. The "derived tones" group are tints/shades of the same
      five brand colors (used for gradients, glows, hover states) — not
      new colors.
-   - Fonts: --font-heading / --font-body point at Google Fonts stand-ins
-     (Poppins / Lora) until the real brand fonts (Archivo or Montserrat /
-     Bitter) are licensed for web. Swap the two variables, plus the
-     matching <link> tag in each HTML file's <head>, and you're done.
+   - Fonts: --font-heading / --font-body point at the real brand fonts
+     (Archivo / Bitter), loaded via Google Fonts. To swap either later,
+     change the two variables here plus the matching <link> tag in
+     each HTML file's <head>.
    - Motion: scroll-reveal animation is handled in js/main.js and honors
      prefers-reduced-motion (see the media query at the very bottom of
      this file) — nothing to touch here for that.
@@ -20,8 +20,8 @@
   --color-blue: #295df6;      /* primary */
   --color-orange: #ec6a2c;    /* accent / CTA */
   --color-lavender: #f2cdfc;  /* soft background */
-  --color-green: #deea9e;     /* soft background / highlight */
-  --color-cream: #eee7ce;     /* base background */
+  --color-green: #deea9e;     /* base background / soft highlight */
+  --color-cream: #eee7ce;     /* text-on-blue / accent tint */
 
   /* Derived tones — tints/shades of the five colors above, used for
      gradients, glows and depth. Not new brand colors. */
@@ -38,12 +38,10 @@
     radial-gradient(circle at 85% 10%, rgba(236, 106, 44, 0.16), transparent 40%),
     radial-gradient(circle at 50% 90%, rgba(222, 234, 158, 0.35), transparent 50%);
 
-  /* Fonts — PLACEHOLDER until real brand fonts are licensed for web.
-     Real brand fonts: Archivo or Montserrat (headings), Bitter (body).
-     Stand-ins below: Poppins (headings), Lora (body). To swap later,
-     change these two lines + the Google Fonts <link> in each HTML file. */
-  --font-heading: 'Poppins', 'Archivo', 'Montserrat', sans-serif;
-  --font-body: 'Lora', 'Bitter', Georgia, serif;
+  /* Brand fonts: Archivo (headings), Bitter (body) — loaded from Google
+     Fonts via the <link> tag in each HTML file's <head>. */
+  --font-heading: 'Archivo', 'Montserrat', sans-serif;
+  --font-body: 'Bitter', Georgia, serif;
 
   --radius: 20px;
   --radius-sm: 12px;
@@ -67,7 +65,7 @@ html {
 body {
   position: relative;
   margin: 0;
-  background: var(--color-cream);
+  background: var(--color-green);
   color: var(--color-ink);
   font-family: var(--font-body);
   line-height: 1.65;
@@ -182,7 +180,7 @@ p { margin: 0 0 1em; }
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(238, 231, 206, 0.78);
+  background: rgba(222, 234, 158, 0.78);
   backdrop-filter: blur(14px) saturate(140%);
   -webkit-backdrop-filter: blur(14px) saturate(140%);
   border-bottom: 1px solid var(--color-border);
@@ -573,17 +571,6 @@ p { margin: 0 0 1em; }
   box-shadow: var(--shadow-lift);
 }
 
-.stat-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 24px;
-  right: 24px;
-  height: 4px;
-  border-radius: 0 0 4px 4px;
-  background: var(--gradient-brand);
-}
-
 .stat-card__number {
   font-family: var(--font-heading);
   font-weight: 700;
@@ -594,6 +581,14 @@ p { margin: 0 0 1em; }
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+.stat-card__label {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-ink);
+  margin-bottom: 12px;
 }
 
 .stat-card__source {
@@ -608,70 +603,91 @@ p { margin: 0 0 1em; }
   font-style: italic;
 }
 
-/* ---- Founder / story blocks ---- */
-.story-block {
+/* ---- Founder story panel ---- */
+.founder-panel {
+  position: relative;
+  overflow: hidden;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 40px;
+  gap: 32px;
   align-items: center;
+  background: var(--color-lavender);
+  border-radius: var(--radius);
+  padding: 40px;
+  box-shadow: var(--shadow-soft);
 }
 
 @media (min-width: 720px) {
-  .story-block {
-    grid-template-columns: 1fr 1fr;
+  .founder-panel {
+    grid-template-columns: minmax(220px, 300px) 1fr;
+    padding: 48px;
   }
+}
+
+.founder-panel .blob--orange { width: 220px; height: 220px; top: -80px; right: -60px; opacity: 0.35; }
+.founder-panel .blob--blue { width: 180px; height: 180px; bottom: -70px; left: -50px; opacity: 0.3; }
+
+.founder-panel__media {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.founder-panel__photo {
+  width: 100%;
+  max-width: 260px;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lift);
+}
+
+.founder-panel__caption {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  text-align: center;
+  color: var(--color-ink);
+  margin: 0;
+}
+
+.founder-panel__caption span {
+  display: block;
+  font-weight: 400;
+  font-size: 0.85rem;
+  color: var(--color-ink-soft);
+  margin-top: 2px;
+}
+
+.founder-panel__content {
+  position: relative;
+  z-index: 1;
 }
 
 .story-block__quote-mark {
   font-family: var(--font-heading);
-  font-size: 4rem;
+  font-size: 3.4rem;
   line-height: 1;
   color: var(--color-orange);
   opacity: 0.5;
   display: block;
-  margin-bottom: -12px;
+  margin: 4px 0 -8px;
 }
 
-.story-block__quote {
+.founder-panel__quote {
   font-style: italic;
-  font-size: 1.3rem;
+  font-size: 1.35rem;
+  line-height: 1.5;
   color: var(--color-ink);
   font-family: var(--font-body);
+  margin-bottom: 18px;
 }
 
-/* Founder photo placeholder — PLACEHOLDER, not a real photo. Swap the
-   contents for an <img> once a real headshot is ready (see README.md
-   "Photography & imagery"). Kept as a styled card rather than a bare
-   monogram circle so the slot it leaves is obvious at a glance. */
-.photo-placeholder {
-  width: 100%;
-  max-width: 220px;
-  aspect-ratio: 4 / 5;
-  border-radius: var(--radius);
-  background: var(--gradient-brand);
-  color: var(--color-white);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 20px;
-  box-shadow: var(--shadow-soft);
-}
-
-.photo-placeholder__monogram {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 2.4rem;
-}
-
-.photo-placeholder__label {
-  font-family: var(--font-heading);
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  opacity: 0.85;
+.founder-panel__body {
+  color: var(--color-ink-soft);
+  margin-bottom: 0;
 }
 
 /* ---- Community photo gallery (real event photos) ---- */
@@ -696,18 +712,6 @@ p { margin: 0 0 1em; }
   box-shadow: var(--shadow-lift);
 }
 
-/* Real founder photo (replaces .photo-placeholder once one exists) —
-   same footprint as the placeholder it swapped out. */
-.photo-placeholder-img {
-  width: 100%;
-  max-width: 220px;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  border-radius: var(--radius);
-  margin-bottom: 20px;
-  box-shadow: var(--shadow-soft);
-}
-
 /* ---- Community voices marquee ----
    Two rows of real, anonymized quotes scrolling in opposite directions
    (pure CSS animation, no JS). Each row is rendered twice back-to-back
@@ -728,12 +732,12 @@ p { margin: 0 0 1em; }
 .voices-track {
   display: flex;
   width: max-content;
-  animation: voices-scroll-left 46s linear infinite;
+  animation: voices-scroll-left 78s linear infinite;
 }
 
 .voices-track--reverse {
   animation-name: voices-scroll-right;
-  animation-duration: 52s;
+  animation-duration: 88s;
 }
 
 .voices-track:hover {
@@ -809,7 +813,7 @@ p { margin: 0 0 1em; }
   border: 1.5px solid var(--color-border);
   font-family: var(--font-body);
   font-size: 1rem;
-  background: var(--color-cream);
+  background: var(--color-green);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -1127,7 +1131,7 @@ p { margin: 0 0 1em; }
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(238, 231, 206, 0.2);
+  border-top: 1px solid rgba(222, 234, 158, 0.3);
   padding-top: 20px;
   font-size: 0.85rem;
   opacity: 0.75;
@@ -1144,7 +1148,7 @@ p { margin: 0 0 1em; }
     top: 100%;
     left: 0;
     right: 0;
-    background: var(--color-cream);
+    background: var(--color-green);
     flex-direction: column;
     align-items: flex-start;
     gap: 0;

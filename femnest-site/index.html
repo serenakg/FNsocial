@@ -10,7 +10,7 @@
        (Archivo or Montserrat / Bitter). See css/styles.css for the swap. -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Bitter:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
@@ -87,22 +87,22 @@
         <div class="stats-grid">
           <div class="stat-card" data-reveal>
             <span class="stat-card__number" data-value="29%">29%</span>
-            <p>Women aged 65+ in Cyprus receive pensions 29% lower on average than men — one of the more pronounced gaps in the EU.</p>
+            <p class="stat-card__label">Cyprus gender pension gap</p>
             <p class="stat-card__source">Source: Eurostat, 2024 data</p>
           </div>
           <div class="stat-card" data-reveal>
             <span class="stat-card__number" data-value="77%">77%</span>
-            <p>Across Europe, women are on track to accumulate just 77% of the wealth men do by retirement.</p>
+            <p class="stat-card__label">Europe's wealth gap by retirement</p>
             <p class="stat-card__source">Source: WTW / World Economic Forum, Global Gender Wealth Equity Index, 2022</p>
           </div>
           <div class="stat-card" data-reveal>
             <span class="stat-card__number" data-value="700M">700M</span>
-            <p>An estimated 700 million women worldwide remain unbanked, without access to a basic financial account.</p>
+            <p class="stat-card__label">Unbanked women worldwide</p>
             <p class="stat-card__source">Source: World Bank, Global Findex 2025</p>
           </div>
           <div class="stat-card" data-reveal>
             <span class="stat-card__number" data-value="24.5%">24.5%</span>
-            <p>Across the EU as a whole, the average gender pension gap for people aged 65+ stands at 24.5% — Cyprus's gap runs well above that average.</p>
+            <p class="stat-card__label">EU average pension gap</p>
             <p class="stat-card__source">Source: Eurostat, 2024 data</p>
           </div>
         </div>
@@ -113,15 +113,18 @@
     <!-- ================= FOUNDER STORY ================= -->
     <section class="section section--alt">
       <div class="container">
-        <div class="story-block">
-          <div data-reveal>
-            <span class="story-block__quote-mark" aria-hidden="true">&ldquo;</span>
-            <h2>Why FemNEST exists</h2>
-            <p class="story-block__quote">FemNEST was founded by Serena Gasparini after she navigated PCOS, fertility treatment, and caring for a child with medical needs — all while managing freelance income in a system that wasn't built for her.</p>
+        <div class="founder-panel" data-reveal>
+          <div class="blob blob--orange" aria-hidden="true"></div>
+          <div class="blob blob--blue" aria-hidden="true"></div>
+          <div class="founder-panel__media">
+            <img src="assets/images/serena-gasparini.jpg" alt="Serena Gasparini, founder of FemNEST" class="founder-panel__photo" />
+            <p class="founder-panel__caption">Serena Gasparini<span>Founder, FemNEST</span></p>
           </div>
-          <div data-reveal>
-            <img src="assets/images/serena-gasparini.jpg" alt="Serena Gasparini, founder of FemNEST" class="photo-placeholder-img" />
-            <p>Based in Cyprus, where women still face systemic barriers like requiring a spouse's signature for basic banking, Serena built the platform she needed and couldn't find.</p>
+          <div class="founder-panel__content">
+            <span class="section__kicker">Why FemNEST exists</span>
+            <span class="story-block__quote-mark" aria-hidden="true">&ldquo;</span>
+            <p class="founder-panel__quote">FemNEST was founded by Serena Gasparini after she navigated PCOS, fertility treatment, and caring for a child with medical needs — all while managing freelance income in a system that wasn't built for her.</p>
+            <p class="founder-panel__body">Based in Cyprus, where women still face systemic barriers like requiring a spouse's signature for basic banking, Serena built the platform she needed and couldn't find.</p>
           </div>
         </div>
       </div>
@@ -171,25 +174,33 @@
         <div class="voices-track">
           <div class="voices-track__set">
             <p class="voice-pill">“<span class="highlight">1 extra day off per month</span> while being on your period — that would have really made a difference for me.”</p>
+            <p class="voice-pill">“Employers often don't believe I'm <span class="highlight">genuinely unfit to work</span> during my period, rather than lazy.”</p>
             <p class="voice-pill">“Understanding fertility when you are <span class="highlight">25 not 35</span>. The cost of delaying having a child can be huge — mentally, financially and otherwise.”</p>
+            <p class="voice-pill">“Micro loans from women to women. No questions asked. Just <span class="highlight">TRUST &amp; FUND</span>.”</p>
             <p class="voice-pill">“You want more financial freedom and choices <span class="highlight">before your body quits</span> — but you also want a pension.”</p>
           </div>
           <div class="voices-track__set" aria-hidden="true">
             <p class="voice-pill">“<span class="highlight">1 extra day off per month</span> while being on your period — that would have really made a difference for me.”</p>
+            <p class="voice-pill">“Employers often don't believe I'm <span class="highlight">genuinely unfit to work</span> during my period, rather than lazy.”</p>
             <p class="voice-pill">“Understanding fertility when you are <span class="highlight">25 not 35</span>. The cost of delaying having a child can be huge — mentally, financially and otherwise.”</p>
+            <p class="voice-pill">“Micro loans from women to women. No questions asked. Just <span class="highlight">TRUST &amp; FUND</span>.”</p>
             <p class="voice-pill">“You want more financial freedom and choices <span class="highlight">before your body quits</span> — but you also want a pension.”</p>
           </div>
         </div>
         <div class="voices-track voices-track--reverse">
           <div class="voices-track__set">
-            <p class="voice-pill">“Employers often don't believe I'm <span class="highlight">genuinely unfit to work</span> during my period, rather than lazy.”</p>
-            <p class="voice-pill">“Micro loans from women to women. No questions asked. Just <span class="highlight">TRUST &amp; FUND</span>.”</p>
-            <p class="voice-pill">“This gap is so significant that it inspired me to <span class="highlight">start building a women's health platform</span> of my own.”</p>
+            <p class="voice-pill">“Navigating maternity as a self-employed woman has been so hard — I have to <span class="highlight">compromise on my time with my child</span> just because I am self-employed.”</p>
+            <p class="voice-pill">“What's missing is a <span class="highlight">single trusted portal</span> where women can find all relevant information in one place — not just another app.”</p>
+            <p class="voice-pill">“At the beginning of a career, it's <span class="highlight">not just about planning for retirement</span> — it's about planning for partners, children, divorce, caregiving, perimenopause, injury.”</p>
+            <p class="voice-pill">“<span class="highlight">More transparency</span> — if we were open about how much we make as women, it would let others know they can do better.”</p>
+            <p class="voice-pill">“A forum of like-minded women who want to work and create opportunities, where <span class="highlight">seasoned women are valued</span> and appreciated.”</p>
           </div>
           <div class="voices-track__set" aria-hidden="true">
-            <p class="voice-pill">“Employers often don't believe I'm <span class="highlight">genuinely unfit to work</span> during my period, rather than lazy.”</p>
-            <p class="voice-pill">“Micro loans from women to women. No questions asked. Just <span class="highlight">TRUST &amp; FUND</span>.”</p>
-            <p class="voice-pill">“This gap is so significant that it inspired me to <span class="highlight">start building a women's health platform</span> of my own.”</p>
+            <p class="voice-pill">“Navigating maternity as a self-employed woman has been so hard — I have to <span class="highlight">compromise on my time with my child</span> just because I am self-employed.”</p>
+            <p class="voice-pill">“What's missing is a <span class="highlight">single trusted portal</span> where women can find all relevant information in one place — not just another app.”</p>
+            <p class="voice-pill">“At the beginning of a career, it's <span class="highlight">not just about planning for retirement</span> — it's about planning for partners, children, divorce, caregiving, perimenopause, injury.”</p>
+            <p class="voice-pill">“<span class="highlight">More transparency</span> — if we were open about how much we make as women, it would let others know they can do better.”</p>
+            <p class="voice-pill">“A forum of like-minded women who want to work and create opportunities, where <span class="highlight">seasoned women are valued</span> and appreciated.”</p>
           </div>
         </div>
       </div>
