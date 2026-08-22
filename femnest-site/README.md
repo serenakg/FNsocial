@@ -93,7 +93,7 @@ Every page is a single self-contained `.html` file with plain text and HTML tags
 1. Duplicate `event.html` (the template) and rename it, e.g. `event-spring-mixer.html`. Don't duplicate `event-femmes-finances-freedom.html` — that one already has real content baked in.
 2. Fill in every `[PLACEHOLDER]` in the new file: event name, date/time, location (mark as "to be announced" if not confirmed — don't invent a venue), description, what-to-expect, and the RSVP button text/link.
 3. Add a new `<article class="event-card">` to `events.html`, matching the shape of the existing cards. Each card is a "ticket stub": a `.ticket-date` block (month + day, shown as the colored square on the left) followed by `.event-card__body` with the rest of the details. Set `data-reveal` on the `<article>` too, so it fades in on scroll like the others.
-4. Once the event has happened, you can either remove its card or change it to match the "past event" style (see the Galentine's Day card in `events.html` for the pattern: swap the badge to `event-card__badge--past`, drop the RSVP button, keep it as a short recap — the ticket-date block automatically turns grey instead of orange for non-featured cards).
+4. Once the event has happened, either remove its card or change it to a "past event" recap: swap the badge to `event-card__badge--past`, drop the RSVP button, keep the copy as a short recap. The `.ticket-date` block automatically turns grey instead of orange for any card that isn't `.event-card--featured`, so a past-event card gets that muted look for free. (The Galentine's Day launch card that used to demonstrate this was removed from `events.html` at Serena's request — recreate one in this shape if a past-event example is needed again.)
 
 ## Visual design system
 
