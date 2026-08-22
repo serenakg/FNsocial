@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 60" role="img" aria-labelledby="femnestLogoTitle" width="220" height="60">
+  <!-- PLACEHOLDER LOGO — replace this file with the real FemNEST logo when ready.
+       Keep the filename (logo.svg) and viewBox proportions similar, or update
+       the <img> width/height in the header markup across all pages. -->
+  <title id="femnestLogoTitle">FemNEST</title>
+  <circle cx="30" cy="30" r="26" fill="#f2cdfc" />
+  <circle cx="30" cy="30" r="26" fill="none" stroke="#295df6" stroke-width="2" />
+  <path d="M18 38c4-14 20-14 24 0" fill="none" stroke="#ec6a2c" stroke-width="3" stroke-linecap="round" />
+  <circle cx="30" cy="20" r="5" fill="#295df6" />
+  <text x="66" y="38" font-family="Poppins, Archivo, Montserrat, sans-serif" font-size="26" font-weight="700" fill="#201f2b">FemNEST</text>
+</svg>

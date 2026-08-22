@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Join the Waitlist — FemNEST</title>
+  <meta name="description" content="Be part of FemNEST from the start. Join 50+ women already on the waitlist." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <a class="nav__brand" href="index.html">
+        <img src="assets/logos/femnest-logo-horizontal-blue.png" alt="FemNEST" />
+      </a>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="primaryNav">
+        <span class="visually-hidden">Menu</span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+      </button>
+      <ul class="nav__links" id="primaryNav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="waitlist.html" class="is-current">Waitlist</a></li>
+        <li><a class="btn btn-primary" href="waitlist.html#join">Join the Waitlist</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" style="padding-bottom: 40px;">
+      <div class="container hero__inner">
+        <h1>Be part of it from the start</h1>
+        <p class="hero__subhead">FemNEST is community-first — the waitlist isn't just an email list, it's the first room. Join 50+ women already in it.</p>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="join">
+      <div class="container">
+        <!-- Default decision: link out to the existing live waitlist
+             (campsite.bio/femnest, 50+ people already on it) rather than
+             running two waitlists in parallel. See README.md "Waitlist"
+             section for how to switch to a native form later, and the
+             commented-out native form markup further down this file. -->
+        <div class="external-waitlist">
+          <h2 style="margin-bottom: 8px;">Join the Waitlist</h2>
+          <p>No noise, no hustle. Just what matters, when it matters.</p>
+          <a class="btn btn-primary btn-block" href="https://campsite.bio/femnest" target="_blank" rel="noopener">Join the Waitlist</a>
+          <p class="form-note">Opens FemNEST's live waitlist page (campsite.bio/femnest) in a new tab — the same list 50+ women are already on.</p>
+        </div>
+
+        <!--
+          NATIVE FORM ALTERNATIVE (not in use — default is linking out above)
+
+          If you decide to bring the waitlist onto this site instead of
+          campsite.bio, delete the .external-waitlist block above and
+          un-comment the form below. Set the <form action> to a real
+          Formspree / Google Form / Mailchimp endpoint first — see
+          README.md "Waitlist" section for step-by-step instructions.
+
+          <div class="form-panel">
+            <form data-native-form action="https://formspree.io/f/REPLACE_WITH_REAL_ENDPOINT" method="POST">
+              <div class="form-field">
+                <label for="wl-name">Name (optional)</label>
+                <input type="text" id="wl-name" name="name" autocomplete="name" />
+              </div>
+              <div class="form-field">
+                <label for="wl-email">Email</label>
+                <input type="email" id="wl-email" name="email" required autocomplete="email" />
+              </div>
+              <button class="btn btn-primary btn-block" type="submit">Join the Waitlist</button>
+              <p class="form-note">No noise, no hustle. Just what matters, when it matters.</p>
+            </form>
+            <div class="form-success" role="status">
+              <p>You're in. Welcome to the first room — we'll be in touch.</p>
+            </div>
+          </div>
+        -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-brand"><img src="assets/logos/femnest-logo-horizontal-white-outline.png" alt="FemNEST" /></p>
+          <p class="footer-pilot-note">FemNEST is currently in pilot stage — MVP launching Spring 2027.</p>
+        </div>
+        <div>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="waitlist.html">Waitlist</a></li>
+          </ul>
+        </div>
+        <div>
+          <ul class="footer-links">
+            <li><a href="mailto:hellofemnest@gmail.com">hellofemnest@gmail.com</a></li>
+            <li><a href="https://linkedin.com/company/femnest" target="_blank" rel="noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; <span data-current-year></span> FemNEST. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

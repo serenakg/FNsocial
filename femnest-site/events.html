@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Events — FemNEST</title>
+  <meta name="description" content="FemNEST events — starting with Femmes, Finances & Freedom, 31 October 2026 in Cyprus." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <a class="nav__brand" href="index.html">
+        <img src="assets/logos/femnest-logo-horizontal-blue.png" alt="FemNEST" />
+      </a>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="primaryNav">
+        <span class="visually-hidden">Menu</span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+      </button>
+      <ul class="nav__links" id="primaryNav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="events.html" class="is-current">Events</a></li>
+        <li><a href="waitlist.html">Waitlist</a></li>
+        <li><a class="btn btn-primary" href="waitlist.html">Join the Waitlist</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" style="padding-bottom: 40px;">
+      <div class="container hero__inner">
+        <h1>Events</h1>
+        <p class="hero__subhead">FemNEST is community before it's product — these gatherings are where that community meets, in person.</p>
+      </div>
+    </section>
+
+    <!-- ================= EVENTS LIST =================
+         Structured so more events can be added as cards over time.
+         Each event is one .event-card. Add a new card in the same shape
+         to list a future event; move a card into the "past events" note
+         style once it's happened (see the Galentine's Day card below for
+         the pattern — no RSVP button, just a recap). -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="card-grid">
+
+          <!-- Featured / upcoming event -->
+          <article class="event-card event-card--featured">
+            <span class="event-card__badge">Upcoming</span>
+            <h2>Femmes, Finances &amp; Freedom</h2>
+            <div class="event-card__meta">
+              <span>31 October 2026</span>
+              <span>Cyprus</span>
+              <span class="tbc">Venue: to be announced</span>
+            </div>
+            <p>FemNEST's second flagship gathering — building on the sold-out February launch. An evening on women, money, and the moments that change both.</p>
+            <a class="btn btn-primary" href="event-femmes-finances-freedom.html">Reserve Your Seat</a>
+          </article>
+
+          <!-- Past event — credibility entry, no RSVP -->
+          <article class="event-card">
+            <span class="event-card__badge event-card__badge--past">Past event</span>
+            <h2>"Your Story is Our Story" — Galentine's Day Launch</h2>
+            <div class="event-card__meta">
+              <span>13 February 2026</span>
+              <span>Boka Coworking Centre, Paphos</span>
+            </div>
+            <p>FemNEST's launch event — 30+ women, an expert panel on financial empowerment, and the start of this community. Sold out.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-brand"><img src="assets/logos/femnest-logo-horizontal-white-outline.png" alt="FemNEST" /></p>
+          <p class="footer-pilot-note">FemNEST is currently in pilot stage — MVP launching Spring 2027.</p>
+        </div>
+        <div>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="waitlist.html">Waitlist</a></li>
+          </ul>
+        </div>
+        <div>
+          <ul class="footer-links">
+            <li><a href="mailto:hellofemnest@gmail.com">hellofemnest@gmail.com</a></li>
+            <li><a href="https://linkedin.com/company/femnest" target="_blank" rel="noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; <span data-current-year></span> FemNEST. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

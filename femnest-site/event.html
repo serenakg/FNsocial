@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- TEMPLATE FILE — this is not meant to be published as-is.
+       Duplicate this file per event (e.g. event-your-event-name.html),
+       fill in the [PLACEHOLDER] content, and link to it from events.html.
+       See README.md "Adding a new event" for the full steps.
+       The live version of this template for the flagship event is
+       event-femmes-finances-freedom.html. -->
+  <title>[EVENT NAME] — FemNEST</title>
+  <meta name="description" content="[One-sentence description of the event.]" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <a class="nav__brand" href="index.html">
+        <img src="assets/logos/femnest-logo-horizontal-blue.png" alt="FemNEST" />
+      </a>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="primaryNav">
+        <span class="visually-hidden">Menu</span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+      </button>
+      <ul class="nav__links" id="primaryNav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="events.html" class="is-current">Events</a></li>
+        <li><a href="waitlist.html">Waitlist</a></li>
+        <li><a class="btn btn-primary" href="waitlist.html">Join the Waitlist</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="event-hero">
+      <div class="container">
+        <a class="back-link" href="events.html">Back to all events</a>
+        <h1>[EVENT NAME]</h1>
+        <p class="hero__subhead">[One-line event tagline.]</p>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container">
+        <div class="event-detail-grid">
+          <div>
+            <h2>About this event</h2>
+            <p>[Longer description — 2-4 sentences on what this event is and why it matters.]</p>
+
+            <h3>What to expect</h3>
+            <p>[What to expect — format, tone, who else will be there.]</p>
+          </div>
+
+          <div>
+            <div class="card">
+              <ul class="event-facts">
+                <li>Date &amp; time<span>[DATE, TIME]</span></li>
+                <li>Location<span class="tbc">[VENUE — mark "to be announced" if unconfirmed, don't invent one]</span></li>
+              </ul>
+
+              <!-- RSVP: wired the same way as the waitlist decision.
+                   Default here links to the live waitlist tool; swap for
+                   a native form the same way as waitlist.html if needed. -->
+              <a class="btn btn-primary btn-block" href="https://campsite.bio/femnest" target="_blank" rel="noopener">[RSVP CTA TEXT]</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-brand"><img src="assets/logos/femnest-logo-horizontal-white-outline.png" alt="FemNEST" /></p>
+          <p class="footer-pilot-note">FemNEST is currently in pilot stage — MVP launching Spring 2027.</p>
+        </div>
+        <div>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="waitlist.html">Waitlist</a></li>
+          </ul>
+        </div>
+        <div>
+          <ul class="footer-links">
+            <li><a href="mailto:hellofemnest@gmail.com">hellofemnest@gmail.com</a></li>
+            <li><a href="https://linkedin.com/company/femnest" target="_blank" rel="noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; <span data-current-year></span> FemNEST. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
