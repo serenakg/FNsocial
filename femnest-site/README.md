@@ -104,10 +104,27 @@ The site follows a "contemporary fintech meets lifestyle brand" direction — th
 - **Scroll reveal**: any element with the `data-reveal` attribute fades/slides in as it scrolls into view (handled by `initScrollReveal()` in `js/main.js`, respects `prefers-reduced-motion`). Add the attribute to a section header, card, or block to include it.
 - **Gradient text / stat numbers**: `.text-gradient` and `.stat-card__number` render text with a blue-to-orange gradient fill (`background-clip: text`) instead of a flat color, for a punchier "big number" feel.
 - **Highlight squiggle**: wrap a key phrase in `<span class="highlight">...</span>` to underline it with a soft orange marker-style highlight (used in the hero headline).
-- **Avatar stack**: `.avatar-stack` with a few `.avatar-stack__item` spans (colored circles with initials) — a "social proof" row with no real photos needed, used in the hero and easy to reuse elsewhere (e.g. a future testimonials section).
+- **Avatar stack**: `.avatar-stack` with a few `.avatar-stack__item` spans (colored circles with initials) — a "social proof" row with no real photos needed, used in the hero.
 - **Ticket-stub event cards**: see "Adding a new event" above.
+- **Count-up stat numbers**: each `.stat-card__number` carries a `data-value` attribute holding its real value (e.g. `data-value="29%"`). `animateStatNumber()` in `js/main.js` counts it up from 0 the moment its card scrolls into view. The visible text in the HTML is already the correct final value, so nothing breaks with JS disabled or under `prefers-reduced-motion` (which skips the animation outright).
+- **Parallax blobs**: `initParallax()` in `js/main.js` gives the `.blob` decorations a light vertical drift on scroll. Skipped under `prefers-reduced-motion`.
 
 All of this is additive CSS/JS — no build step, same file structure as before.
+
+## Photography & imagery
+
+The site currently uses **no real photos** — no founder headshot, no event photos, no stock imagery of people. Two things stand in for them, both clearly marked as placeholders in the code:
+
+- **Hero illustration**: an original abstract SVG (a wave/nest motif echoing the logo, built only from the five brand colors) sits beside the headline on wide screens (`.hero__illustration` in `index.html`, hidden below 1080px). This is illustration, not a photo — it can stay indefinitely if a photographic hero never happens, or be swapped for a real image later.
+- **Founder photo**: `.photo-placeholder` in the "Why FemNEST exists" section is a styled placeholder card (gradient background, "SG" monogram, "Photo coming soon" label) marking where a real founder headshot goes. **To swap in a real photo**: replace the `<div class="photo-placeholder">...</div>` block with `<img src="assets/images/serena-gasparini.jpg" alt="Serena Gasparini, founder of FemNEST" class="photo-placeholder-img" />` (add a `.photo-placeholder-img { width: 100%; max-width: 220px; aspect-ratio: 4/5; object-fit: cover; border-radius: var(--radius); margin-bottom: 20px; }` rule to `css/styles.css` to match the current sizing), and drop the actual image file in `assets/images/`.
+
+Event photos could go in `assets/images/` too (e.g. a small gallery on the event detail page after Femmes, Finances & Freedom actually happens) — no structure for that exists yet since there are no photos to put there.
+
+## Testimonials
+
+The "What the room is saying" section on the homepage is **placeholder content** — three testimonial cards with bracketed placeholders (`[Member name]`, `[Add a real quote...]`, etc.), not real quotes. This needs real quotes from actual waitlist members, event attendees, or survey responses before publishing — using invented quotes as if real would be dishonest to site visitors.
+
+**To fill one in**: replace the bracketed text inside a `.testimonial-card` block in `index.html` — the quote in `.testimonial-card__quote`, the name in `.testimonial-card__name`, the context line (e.g. "Waitlist member since March 2026") in `.testimonial-card__context`, and the initials in `.testimonial-card__avatar` (also pick a background color for that avatar — any brand color works, see the `style="background: ..."` on the existing placeholders). If there are fewer than three real quotes available, delete the extra `.testimonial-card` block(s) rather than leaving placeholders live — the `.card-grid` layout reflows fine with one or two cards.
 
 ## Deploying
 
@@ -125,6 +142,8 @@ These were deliberately left as placeholders or defaults rather than invented. C
 
 - **Waitlist tool**: defaulted to linking out to campsite.bio/femnest (see "Waitlist" section above). Confirm this is right, or switch to a native form.
 - **Venue for Femmes, Finances & Freedom (31 Oct 2026)**: not yet booked — shown honestly as "Venue: to be announced" on `events.html` and the event page. Update once confirmed.
+- **Founder photo**: still a styled placeholder, not a real photo (see "Photography & imagery" above). Needs a real headshot from Serena.
+- **Testimonials**: all three cards in the "What the room is saying" section are bracketed placeholders, not real quotes (see "Testimonials" above). Needs 1-3 real quotes from waitlist members or event attendees before publishing.
 - **Logo**: the real FemNEST wordmark is now in use (see "Logo" section above) — this one's resolved. Only the browser favicon is still a placeholder, pending a square icon-only mark.
 - **Fonts**: currently Poppins/Lora as Google Fonts stand-ins for Archivo/Montserrat + Bitter, pending web licensing. See "Editing fonts" above.
 - **Statistics on the homepage ("Why now" section)**: re-verified via live search on 22 August 2026 before publishing, per the brief's instruction — now resolved to four confirmed, cited figures:

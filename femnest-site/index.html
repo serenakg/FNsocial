@@ -45,6 +45,22 @@
       <div class="blob blob--blue" aria-hidden="true"></div>
       <div class="blob blob--orange" aria-hidden="true"></div>
       <div class="blob blob--green" aria-hidden="true"></div>
+
+      <!-- Original abstract illustration (brand colors, not a photo) — a
+           wave/nest motif echoing the logo. Hidden below 1080px so it
+           never competes with the headline; see .hero__illustration in
+           css/styles.css. -->
+      <svg class="hero__illustration" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+        <circle cx="150" cy="150" r="120" style="stroke: var(--color-blue)" stroke-width="2" opacity="0.35" />
+        <circle cx="150" cy="150" r="90" style="stroke: var(--color-orange)" stroke-width="2" opacity="0.4" />
+        <path d="M35 175c30-40 80-40 110 0s80 40 110 0" style="stroke: var(--color-blue)" stroke-width="4" stroke-linecap="round" opacity="0.5" />
+        <circle cx="150" cy="150" r="34" style="fill: var(--color-orange)" opacity="0.9" />
+        <circle cx="90" cy="90" r="10" style="fill: var(--color-blue)" />
+        <circle cx="222" cy="82" r="7" style="fill: var(--color-green)" />
+        <circle cx="232" cy="202" r="9" style="fill: var(--color-lavender)" />
+        <circle cx="68" cy="212" r="6" style="fill: var(--color-blue)" />
+      </svg>
+
       <div class="container hero__inner">
         <span class="hero__eyebrow">Pilot stage · Cyprus</span>
         <h1>Financial freedom for women — mapped to <span class="highlight">the moments that matter</span></h1>
@@ -85,22 +101,22 @@
         </div>
         <div class="stats-grid">
           <div class="stat-card" data-reveal>
-            <span class="stat-card__number">29%</span>
+            <span class="stat-card__number" data-value="29%">29%</span>
             <p>Women aged 65+ in Cyprus receive pensions 29% lower on average than men — one of the more pronounced gaps in the EU.</p>
             <p class="stat-card__source">Source: Eurostat, 2024 data</p>
           </div>
           <div class="stat-card" data-reveal>
-            <span class="stat-card__number">77%</span>
+            <span class="stat-card__number" data-value="77%">77%</span>
             <p>Across Europe, women are on track to accumulate just 77% of the wealth men do by retirement.</p>
             <p class="stat-card__source">Source: WTW / World Economic Forum, Global Gender Wealth Equity Index, 2022</p>
           </div>
           <div class="stat-card" data-reveal>
-            <span class="stat-card__number">700M</span>
+            <span class="stat-card__number" data-value="700M">700M</span>
             <p>An estimated 700 million women worldwide remain unbanked, without access to a basic financial account.</p>
             <p class="stat-card__source">Source: World Bank, Global Findex 2025</p>
           </div>
           <div class="stat-card" data-reveal>
-            <span class="stat-card__number">24.5%</span>
+            <span class="stat-card__number" data-value="24.5%">24.5%</span>
             <p>Across the EU as a whole, the average gender pension gap for people aged 65+ stands at 24.5% — Cyprus's gap runs well above that average.</p>
             <p class="stat-card__source">Source: Eurostat, 2024 data</p>
           </div>
@@ -119,7 +135,12 @@
             <p class="story-block__quote">FemNEST was founded by Serena Gasparini after she navigated PCOS, fertility treatment, and caring for a child with medical needs — all while managing freelance income in a system that wasn't built for her.</p>
           </div>
           <div data-reveal>
-            <div class="story-block__avatar" aria-hidden="true">SG</div>
+            <!-- PLACEHOLDER — swap for a real founder photo (<img>) when
+                 one is ready. See README.md "Photography & imagery". -->
+            <div class="photo-placeholder" aria-hidden="true">
+              <span class="photo-placeholder__monogram">SG</span>
+              <span class="photo-placeholder__label">Photo coming soon</span>
+            </div>
             <p>Based in Cyprus, where women still face systemic barriers like requiring a spouse's signature for basic banking, Serena built the platform she needed and couldn't find.</p>
           </div>
         </div>
@@ -134,6 +155,56 @@
           <h2>Built with the room, not for it</h2>
         </div>
         <p data-reveal style="max-width: 760px; font-size: 1.1rem;">FemNEST is community before it's product. Real member stories, a live waitlist of 50+ women, and in-person events come first — the platform is being built around what this community actually needs, not the other way around.</p>
+      </div>
+    </section>
+
+    <!-- ================= TESTIMONIALS =================
+         PLACEHOLDER CONTENT — the three quotes below are bracketed
+         placeholders, not real testimonials. Replace each [bracketed]
+         name/context/quote with a real one from a waitlist member, event
+         attendee, or survey response before this goes live. See
+         README.md "Testimonials" for how to swap these in. -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section__header" data-reveal>
+          <span class="section__kicker">In their words</span>
+          <h2>What the room is saying</h2>
+        </div>
+        <div class="card-grid">
+          <div class="testimonial-card" data-reveal>
+            <span class="testimonial-card__quote-mark" aria-hidden="true">&ldquo;</span>
+            <p class="testimonial-card__quote">[Add a real quote from a waitlist member here — what made her join, or what she's hoping FemNEST helps with.]</p>
+            <div class="testimonial-card__byline">
+              <span class="testimonial-card__avatar" style="background: var(--color-blue);" aria-hidden="true">[?]</span>
+              <div>
+                <p class="testimonial-card__name">[Member name]</p>
+                <p class="testimonial-card__context">[Waitlist member since Month Year]</p>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card" data-reveal>
+            <span class="testimonial-card__quote-mark" aria-hidden="true">&ldquo;</span>
+            <p class="testimonial-card__quote">[Add a real quote from a Femmes, Finances &amp; Freedom or Galentine's Day attendee here — what the room felt like.]</p>
+            <div class="testimonial-card__byline">
+              <span class="testimonial-card__avatar" style="background: var(--color-orange);" aria-hidden="true">[?]</span>
+              <div>
+                <p class="testimonial-card__name">[Attendee name]</p>
+                <p class="testimonial-card__context">[Event attendee, Month Year]</p>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card" data-reveal>
+            <span class="testimonial-card__quote-mark" aria-hidden="true">&ldquo;</span>
+            <p class="testimonial-card__quote">[Add a real quote here — from a survey response, DM, or feedback form.]</p>
+            <div class="testimonial-card__byline">
+              <span class="testimonial-card__avatar" style="background: var(--color-ink-soft);" aria-hidden="true">[?]</span>
+              <div>
+                <p class="testimonial-card__name">[Name]</p>
+                <p class="testimonial-card__context">[Context]</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 

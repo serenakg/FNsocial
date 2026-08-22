@@ -1,13 +1,19 @@
 /* ==========================================================================
    FemNEST — main.js
    --------------------------------------------------------------------------
-   Vanilla JS, no build step. Three jobs on this page:
+   Vanilla JS, no build step. Jobs on this page:
    1. Mobile nav toggle
    2. Footer "current year" stamp
    3. Native form handling (RSVP form on the event page) — inline
       confirmation, no page reload. The waitlist itself currently links out
       to the live tool at campsite.bio/femnest (see README.md "Waitlist"
       section for how to switch to a native form later).
+   4. Scroll-reveal animation on [data-reveal] elements
+   5. Count-up animation on the "Why now" stat numbers, triggered the
+      moment their card is revealed
+   6. A light parallax drift on the decorative hero blobs
+   All motion (4-6) is skipped outright under prefers-reduced-motion —
+   see the isReducedMotion() check each one starts with.
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -15,20 +21,25 @@ document.addEventListener('DOMContentLoaded', function () {
   stampFooterYear();
   initNativeForms();
   initScrollReveal();
+  initParallax();
 });
+
+function isReducedMotion() {
+  return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
 
 /**
  * Fades/slides in any element marked [data-reveal] as it enters the
  * viewport (see the [data-reveal] rules in css/styles.css). Skips itself
  * entirely under prefers-reduced-motion — those elements are just shown,
- * no animation, no observer needed.
+ * no animation, no observer needed. Also kicks off the number count-up
+ * (see animateStatNumber) the moment a stat card is revealed.
  */
 function initScrollReveal() {
   var targets = document.querySelectorAll('[data-reveal]');
   if (!targets.length) return;
 
-  var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+  if (isReducedMotion() || !('IntersectionObserver' in window)) {
     targets.forEach(function (el) {
       el.classList.add('is-revealed');
     });
@@ -40,6 +51,10 @@ function initScrollReveal() {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           entry.target.classList.add('is-revealed');
+          var numberEl = entry.target.querySelector('.stat-card__number[data-value]');
+          if (numberEl) {
+            animateStatNumber(numberEl);
+          }
           observer.unobserve(entry.target);
         }
       });
@@ -50,6 +65,81 @@ function initScrollReveal() {
   targets.forEach(function (el) {
     observer.observe(el);
   });
+}
+
+/**
+ * Counts a stat number up from 0 to its real value (e.g. "29%", "24.5%",
+ * "700M") over ~1.1s. The real value lives in data-value so the number is
+ * still correct in the HTML source (and for no-JS / reduced-motion cases)
+ * — this only rewrites the displayed text while the page is live.
+ */
+function animateStatNumber(el) {
+  var target = el.getAttribute('data-value') || el.textContent.trim();
+  var match = target.match(/^([\d.]+)(.*)$/);
+  if (!match) return;
+
+  var endValue = parseFloat(match[1]);
+  var suffix = match[2];
+  var decimals = (match[1].split('.')[1] || '').length;
+  var duration = 1100;
+  var startTime = null;
+
+  function easeOutCubic(t) {
+    return 1 - Math.pow(1 - t, 3);
+  }
+
+  function frame(timestamp) {
+    if (startTime === null) startTime = timestamp;
+    var elapsed = timestamp - startTime;
+    var progress = Math.min(elapsed / duration, 1);
+    var current = endValue * easeOutCubic(progress);
+    el.textContent = current.toFixed(decimals) + suffix;
+    if (progress < 1) {
+      window.requestAnimationFrame(frame);
+    } else {
+      el.textContent = target;
+    }
+  }
+
+  window.requestAnimationFrame(frame);
+}
+
+/**
+ * Subtle parallax drift on the decorative .blob elements: each one shifts
+ * vertically at a slightly different rate as the page scrolls, so the
+ * gradient backdrops feel alive rather than static. Purely decorative —
+ * skipped entirely under prefers-reduced-motion, and the blobs are
+ * aria-hidden so this never affects screen reader users.
+ */
+function initParallax() {
+  if (isReducedMotion()) return;
+
+  var blobs = document.querySelectorAll('.blob');
+  if (!blobs.length) return;
+
+  var ticking = false;
+
+  function update() {
+    var scrollY = window.scrollY;
+    blobs.forEach(function (blob, index) {
+      var speed = 0.06 + (index % 3) * 0.04;
+      blob.style.transform = 'translateY(' + (scrollY * speed).toFixed(1) + 'px)';
+    });
+    ticking = false;
+  }
+
+  window.addEventListener(
+    'scroll',
+    function () {
+      if (!ticking) {
+        window.requestAnimationFrame(update);
+        ticking = true;
+      }
+    },
+    { passive: true }
+  );
+
+  update();
 }
 
 function initMobileNav() {

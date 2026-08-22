@@ -370,6 +370,27 @@ p { margin: 0 0 1em; }
   max-width: 760px;
 }
 
+/* Abstract brand illustration (not a photo) — an original wave/nest motif
+   built from the brand palette, echoing the logo. Sits beside the hero
+   text on wide screens; hidden below 1080px so it never competes with
+   the headline on tablet/mobile. Purely decorative, so aria-hidden. */
+.hero__illustration {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 300px;
+  height: 300px;
+  display: none;
+}
+
+@media (min-width: 1080px) {
+  .hero__illustration {
+    display: block;
+  }
+}
+
 /* Used on the dedicated Waitlist page to center the hero + CTA card
    instead of the usual left-aligned editorial hero layout. */
 .hero__inner--center {
@@ -632,19 +653,100 @@ p { margin: 0 0 1em; }
   font-family: var(--font-body);
 }
 
-.story-block__avatar {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
+/* Founder photo placeholder — PLACEHOLDER, not a real photo. Swap the
+   contents for an <img> once a real headshot is ready (see README.md
+   "Photography & imagery"). Kept as a styled card rather than a bare
+   monogram circle so the slot it leaves is obvious at a glance. */
+.photo-placeholder {
+  width: 100%;
+  max-width: 220px;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius);
   background: var(--gradient-brand);
   color: var(--color-white);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-soft);
+}
+
+.photo-placeholder__monogram {
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 1.1rem;
-  margin-bottom: 16px;
+  font-size: 2.4rem;
+}
+
+.photo-placeholder__label {
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+/* ---- Testimonials ---- */
+.testimonial-card {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lift);
+}
+
+.testimonial-card__quote-mark {
+  font-family: var(--font-heading);
+  font-size: 2.6rem;
+  line-height: 1;
+  color: var(--color-orange);
+  opacity: 0.5;
+  display: block;
+  margin-bottom: -4px;
+}
+
+.testimonial-card__quote {
+  font-style: italic;
+  margin-bottom: 18px;
+}
+
+.testimonial-card__byline {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.testimonial-card__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+.testimonial-card__name {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--color-ink);
+}
+
+.testimonial-card__context {
+  font-size: 0.82rem;
+  color: var(--color-ink-soft);
 }
 
 /* ---- Waitlist / form blocks ---- */
