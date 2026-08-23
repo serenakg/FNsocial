@@ -383,18 +383,18 @@ p { margin: 0 0 1em; }
 
 .founder-panel__wave {
   position: absolute;
-  top: 4px;
-  right: 4%;
-  z-index: 0;
+  top: -22px;
+  left: -14px;
+  z-index: 2;
   pointer-events: none;
-  width: 200px;
+  width: 210px;
   height: auto;
-  opacity: 0.85;
-  transform: rotate(3deg);
+  opacity: 0.95;
+  transform: rotate(-5deg);
 }
 
 @media (max-width: 719px) {
-  .founder-panel__wave { display: none; }
+  .founder-panel__wave { width: 160px; top: -16px; left: -10px; }
 }
 
 /* ---- Hero ---- */
@@ -732,6 +732,121 @@ p { margin: 0 0 1em; }
   margin-bottom: 0;
 }
 
+/* ---- Mind the Gap timeline (life-stage cascade) ---- */
+.gap-timeline__intro {
+  max-width: 62ch;
+  font-size: 1.05rem;
+  color: var(--color-ink-soft);
+  font-style: italic;
+}
+
+.gap-timeline__intro + .gap-timeline__intro {
+  margin-top: 10px;
+}
+
+.gap-timeline__source-note {
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  color: var(--color-ink-soft);
+  margin-top: 36px;
+}
+
+.gap-timeline__scroll {
+  margin-top: 44px;
+}
+
+.gap-timeline__track {
+  position: relative;
+  height: 42px;
+  margin: 0 6px;
+  overflow: hidden;
+  border-radius: 999px;
+}
+
+.gap-timeline__track img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 42px;
+  width: auto;
+  max-width: none;
+}
+
+.gap-timeline__dot {
+  position: absolute;
+  top: 50%;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--color-cream);
+  border: 2px solid var(--color-ink);
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.gap-timeline__labels {
+  position: relative;
+  height: 48px;
+  margin: 14px 6px 0;
+}
+
+.gap-timeline__label {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  width: 132px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.78rem;
+  line-height: 1.3;
+  color: var(--color-ink);
+  text-align: center;
+}
+
+.gap-timeline__gaps {
+  position: relative;
+  height: 130px;
+  margin-top: 24px;
+}
+
+.gap-timeline__gap {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  width: 118px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.gap-timeline__gap-stat {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--color-orange);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.gap-timeline__gap-label {
+  font-family: var(--font-heading);
+  font-size: 0.68rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+}
+
+@media (max-width: 860px) {
+  .gap-timeline__scroll {
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+  .gap-timeline__inner {
+    min-width: 900px;
+  }
+}
+
 /* ---- Community photo gallery (real event photos) ---- */
 .community-gallery {
   display: grid;
@@ -752,6 +867,40 @@ p { margin: 0 0 1em; }
 .community-gallery img:hover {
   transform: translateY(-6px) scale(1.02);
   box-shadow: var(--shadow-lift);
+}
+
+.community-gallery__item {
+  position: relative;
+}
+
+.community-gallery img.community-gallery__squiggle {
+  position: absolute;
+  z-index: 2;
+  width: 128px;
+  height: auto;
+  pointer-events: none;
+  aspect-ratio: auto;
+  object-fit: contain;
+  border-radius: 0;
+  box-shadow: none;
+  transition: none;
+}
+
+.community-gallery img.community-gallery__squiggle:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.community-gallery img.community-gallery__squiggle.community-gallery__squiggle--tl {
+  top: -22px;
+  left: -20px;
+  transform: rotate(-10deg);
+}
+
+.community-gallery img.community-gallery__squiggle.community-gallery__squiggle--br {
+  bottom: -20px;
+  right: -18px;
+  transform: rotate(8deg) scaleX(-1);
 }
 
 /* ---- Community voices marquee ----
