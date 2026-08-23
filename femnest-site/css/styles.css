@@ -355,6 +355,48 @@ p { margin: 0 0 1em; }
 .blob--green { background: var(--color-green); }
 .blob--lavender { background: var(--color-lavender); }
 
+/* ---- Wave motif accents ----
+   The squiggle traced out of the wordmark's own wave (see
+   assets/icons/wave-motif-*.png and wave-mark-*.png), reused as a crisp
+   decorative line — the graphic counterpart to the soft blurred blobs
+   above. Keep it to brand blue/orange only. */
+.hero__wave-flourish {
+  display: block;
+  width: 150px;
+  height: auto;
+  margin: 4px 0 0 4px;
+  transform: rotate(-4deg);
+}
+
+.wave-divider {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 40px 0 0;
+}
+
+.wave-divider img {
+  width: 170px;
+  height: auto;
+  opacity: 0.9;
+}
+
+.founder-panel__wave {
+  position: absolute;
+  top: 4px;
+  right: 4%;
+  z-index: 0;
+  pointer-events: none;
+  width: 200px;
+  height: auto;
+  opacity: 0.85;
+  transform: rotate(3deg);
+}
+
+@media (max-width: 719px) {
+  .founder-panel__wave { display: none; }
+}
+
 /* ---- Hero ---- */
 .hero {
   position: relative;
