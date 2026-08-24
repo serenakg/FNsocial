@@ -847,16 +847,25 @@ p { margin: 0 0 1em; }
   }
 }
 
-/* ---- Community photo gallery (real event photos) ---- */
+/* ---- Community photo gallery (real event photos) ----
+   CSS columns rather than a grid, so images of different heights
+   (the portrait wave-wrap shots vs. the standard 4:3 crops) pack
+   together Pinterest-style with no leftover row gaps. */
 .community-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 18px;
+  columns: 3 300px;
+  column-gap: 18px;
   margin-top: 36px;
+}
+
+.community-gallery__item {
+  position: relative;
+  break-inside: avoid;
+  margin-bottom: 18px;
 }
 
 .community-gallery img {
   width: 100%;
+  display: block;
   aspect-ratio: 4 / 3;
   object-fit: cover;
   border-radius: var(--radius-sm);
@@ -871,40 +880,6 @@ p { margin: 0 0 1em; }
 .community-gallery img:hover {
   transform: translateY(-6px) scale(1.02);
   box-shadow: var(--shadow-lift);
-}
-
-.community-gallery__item {
-  position: relative;
-}
-
-.community-gallery img.community-gallery__squiggle {
-  position: absolute;
-  z-index: 2;
-  width: 128px;
-  height: auto;
-  pointer-events: none;
-  aspect-ratio: auto;
-  object-fit: contain;
-  border-radius: 0;
-  box-shadow: none;
-  transition: none;
-}
-
-.community-gallery img.community-gallery__squiggle:hover {
-  transform: none;
-  box-shadow: none;
-}
-
-.community-gallery img.community-gallery__squiggle.community-gallery__squiggle--tl {
-  top: -22px;
-  left: -20px;
-  transform: rotate(-10deg);
-}
-
-.community-gallery img.community-gallery__squiggle.community-gallery__squiggle--br {
-  bottom: -20px;
-  right: -18px;
-  transform: rotate(8deg) scaleX(-1);
 }
 
 /* ---- Community voices marquee ----
