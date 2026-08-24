@@ -898,48 +898,142 @@ p { margin: 0 0 1em; }
   color: var(--color-ink-soft);
 }
 
-/* ---- Five pillars (What is FemNEST) ---- */
+/* ---- Five pillars (What is FemNEST) ----
+   Six flip tiles (five pillars + one real photo) so the grid is always
+   even — 2 columns on mobile, 3 on tablet+, never an orphaned last card.
+   Front face is a brand-color squiggle background, no photography,
+   except the sixth tile which is a real event photo; back face reveals
+   the description, alternating blue/orange like the community gallery. */
 .pillars-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
   margin-top: 40px;
 }
 
+@media (min-width: 720px) {
+  .pillars-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
 .pillar-card {
-  background: var(--color-cream);
+  perspective: 1200px;
+}
+
+.pillar-card__flip {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.4, 0.15, 0.2, 1);
+}
+
+.pillar-card:hover .pillar-card__flip,
+.pillar-card:focus-within .pillar-card__flip {
+  transform: rotateY(180deg);
+}
+
+.pillar-card__face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
   border-radius: var(--radius);
-  padding: 28px 22px;
-  text-align: center;
+  overflow: hidden;
   box-shadow: var(--shadow-soft);
+}
+
+.pillar-card__face--front {
+  background: var(--color-cream);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  text-align: center;
+}
+
+.pillar-card:nth-child(3n+2) .pillar-card__face--front {
+  background: var(--color-lavender);
+}
+
+.pillar-card:nth-child(3n+3) .pillar-card__face--front {
+  background: var(--color-green);
+}
+
+.pillar-card__squiggle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 160%;
+  max-width: none;
+  opacity: 0.35;
+  transform: translate(-50%, -50%) rotate(-8deg);
+  pointer-events: none;
 }
 
 .pillar-card__icon {
   font-size: 2rem;
-  display: block;
-  margin-bottom: 12px;
+  position: relative;
 }
 
-.pillar-card h3 {
+.pillar-card__face--front h3 {
   font-family: var(--font-heading);
   font-size: 1.05rem;
-  margin-bottom: 8px;
+  position: relative;
 }
 
-.pillar-card p {
-  color: var(--color-ink-soft);
-  font-size: 0.9rem;
+.pillar-card__face--back {
+  transform: rotateY(180deg);
+  background: var(--color-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
 }
 
-/* ---- Three-door funnel ---- */
+.pillar-card:nth-child(even) .pillar-card__face--back {
+  background: var(--color-orange);
+}
+
+.pillar-card__face--back p {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: var(--color-cream);
+}
+
+.pillar-card--photo .pillar-card__face--front img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* ---- Three-door funnel ----
+   Jumps straight from 1 column to 3 (skips a 2-column mid-state) so a
+   3-card row never leaves an orphaned card next to empty space. CTA
+   stays visible on the front at all times — these are conversion
+   buttons, not content to hide behind a hover-only flip. */
 .funnel-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: 1fr;
   gap: 24px;
   margin-top: 8px;
 }
 
+@media (min-width: 720px) {
+  .funnel-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 .funnel-card {
+  position: relative;
   background: var(--color-white);
   border-radius: var(--radius);
   padding: 32px 28px;
@@ -949,25 +1043,41 @@ p { margin: 0 0 1em; }
   flex-direction: column;
   align-items: center;
   gap: 14px;
+  overflow: hidden;
+}
+
+.funnel-card__squiggle {
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  width: 160%;
+  max-width: none;
+  opacity: 0.14;
+  transform: translateX(-50%) rotate(-6deg);
+  pointer-events: none;
 }
 
 .funnel-card__icon {
   font-size: 2.2rem;
+  position: relative;
 }
 
 .funnel-card h3 {
   font-family: var(--font-heading);
   font-size: 1.2rem;
+  position: relative;
 }
 
 .funnel-card p {
   color: var(--color-ink-soft);
   font-size: 0.92rem;
   flex-grow: 1;
+  position: relative;
 }
 
 .funnel-card .btn {
   margin-top: 4px;
+  position: relative;
 }
 
 /* ---- Community photo gallery (real event photos) ----
