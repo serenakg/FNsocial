@@ -1113,6 +1113,37 @@ p { margin: 0 0 1em; }
   position: relative;
 }
 
+/* ---- Past-event gallery (events.html) ----
+   A plain photo grid — no flip, unlike the homepage community gallery —
+   for a simpler supporting page. Six photos so it tiles evenly (3x2 /
+   2x3) with no gaps. */
+.past-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 36px;
+}
+
+@media (max-width: 860px) {
+  .past-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.past-gallery img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-soft);
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.past-gallery img:hover {
+  transform: translateY(-4px);
+}
+
 /* ---- Community photo gallery (real event photos) ----
    The four wave-wrapped event photos in a single row. Each is a 3D
    flip card: hovering turns it to a short FemNEST statement on a

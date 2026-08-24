@@ -11,8 +11,10 @@ Static marketing site — plain HTML/CSS/JS, no build step, no framework. Two jo
   events.html                         Events listing (add new event cards here)
   event.html                          TEMPLATE — duplicate this per event, don't publish it directly
   event-femmes-finances-freedom.html  Live event page for the flagship event
+  employer.html                       Employer pilot landing page (linked from the homepage funnel)
+  investors.html                      Investor relations landing page (linked from the homepage funnel)
   /assets
-    logo.svg                          Small placeholder icon — used only as the browser favicon for now
+    /icons                            Wave favicon + wave motif/mark graphics (see "Logo" below)
     /logos                            Real FemNEST wordmark, in every brand color + layout
     /images                           Drop event/story photos here
   /css
@@ -68,7 +70,7 @@ The real FemNEST wordmark is in `assets/logos/`, in both layouts and all four br
 Currently in use:
 - **Header nav**: `femnest-logo-horizontal-blue.png`
 - **Footer** (dark background): `femnest-logo-horizontal-white-outline.png`, which reads clearly against the dark footer.
-- **Favicon**: still the small placeholder mark at `assets/logo.svg` — none of the supplied files is a square icon-only mark, so the favicon hasn't been swapped yet. If a square icon version of the wave mark gets made, drop it in as `assets/logo.svg` (or update the `<link rel="icon">` tag in each page's `<head>` to point at a new file).
+- **Favicon**: resolved — a square icon-only version of the wave mark was built (`assets/icons/favicon-wave-32.png` / `favicon-wave-180.png`) and is wired into every page's `<head>` via `<link rel="icon">` / `<link rel="apple-touch-icon">`.
 
 To swap which color/layout shows where, just change the `<img src="...">` path in the header (`<a class="nav__brand">` block) or footer (`<p class="footer-brand">` block) of each HTML file — sizing is controlled by `.nav__brand img` / `.footer-brand img` in `css/styles.css`, so a different file at a different native size will still scale correctly.
 
@@ -122,7 +124,7 @@ All of this is additive CSS/JS — no build step, same file structure as before.
 
 (An earlier version of this homepage also had an abstract SVG hero illustration next to the headline — removed at Serena's request. The hero is text/gradient-blobs only now.)
 
-- **Community gallery**: real photos from FemNEST's launch event now live in `assets/images/event/`, shown in a `.community-gallery` grid in the "Community first" section of `index.html`. Serena supplied 16 photos from the event; 6 were selected for variety (a candid conversation, an embrace, a panel moment, the room applauding, a quieter reflection moment, and Serena speaking) rather than using all of them, each resized to a 1200px-max-dimension JPEG. The grid uses `object-fit: cover` on a fixed aspect ratio, so any new photo added the same way will slot in cleanly regardless of its original orientation.
+- **Community gallery**: real photos from FemNEST's launch event live in `assets/images/event/`, each resized to a 1200px-max-dimension JPEG. The homepage's `.community-gallery` (in "Community first") shows 4 of them, wrapped in the wave motif, as hover-flip cards. The remaining photos from that shoot are used elsewhere: one on a flip tile in the "What is FemNEST" pillars grid, and the rest in the `.past-gallery` plain photo grid on `events.html` ("From the room that started it"). The grid(s) use `object-fit: cover` on a fixed aspect ratio, so any new photo added the same way will slot in cleanly regardless of its original orientation.
   - **To add or swap a gallery photo**: drop a resized JPEG (long edge ~1200px keeps file size reasonable — there's no build step to do this automatically) into `assets/images/event/`, then add or edit an `<img>` line inside `.community-gallery` in `index.html`. Write real, specific alt text for each (what's happening in the shot), not a generic placeholder.
   - Only photos of people who were visibly comfortable being photographed at a public event were used; none show private information beyond a visible first-name badge. If any attendee ever asks for a photo to come down, remove that `<img>` line and its file.
 
@@ -139,6 +141,24 @@ Within each quote, one key phrase is wrapped in `<span class="highlight">...</sp
 2. Edit, add, or delete the `<p class="voice-pill">` line in both places identically.
 3. Keep quotes real and anonymized — don't invent one, and don't attach a name/photo to one unless that person has explicitly agreed to be identified.
 4. If a quote runs long, it's fine to trim it down to its punchiest sentence or clause (as was done for several of the ten currently live) as long as the trimmed version doesn't change its meaning — treat it like a pull-quote, not a paraphrase.
+
+## Employer and investor pages
+
+`employer.html` and `investors.html` are the two "doors" from the homepage's Three-Door Funnel that needed real destinations (the handover doc's brief suggested `/employer` and `/investors` or a pitch-deck PDF — none of those existed, so these were built to match). They're deliberately **not** in the primary nav or footer — those are locked sections per the handover doc, and the funnel cards are the intended entry point.
+
+- **Employer page**: pilot structure (discovery call → scoped pilot → debrief), the EU Pay Transparency Directive angle (verified, June 2027 deadline). Pilot **timeline and pricing are intentionally not stated as fixed numbers** — the handover doc suggested "3–6 months" and a pricing structure, but neither was confirmed by Serena, so the copy frames both as scoped together on the discovery call rather than inventing figures.
+- **Investor page**: company snapshot (Founded/Location/Stage — Serena's own stated facts, not third-party stats), the same four sourced market-gap figures already on the homepage, and traction claims already published elsewhere on the site (sold-out Feb 2026 launch, 50+ waitlist) — no new attendee/press/revenue numbers were introduced. **No pitch-deck PDF exists in this build**, so "Request the Deck" opens an email instead of a dead link; swap it for a direct download once a deck is hosted.
+
+## Testimonials: kept as the scrolling marquee
+
+The handover doc described a static grid of testimonial cards, and separately suggested a rotating carousel as an optional post-launch upgrade — but also said keeping the current presentation "works fine" if a carousel isn't built. The live site already has neither: it's a two-row, opposite-direction scrolling marquee (`.voices-marquee`, see "Community voices" above), which reads as more dynamic than either a static grid or a manual carousel and already pauses on hover for readability. Left as-is rather than downgrading it to a carousel.
+
+## Analytics
+
+Not active. Both Google Analytics 4 and Hotjar snippets are written and commented out in every page's `<head>` (search for `ANALYTICS (not active`), ready to enable once Serena has:
+
+1. A real GA4 Measurement ID and Hotjar Site ID (the commented code has `G-REPLACE_WITH_REAL_ID` and `hjid: 0000000` placeholders — swap both in, in every file, then uncomment the block).
+2. A decision on cookie consent. FemNEST is Cyprus-based and the site's audience is EU visitors, so GDPR/ePrivacy rules apply to any tracking script — a consent banner (or a consent-gated loading pattern) should go in *before* these go live, not after.
 
 ## Deploying
 
@@ -158,7 +178,12 @@ These were deliberately left as placeholders or defaults rather than invented. C
 - **Venue for Femmes, Finances & Freedom (31 Oct 2026)**: not yet booked — shown honestly as "Venue: to be announced" on `events.html` and the event page. Update once confirmed.
 - **Founder photo**: real photo now in place (see "Photography & imagery" above) — resolved.
 - **Community voices**: real, anonymized quotes now in place (see "Community voices" above) — resolved. No names/photos are attached to them by design.
-- **Logo**: the real FemNEST wordmark is now in use (see "Logo" section above) — this one's resolved. Only the browser favicon is still a placeholder, pending a square icon-only mark.
+- **Logo**: the real FemNEST wordmark is now in use (see "Logo" section above) — this one's resolved. The browser favicon is resolved too (see "Logo" above).
+- **Lifetime wealth-lost figure** (Problem Statement, `index.html`): shown as a `.stat-pending` placeholder — no verifiable Cyprus-specific source found. Needs a real, sourced figure before publishing.
+- **Employer pilot timeline & pricing** (`employer.html`): not stated as fixed numbers — see "Employer and investor pages" above. Confirm real figures if you want them published.
+- **Investor market sizing** (TAM/SAM/SOM, `investors.html`): shown as a `.stat-pending` placeholder — the handover doc's "€635M market" figure wasn't sourced, so it wasn't published. Needs a real, cited figure.
+- **Pitch deck**: no PDF exists yet — `investors.html`'s "Request the Deck" button opens an email instead. Host a real deck and swap the link once one exists.
+- **Analytics**: GA4 + Hotjar are wired but commented out, pending real tracking IDs and a cookie-consent decision — see "Analytics" above.
 - **Fonts**: real brand fonts (Archivo/Bitter) now live via Google Fonts — resolved. See "Editing fonts" above.
 - **Statistics on the homepage ("Why now" section)**: re-verified via live search on 22 August 2026 before publishing, per the brief's instruction — now resolved to four confirmed, cited figures:
   - **"Europe: women hold 77% of the wealth men do"** — CONFIRMED. Traced to WTW (Willis Towers Watson)'s 2022 Global Gender Wealth Equity Report, produced with the World Economic Forum: the average Wealth Equity Index across the 14 European countries studied is 0.77 (women on track to accumulate 77% of men's wealth by retirement). Reinstated on the site with this citation.
