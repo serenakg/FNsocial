@@ -732,10 +732,22 @@ p { margin: 0 0 1em; }
   margin-top: 44px;
 }
 
-.gap-timeline__track {
+/* The map: life-stage dots sit above the wave on a thin tick line;
+   gap stat pills straddle the wave itself, bridging the two stages
+   they fall between — mirrors the source deck's line-diagram layout,
+   with the wave standing in for the plain connecting line. */
+.gap-timeline__map {
   position: relative;
-  height: 42px;
+  height: 236px;
   margin: 0 6px;
+}
+
+.gap-timeline__track {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 110px;
+  height: 42px;
   overflow: hidden;
   border-radius: 999px;
 }
@@ -749,69 +761,76 @@ p { margin: 0 0 1em; }
   max-width: none;
 }
 
-.gap-timeline__dot {
-  position: absolute;
-  top: 50%;
-  width: 13px;
-  height: 13px;
-  border-radius: 50%;
-  background: var(--color-cream);
-  border: 2px solid var(--color-ink);
-  transform: translate(-50%, -50%);
-  z-index: 2;
-}
-
-.gap-timeline__labels {
-  position: relative;
-  height: 48px;
-  margin: 14px 6px 0;
-}
-
-.gap-timeline__label {
+.gap-timeline__stage {
   position: absolute;
   top: 0;
   transform: translateX(-50%);
-  width: 132px;
-  font-family: var(--font-heading);
-  font-weight: 600;
-  font-size: 0.78rem;
-  line-height: 1.3;
-  color: var(--color-ink);
-  text-align: center;
-}
-
-.gap-timeline__gaps {
-  position: relative;
-  height: 130px;
-  margin-top: 24px;
-}
-
-.gap-timeline__gap {
-  position: absolute;
-  top: 0;
-  transform: translateX(-50%);
-  width: 118px;
-  text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  align-items: center;
+  width: 128px;
 }
 
-.gap-timeline__gap-stat {
+.gap-timeline__stage-label {
+  min-height: 28px;
+  display: flex;
+  align-items: flex-end;
   font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: 1.5rem;
-  color: var(--color-orange);
-  font-variant-numeric: tabular-nums;
-  line-height: 1;
-}
-
-.gap-timeline__gap-label {
-  font-family: var(--font-heading);
+  font-weight: 700;
   font-size: 0.68rem;
   letter-spacing: 0.03em;
   text-transform: uppercase;
+  text-align: center;
+  line-height: 1.25;
+  color: var(--color-ink);
+}
+
+.gap-timeline__stage-tick {
+  width: 1px;
+  height: 98px;
+  background: rgba(32, 31, 43, 0.35);
+}
+
+.gap-timeline__stage-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-cream);
+  border: 2px solid var(--color-ink);
+}
+
+.gap-timeline__pill {
+  position: absolute;
+  top: 109px;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.gap-timeline__pill-stat {
+  background: var(--color-lavender);
+  border-radius: 999px;
+  padding: 9px 16px;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: var(--color-ink);
+  box-shadow: var(--shadow-soft);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.gap-timeline__pill-label {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.64rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
   color: var(--color-ink-soft);
+  text-align: center;
+  white-space: nowrap;
 }
 
 @media (max-width: 860px) {
@@ -825,34 +844,39 @@ p { margin: 0 0 1em; }
 }
 
 /* ---- Community photo gallery (real event photos) ----
-   CSS columns rather than a grid, so images of different heights
-   (the portrait wave-wrap shots vs. the standard 4:3 crops) pack
-   together Pinterest-style with no leftover row gaps. Each photo is a
-   3D flip card: hovering turns it to a one-word answer to "what is
-   FemNEST" on a brand-color back face. */
+   The four wave-wrapped event photos in a single row. Each is a 3D
+   flip card: hovering turns it to a short FemNEST statement on a
+   brand-color back face. */
 .community-gallery {
-  columns: 3 300px;
-  column-gap: 18px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
   margin-top: 36px;
+}
+
+@media (max-width: 860px) {
+  .community-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .community-gallery {
+    grid-template-columns: 1fr;
+  }
 }
 
 .community-gallery__item {
   position: relative;
-  break-inside: avoid;
-  margin-bottom: 18px;
   perspective: 1200px;
 }
 
 .community-gallery__flip {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 4 / 5;
   transform-style: preserve-3d;
   transition: transform 0.6s cubic-bezier(0.4, 0.15, 0.2, 1);
-}
-
-.community-gallery__item--portrait .community-gallery__flip {
-  aspect-ratio: 4 / 5;
 }
 
 .community-gallery__item:hover .community-gallery__flip {
