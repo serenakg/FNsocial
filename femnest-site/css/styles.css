@@ -969,14 +969,31 @@ p { margin: 0 0 1em; }
   left: 50%;
   width: 160%;
   max-width: none;
-  opacity: 0.35;
+  opacity: 0.22;
   transform: translate(-50%, -50%) rotate(-8deg);
   pointer-events: none;
 }
 
-.pillar-card__icon {
-  font-size: 2rem;
+.pillar-card__icon-badge {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--color-white);
+  box-shadow: var(--shadow-soft);
+  color: var(--color-blue);
+}
+
+.pillar-card:nth-child(even) .pillar-card__icon-badge {
+  color: var(--color-orange);
+}
+
+.pillar-card__icon-badge svg {
+  width: 26px;
+  height: 26px;
 }
 
 .pillar-card__face--front h3 {
@@ -1057,9 +1074,25 @@ p { margin: 0 0 1em; }
   pointer-events: none;
 }
 
-.funnel-card__icon {
-  font-size: 2.2rem;
+.funnel-card__icon-badge {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--color-cream);
+  color: var(--color-blue);
+}
+
+.funnel-card:nth-child(even) .funnel-card__icon-badge {
+  color: var(--color-orange);
+}
+
+.funnel-card__icon-badge svg {
+  width: 28px;
+  height: 28px;
 }
 
 .funnel-card h3 {
