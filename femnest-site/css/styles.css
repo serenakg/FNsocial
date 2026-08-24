@@ -381,22 +381,6 @@ p { margin: 0 0 1em; }
   opacity: 0.9;
 }
 
-.founder-panel__wave {
-  position: absolute;
-  top: -22px;
-  left: -14px;
-  z-index: 2;
-  pointer-events: none;
-  width: 210px;
-  height: auto;
-  opacity: 0.95;
-  transform: rotate(-5deg);
-}
-
-@media (max-width: 719px) {
-  .founder-panel__wave { width: 160px; top: -16px; left: -10px; }
-}
-
 /* ---- Hero ---- */
 .hero {
   position: relative;
@@ -636,13 +620,6 @@ p { margin: 0 0 1em; }
 .stat-card__source {
   font-size: 0.85rem;
   color: var(--color-ink-soft);
-}
-
-.stats-footnote {
-  margin-top: 28px;
-  font-size: 0.85rem;
-  color: var(--color-ink-soft);
-  font-style: italic;
 }
 
 /* ---- Founder story panel ---- */
@@ -908,18 +885,15 @@ p { margin: 0 0 1em; }
   text-align: center;
 }
 
-.community-gallery__item:nth-child(3n+2) .community-gallery__face--back {
+.community-gallery__item:nth-child(even) .community-gallery__face--back {
   background: var(--color-orange);
-}
-
-.community-gallery__item:nth-child(3n+3) .community-gallery__face--back {
-  background: var(--color-ink);
 }
 
 .community-gallery__face--back span {
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 1.4rem;
+  font-size: 1.15rem;
+  line-height: 1.35;
   color: var(--color-cream);
 }
 
