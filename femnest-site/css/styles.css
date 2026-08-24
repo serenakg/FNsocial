@@ -864,6 +864,10 @@ p { margin: 0 0 1em; }
   transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
 }
 
+.community-gallery__item--portrait img {
+  aspect-ratio: 4 / 5;
+}
+
 .community-gallery img:hover {
   transform: translateY(-6px) scale(1.02);
   box-shadow: var(--shadow-lift);
