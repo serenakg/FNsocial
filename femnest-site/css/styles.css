@@ -944,62 +944,57 @@ p { margin: 0 0 1em; }
   box-shadow: var(--shadow-soft);
 }
 
+/* Front face: white by default (colored ribbon carries the brand color,
+   black icon/text on top) — or "reversed" (a solid brand-color
+   background with a white/lavender ribbon and text), pulling the two
+   treatments straight from the logo's own color lockups. Set per-card
+   via a modifier class in the HTML rather than nth-child, since which
+   cards reverse is a content decision, not a repeating pattern. */
 .pillar-card__face--front {
-  background: var(--color-cream);
+  background: var(--color-white);
+  color: var(--color-ink);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 20px;
+  justify-content: flex-start;
+  gap: 14px;
+  padding: 34px 20px 0;
   text-align: center;
 }
 
-.pillar-card:nth-child(3n+2) .pillar-card__face--front {
-  background: var(--color-lavender);
+.pillar-card__face--front.pillar-card--reverse-blue {
+  background: var(--color-blue);
+  color: var(--color-lavender);
 }
 
-.pillar-card:nth-child(3n+3) .pillar-card__face--front {
-  background: var(--color-green);
+.pillar-card__face--front.pillar-card--reverse-orange {
+  background: var(--color-orange);
+  color: var(--color-white);
 }
 
-.pillar-card__squiggle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 160%;
-  max-width: none;
-  opacity: 0.22;
-  transform: translate(-50%, -50%) rotate(-8deg);
-  pointer-events: none;
-}
-
-.pillar-card__icon-badge {
+.pillar-card__icon {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: var(--color-white);
-  box-shadow: var(--shadow-soft);
-  color: var(--color-blue);
-}
-
-.pillar-card:nth-child(even) .pillar-card__icon-badge {
-  color: var(--color-orange);
-}
-
-.pillar-card__icon-badge svg {
-  width: 26px;
-  height: 26px;
+  width: 52px;
+  height: 52px;
+  color: inherit;
 }
 
 .pillar-card__face--front h3 {
   font-family: var(--font-heading);
-  font-size: 1.05rem;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: inherit;
   position: relative;
+}
+
+.pillar-card__ribbon {
+  position: absolute;
+  left: 50%;
+  bottom: 8%;
+  width: 132%;
+  max-width: none;
+  transform: translateX(-50%);
+  pointer-events: none;
 }
 
 .pillar-card__face--back {
