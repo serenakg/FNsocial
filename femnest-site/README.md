@@ -44,19 +44,35 @@ Green (`--color-green`) is the site's base background color (page background, st
 
 ## Editing fonts
 
-Also in `css/styles.css`, same `:root` block:
+Per `FemNEST_Brand_Guidelines.pdf`, the brand actually specifies **three** fonts, each with a distinct job — this site currently uses two of them, for the reason explained below:
+
+| Guide's role | Font | Status on this site |
+|---|---|---|
+| Primary Headline — editorial headlines, pulled quotes, section titles | **Bitter** (serif) | Live. Self-hosted (see below). |
+| Body & UI — body copy, nav, forms, metadata | **Open Sauce** (sans-serif) | Not live — files not supplied yet. **Poppins** stands in for it (loaded from Google Fonts), the same stand-in the brand guide's own one-pager uses. |
+| Display / Accent — stat callouts, bold moments | **Coolvetica Rg** | **Not live — blocked by licensing, see below.** |
+
+In `css/styles.css`, same `:root` block:
 
 ```css
---font-heading: 'Archivo', 'Montserrat', sans-serif;
---font-body: 'Bitter', Georgia, serif;
+--font-heading: 'Bitter', Georgia, serif;
+--font-body: 'Poppins', system-ui, -apple-system, sans-serif;
 ```
 
-These are the real confirmed brand fonts — **Archivo** (headings) and **Bitter** (body) — loaded from Google Fonts via the `<link>` tag in every page's `<head>`. (An earlier version of this site used Poppins/Lora as placeholders before the brand fonts were confirmed for web use — that's resolved now.)
+**Bitter is self-hosted**, not loaded from Google Fonts: the two variable-font files live in `assets/fonts/` (`Bitter-VariableFont_wght.ttf`, `Bitter-Italic-VariableFont_wght.ttf`), declared via `@font-face` right after the `:root` block in `css/styles.css`. It's licensed under the SIL Open Font License (`assets/fonts/OFL.txt`), which explicitly permits this. **Poppins** is still loaded from Google Fonts via the `<link>` tag in every page's `<head>`.
 
-To change either font later:
-1. Get a Google Fonts / Adobe Fonts link (or `@font-face` files) for the new font.
-2. In every `.html` file's `<head>`, replace the Google Fonts `<link>` tag with the new one.
-3. In `css/styles.css`, update the two variables above to the new font name(s).
+### Coolvetica isn't on the site — why
+
+Serena supplied the three Coolvetica `.otf` files (Rg, Rg Italic, Rg Cram), but they're licensed under Typodermic's **free desktop license**, which covers static commercial designs (logos, print, packaging, social graphics, slides, rendered video) but explicitly **excludes** "websites and webfonts" — that needs a separate, paid webfont license from Typodermic (see `typodermicfonts.com/license/`). Embedding these specific files as a `@font-face` on the live site would violate that license.
+
+**Two ways to unblock it:**
+1. Buy/obtain a webfont license from Typodermic for Coolvetica, then self-host it the same way Bitter is done here (drop the licensed webfont files in `assets/fonts/`, add an `@font-face` block, add a `--font-accent` variable).
+2. Use Coolvetica only in **static** assets it's already licensed for — exported PNG/SVG graphics (e.g. social posts, stat callout images, print materials) made in a design tool — and keep the live site's stat callouts in Bitter/Poppins as they are now.
+
+### To change any font later
+1. Get properly licensed webfont files (or a Google Fonts / Adobe Fonts link) for the new font.
+2. Self-hosted fonts: add the files to `assets/fonts/` and an `@font-face` block in `css/styles.css`. Google Fonts: update the `<link>` tag in every `.html` file's `<head>`.
+3. Update the relevant variable(s) in `css/styles.css`'s `:root` block.
 
 That's the only place font names are referenced — everything else uses `var(--font-heading)` / `var(--font-body)`.
 
@@ -174,6 +190,10 @@ No build command is needed — there's nothing to compile.
 
 These were deliberately left as placeholders or defaults rather than invented. Confirm with Serena before treating any of them as final:
 
+- **Coolvetica (display/accent font)**: not live on the site — the supplied files are desktop-license-only and exclude webfont use. See "Editing fonts" → "Coolvetica isn't on the site — why" for the two ways to unblock it.
+- **Open Sauce (body/UI font)**: not supplied yet — Poppins is standing in for it. Swap it in once Serena has the real files (see "Editing fonts" above).
+- **Background color vs. the brand guide**: `FemNEST_Brand_Guidelines.pdf` lists Off-White (`#F6F7F2`) as the "Primary page background / canvas colour" and describes Soft Lime as being for "tags, callout cards, success indicators" — but this site currently uses lime green as its base page/header background (`--color-green`, page body, sticky header, mobile nav), a deliberate swap made earlier at Serena's explicit request (cream was the original base). **Not changed here** since it directly contradicts that specific instruction — flagging the conflict rather than silently picking one. Confirm with Serena which should win before touching `--color-green` / body background.
+- **Body text color vs. the brand guide**: the guide lists Black (`#000000`) for "body typography," but the site uses a softer near-black (`--color-ink: #201f2b`) throughout. Minor difference, not changed — flagging for the same reason as above.
 - **Waitlist tool**: defaulted to linking out to campsite.bio/femnest (see "Waitlist" section above). Confirm this is right, or switch to a native form.
 - **Venue for Femmes, Finances & Freedom (31 Oct 2026)**: not yet booked — shown honestly as "Venue: to be announced" on `events.html` and the event page. Update once confirmed.
 - **Founder photo**: real photo now in place (see "Photography & imagery" above) — resolved.

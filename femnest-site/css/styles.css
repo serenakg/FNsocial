@@ -7,9 +7,12 @@
      five brand colors (used for gradients, glows, hover states) — not
      new colors.
    - Fonts: --font-heading / --font-body point at the real brand fonts
-     (Archivo / Bitter), loaded via Google Fonts. To swap either later,
-     change the two variables here plus the matching <link> tag in
-     each HTML file's <head>.
+     per FemNEST_Brand_Guidelines.pdf. Bitter (headings) is self-hosted
+     from assets/fonts/ via the @font-face rules just below :root —
+     Poppins (body) is a temporary stand-in for the brand's specified
+     Open Sauce, loaded via Google Fonts, until real Open Sauce files
+     are supplied. See README.md "Fonts" for the full picture, including
+     why Coolvetica (the brand's display/accent font) isn't in use yet.
    - Motion: scroll-reveal animation is handled in js/main.js and honors
      prefers-reduced-motion (see the media query at the very bottom of
      this file) — nothing to touch here for that.
@@ -38,10 +41,21 @@
     radial-gradient(circle at 85% 10%, rgba(236, 106, 44, 0.16), transparent 40%),
     radial-gradient(circle at 50% 90%, rgba(222, 234, 158, 0.35), transparent 50%);
 
-  /* Brand fonts: Archivo (headings), Bitter (body) — loaded from Google
-     Fonts via the <link> tag in each HTML file's <head>. */
-  --font-heading: 'Archivo', 'Montserrat', sans-serif;
-  --font-body: 'Bitter', Georgia, serif;
+  /* Brand fonts, per FemNEST_Brand_Guidelines.pdf:
+     - Bitter (serif) = "Primary Headline" — editorial headlines, pulled
+       quotes, section titles. Self-hosted (SIL Open Font License) via
+       the @font-face rules below.
+     - Open Sauce = "Body & UI" — body copy, nav, forms, metadata. Font
+       files not supplied yet; Poppins stands in for it (the same
+       stand-in the brand guide itself uses on its one-pager), loaded
+       from Google Fonts. Swap for real Open Sauce files once available.
+     Coolvetica Rg ("Display/Accent" — stat callouts, bold moments) is
+     NOT used here: the supplied .otf files are under Typodermic's free
+     DESKTOP license, which explicitly excludes "websites and webfonts"
+     — that needs a separate paid webfont license from Typodermic. See
+     README.md "Fonts" before adding it anywhere on the site. */
+  --font-heading: 'Bitter', Georgia, serif;
+  --font-body: 'Poppins', system-ui, -apple-system, sans-serif;
 
   --radius: 20px;
   --radius-sm: 12px;
@@ -49,6 +63,25 @@
   --shadow-lift: 0 24px 48px rgba(32, 31, 43, 0.16);
   --shadow-glow-orange: 0 14px 32px rgba(236, 106, 44, 0.35);
   --max-width: 1160px;
+}
+
+/* ---- Self-hosted brand font: Bitter (SIL OFL — see assets/fonts/OFL.txt) ---- */
+@font-face {
+  font-family: 'Bitter';
+  src: url('../assets/fonts/Bitter-VariableFont_wght.ttf') format('truetype-variations'),
+       url('../assets/fonts/Bitter-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bitter';
+  src: url('../assets/fonts/Bitter-Italic-VariableFont_wght.ttf') format('truetype-variations'),
+       url('../assets/fonts/Bitter-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
 }
 
 /* ---- Reset ---- */
