@@ -57,6 +57,8 @@
       <ul class="nav__links" id="primaryNav">
         <li><a href="index.html">Home</a></li>
         <li><a href="events.html">Community</a></li>
+        <li><a href="investors.html" class="is-current">Investors</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a class="btn btn-primary" href="index.html#join">Join the Waitlist</a></li>
       </ul>
     </nav>
@@ -108,9 +110,14 @@
     </section>
 
     <!-- ================= MARKET OPPORTUNITY =================
-         Uses the same four sourced, cited figures already live on the
-         homepage's stats section — no new market-sizing figures
-         (TAM/SAM/SOM) are invented here. See README.md "Open items". -->
+         First stat card uses the 22% pension & wealth gap figure — the
+         same one already cited in the homepage's Mind the Gap timeline
+         and Problem Statement headline (source: EIGE 2025 / Eurostat
+         2024 / WEF Global Gender Gap Report 2024) — replacing the
+         earlier, unrelated "29% Cyprus gender pension gap" figure, so
+         this section's numbers echo Maria's story instead of a
+         separate stat. TAM/SAM/SOM below are real figures from
+         Serena's own market-sizing model — no longer a placeholder. -->
     <section class="section section--lavender section--tilt">
       <div class="container">
         <div class="section__header" data-reveal>
@@ -120,9 +127,9 @@
         <p data-reveal style="max-width: 760px; font-size: 1.1rem; margin-bottom: 32px;">We're starting with perimenopause and menopause — the single largest population of women in transition, and the group best placed to bring the rest of the community with them as FemNEST grows.</p>
         <div class="stats-grid">
           <div class="stat-card" data-reveal>
-            <span class="stat-card__number" data-value="29%">29%</span>
-            <p class="stat-card__label">Cyprus gender pension gap</p>
-            <p class="stat-card__source">Source: Eurostat, 2024 data</p>
+            <span class="stat-card__number" data-value="22%">22%</span>
+            <p class="stat-card__label">Smaller pensions women retire with</p>
+            <p class="stat-card__source">Source: EIGE 2025 &middot; Eurostat 2024 &middot; WEF Global Gender Gap Report 2024</p>
           </div>
           <div class="stat-card" data-reveal>
             <span class="stat-card__number" data-value="77%">77%</span>
@@ -134,10 +141,28 @@
             <p class="stat-card__label">Unbanked women worldwide</p>
             <p class="stat-card__source">Source: World Bank, Global Findex 2025</p>
           </div>
-          <div class="stat-card" data-reveal>
-            <span class="section__kicker" style="color: var(--color-orange);">Market sizing</span>
-            <span class="stat-pending" style="margin-top: 10px;">TAM/SAM/SOM to confirm</span>
+        </div>
+
+        <div class="market-sizing" data-reveal>
+          <span class="section__kicker" style="color: var(--color-orange);">Market sizing</span>
+          <div class="market-sizing__grid">
+            <div class="market-sizing__item">
+              <span class="market-sizing__label">TAM</span>
+              <span class="market-sizing__value">&euro;24.8B</span>
+              <p class="market-sizing__note">~68 million EU women aged 40&ndash;60 &times; &euro;365/year</p>
+            </div>
+            <div class="market-sizing__item">
+              <span class="market-sizing__label">SAM</span>
+              <span class="market-sizing__value">&euro;635M</span>
+              <p class="market-sizing__note">~1.74 million women aged 40&ndash;60 in Cyprus, Greece and Malta &times; &euro;365/year</p>
+            </div>
+            <div class="market-sizing__item">
+              <span class="market-sizing__label">SOM</span>
+              <span class="market-sizing__value">&euro;12.8M ARR</span>
+              <p class="market-sizing__note">By Year 3 &middot; 35,000 paying members &middot; 2% of SAM. Near-term: 1,000 members in Cyprus &amp; Greece &rarr; &euro;365K ARR within 12 months of funding.</p>
+            </div>
           </div>
+          <p class="stat-card__source" style="margin-top: 14px;">Source: Eurostat 2025 &middot; FemNEST pricing model</p>
         </div>
       </div>
     </section>
@@ -200,6 +225,7 @@
           <ul class="footer-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="events.html">Community</a></li>
+            <li><a href="about.html">About</a></li>
             <li><a href="privacy.html">Privacy Policy</a></li>
             <li><a href="terms.html">Terms &amp; Conditions</a></li>
             <li><a href="#" data-cookie-settings>Cookie Settings</a></li>
