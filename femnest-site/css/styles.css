@@ -701,6 +701,24 @@ p { margin: 0 0 1em; }
   margin: 0;
 }
 
+.stats-intro {
+  max-width: 62ch;
+  font-size: 1.05rem;
+  color: var(--color-ink-soft);
+  margin: 12px 0 28px;
+}
+
+.stat-card__scope {
+  display: block;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-orange-deep);
+  margin-bottom: 10px;
+}
+
 .stat-card__number {
   font-family: var(--font-heading);
   font-weight: 700;
@@ -924,119 +942,71 @@ p { margin: 0 0 1em; }
   margin-top: 16px;
 }
 
-.gap-timeline__scroll {
-  margin-top: 44px;
+/* ---- Gap cards (Mind the Gap) ----
+   One card per life-stage transition — stacks to a single column on
+   phones, grids to 2/3 columns as the viewport grows. No horizontal
+   scroll or absolute-positioned math, so it reads the same way on
+   any screen. */
+.gap-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  margin-top: 40px;
 }
 
-/* The map: life-stage dots sit above the wave on a thin tick line;
-   gap stat pills straddle the wave itself, bridging the two stages
-   they fall between — mirrors the source deck's line-diagram layout,
-   with the wave standing in for the plain connecting line. */
-.gap-timeline__map {
-  position: relative;
-  height: 236px;
-  margin: 0 6px;
+@media (min-width: 640px) {
+  .gap-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.gap-timeline__track {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 110px;
-  height: 42px;
-  overflow: hidden;
-  border-radius: 999px;
+@media (min-width: 980px) {
+  .gap-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
-.gap-timeline__track img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 42px;
-  width: auto;
-  max-width: none;
-}
-
-.gap-timeline__stage {
-  position: absolute;
-  top: 0;
-  transform: translateX(-50%);
+.gap-card {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  padding: 24px 26px;
+  box-shadow: var(--shadow-soft);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 128px;
 }
 
-.gap-timeline__stage-label {
-  min-height: 28px;
-  display: flex;
-  align-items: flex-end;
+.gap-card__stage {
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: 0.68rem;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  text-align: center;
-  line-height: 1.25;
-  color: var(--color-ink);
-}
-
-.gap-timeline__stage-tick {
-  width: 1px;
-  height: 98px;
-  background: rgba(32, 31, 43, 0.35);
-}
-
-.gap-timeline__stage-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--color-cream);
-  border: 2px solid var(--color-ink);
-}
-
-.gap-timeline__pill {
-  position: absolute;
-  top: 109px;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-}
-
-.gap-timeline__pill-stat {
-  background: var(--color-lavender);
-  border-radius: 999px;
-  padding: 9px 16px;
-  font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: 1.2rem;
-  color: var(--color-ink);
-  box-shadow: var(--shadow-soft);
-  white-space: nowrap;
-  font-variant-numeric: tabular-nums;
-}
-
-.gap-timeline__pill-label {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 0.64rem;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--color-ink-soft);
-  text-align: center;
-  white-space: nowrap;
+  margin-bottom: 12px;
 }
 
-@media (max-width: 860px) {
-  .gap-timeline__scroll {
-    overflow-x: auto;
-    padding-bottom: 8px;
-  }
-  .gap-timeline__inner {
-    min-width: 900px;
-  }
+.gap-card__stat {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 2rem;
+  color: var(--color-blue-deep);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+}
+
+.gap-card__label {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--color-orange-deep);
+  margin: 4px 0 12px;
+}
+
+.gap-card__explain {
+  color: var(--color-ink-soft);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
 }
 
 /* ---- Pending-stat placeholder ----
