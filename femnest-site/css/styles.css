@@ -969,12 +969,21 @@ p { margin: 0 0 1em; }
   margin-top: 10px;
 }
 
-.gap-timeline__story {
+/* ---- Gap -> Founder bridge ----
+   A short standalone banner between Mind the Gap and What is FemNEST —
+   deliberately slim (not a full section's padding) so it reads as a
+   transition, not another section. */
+.gap-bridge {
+  padding: 40px 0;
+}
+
+.gap-bridge__text {
   max-width: 62ch;
-  font-size: 1.15rem;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.3rem;
   font-weight: 600;
   color: var(--color-ink);
-  margin-top: 32px;
 }
 
 .gap-timeline__source-note {
