@@ -842,6 +842,10 @@ p { margin: 0 0 1em; }
 
 .founder-panel__body {
   color: var(--color-ink-soft);
+  margin-bottom: 14px;
+}
+
+.founder-panel__body:last-child {
   margin-bottom: 0;
 }
 
