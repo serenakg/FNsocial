@@ -17,6 +17,7 @@ Static marketing site — plain HTML/CSS/JS, no build step, no framework. Two jo
   terms.html                          Terms & Conditions — template content, needs legal review
   /assets
     /icons                            Wave favicon + wave motif/mark graphics (see "Logo" below)
+      /flip                           Colored flip-card icons (Serena's set) used on every .pillar-card / .funnel-card across the site
     /logos                            Real FemNEST wordmark, in every brand color + layout
     /images                           Drop event/story photos here
     /fonts                            Self-hosted Bitter variable font files (see "Editing fonts")
