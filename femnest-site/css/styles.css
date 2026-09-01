@@ -395,9 +395,10 @@ p { margin: 0 0 1em; }
    above. Keep it to brand blue/orange only. */
 .hero__wave-flourish {
   display: block;
-  width: 150px;
+  width: 260px;
+  max-width: 60%;
   height: auto;
-  margin: 4px 0 0 4px;
+  margin: 20px 0 0 4px;
   transform: rotate(-4deg);
 }
 
@@ -580,6 +581,25 @@ p { margin: 0 0 1em; }
   margin: 0 0 40px;
 }
 
+.section__header--center {
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* ---- Kit (ConvertKit) signup form ----
+   The form's own inline styles (background, radius, colors) already
+   match the brand palette — this wrapper just centers it. */
+.kit-form-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.kit-form-wrap .formkit-form {
+  width: 100%;
+}
+
 .section__kicker {
   display: inline-block;
   font-family: var(--font-heading);
@@ -653,6 +673,18 @@ p { margin: 0 0 1em; }
 .stat-card__source {
   font-size: 0.85rem;
   color: var(--color-ink-soft);
+}
+
+.press-mention {
+  text-align: center;
+  margin-top: 32px;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  color: var(--color-ink-soft);
+}
+
+.press-mention strong {
+  color: var(--color-ink);
 }
 
 /* ---- Founder story panel ---- */
@@ -754,11 +786,19 @@ p { margin: 0 0 1em; }
   margin-top: 10px;
 }
 
+.gap-timeline__story {
+  max-width: 62ch;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-ink);
+  margin-top: 32px;
+}
+
 .gap-timeline__source-note {
   font-family: var(--font-heading);
   font-size: 0.82rem;
   color: var(--color-ink-soft);
-  margin-top: 36px;
+  margin-top: 16px;
 }
 
 .gap-timeline__scroll {
@@ -931,22 +971,56 @@ p { margin: 0 0 1em; }
   color: var(--color-ink-soft);
 }
 
-/* ---- Five pillars (What is FemNEST) ----
-   Six flip tiles (five pillars + one real photo) so the grid is always
-   even — 2 columns on mobile, 3 on tablet+, never an orphaned last card.
-   Front face is a brand-color squiggle background, no photography,
-   except the sixth tile which is a real event photo; back face reveals
-   the description, alternating blue/orange like the community gallery. */
+/* ---- Persona callout (Problem Statement) ----
+   Structure only, pending Maria's real story from the pitch deck — see
+   README.md "Open items". */
+.persona-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 32px;
+  padding: 24px;
+  background: var(--color-cream);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  flex-wrap: wrap;
+}
+
+.persona-card__avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--color-lavender);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--color-blue-deep);
+  flex-shrink: 0;
+}
+
+.persona-card__body h4 {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  margin: 0 0 6px;
+}
+
+/* ---- Four pillars (What is FemNEST) ----
+   Fixed 2x2 grid — always even, regardless of viewport width. Front
+   face is a brand-color squiggle ribbon, no photography; back face
+   reveals the description, alternating blue/orange like the community
+   gallery flip cards. */
 .pillars-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 18px;
-  margin-top: 40px;
+  margin-top: 0;
 }
 
-@media (min-width: 720px) {
+@media (min-width: 480px) {
   .pillars-grid {
-    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
 }
@@ -1005,6 +1079,57 @@ p { margin: 0 0 1em; }
   color: var(--color-white);
 }
 
+.pillar-card__face--front.pillar-card--reverse-lavender {
+  background: var(--color-lavender);
+  color: var(--color-blue-deep);
+}
+
+/* ---- "What is FemNEST" two-column layout ----
+   Intro paragraph sits beside the pillars grid on wider screens instead
+   of full-width above it. */
+.idea-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  margin-top: 8px;
+}
+
+@media (min-width: 900px) {
+  .idea-layout {
+    grid-template-columns: 0.75fr 1.6fr;
+    align-items: start;
+  }
+}
+
+.idea-layout__intro {
+  font-size: 1.1rem;
+}
+
+.coming-soon-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-blue-deep);
+  background: var(--color-lavender);
+  padding: 8px 18px;
+  border-radius: 999px;
+  margin-top: 28px;
+}
+
+.coming-soon-badge::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-orange);
+  display: inline-block;
+}
+
 .pillar-card__icon {
   position: relative;
   width: 52px;
@@ -1059,11 +1184,14 @@ p { margin: 0 0 1em; }
   object-fit: cover;
 }
 
-/* ---- Three-door funnel ----
-   Jumps straight from 1 column to 3 (skips a 2-column mid-state) so a
-   3-card row never leaves an orphaned card next to empty space. CTA
-   stays visible on the front at all times — these are conversion
-   buttons, not content to hide behind a hover-only flip. */
+/* ---- Two-door funnel (Woman / Investor) ----
+   The employer door is hidden for now (Serena's request), not deleted —
+   employer.html still exists, just unlinked from here. Flip cards show
+   "what you get" on the back, but the CTA button lives OUTSIDE the flip
+   in the static DOM, always visible and tappable — a hover-only flip
+   would make it unreachable on touch devices, which is why the earlier
+   version of this section kept CTAs off the back face entirely. This
+   keeps the requested flip-card interaction without losing that. */
 .funnel-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -1077,18 +1205,70 @@ p { margin: 0 0 1em; }
   }
 }
 
+/* Two-door funnel grid (homepage only) — separate from .funnel-grid
+   above, which employer.html and investors.html also use for their own
+   3-card grids of plain .card / .pillar-card content. */
+.two-door-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  max-width: 720px;
+  margin: 8px auto 0;
+}
+
+@media (min-width: 640px) {
+  .two-door-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .funnel-card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 16px;
+}
+
+.funnel-card__flip-wrap {
+  perspective: 1200px;
+}
+
+.funnel-card__flip {
   position: relative;
-  background: var(--color-white);
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.4, 0.15, 0.2, 1);
+}
+
+.funnel-card:hover .funnel-card__flip,
+.funnel-card:focus-within .funnel-card__flip {
+  transform: rotateY(180deg);
+}
+
+.funnel-card__face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
   border-radius: var(--radius);
-  padding: 32px 28px;
-  text-align: center;
+  overflow: hidden;
   box-shadow: var(--shadow-soft);
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 14px;
-  overflow: hidden;
+  padding: 32px 28px;
+}
+
+.funnel-card__face--front {
+  background: var(--color-white);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.funnel-card__face--front.pillar-card--reverse-blue {
+  background: var(--color-blue);
+  color: var(--color-lavender);
 }
 
 .funnel-card__squiggle {
@@ -1118,6 +1298,11 @@ p { margin: 0 0 1em; }
   color: var(--color-orange);
 }
 
+.funnel-card__face--front.pillar-card--reverse-blue .funnel-card__icon-badge {
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--color-lavender);
+}
+
 .funnel-card__icon-badge svg {
   width: 28px;
   height: 28px;
@@ -1129,16 +1314,34 @@ p { margin: 0 0 1em; }
   position: relative;
 }
 
-.funnel-card p {
-  color: var(--color-ink-soft);
-  font-size: 0.92rem;
-  flex-grow: 1;
-  position: relative;
+.funnel-card__face--back {
+  transform: rotateY(180deg);
+  background: var(--color-cream);
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
 }
 
-.funnel-card .btn {
-  margin-top: 4px;
-  position: relative;
+.funnel-card__face--back h4 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-orange);
+  margin: 0;
+}
+
+.funnel-card__face--back ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--color-ink-soft);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.funnel-card > .btn {
+  width: 100%;
 }
 
 /* ---- Past-event gallery (events.html) ----
@@ -1787,4 +1990,76 @@ p { margin: 0 0 1em; }
   .voices-track__set[aria-hidden="true"] {
     display: none;
   }
+}
+
+/* ---- Cookie consent banner ----
+   Injected by initCookieBanner() in js/main.js, not written into each
+   HTML file — see README.md "Cookies & analytics". */
+.cookie-banner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 500;
+  background: var(--color-ink);
+  color: var(--color-white);
+  padding: 20px 24px;
+  box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.cookie-banner__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.cookie-banner__inner p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--color-cream);
+  flex: 1 1 320px;
+}
+
+.cookie-banner__inner a {
+  color: var(--color-white);
+  text-decoration: underline;
+}
+
+.cookie-banner__actions {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.cookie-banner__actions .btn {
+  padding: 10px 20px;
+  font-size: 0.85rem;
+}
+
+/* ---- Legal pages (privacy.html / terms.html) ---- */
+.legal-content h2 {
+  font-size: 1.3rem;
+  margin-top: 2em;
+}
+
+.legal-content h2:first-child {
+  margin-top: 0;
+}
+
+.legal-content p,
+.legal-content li {
+  color: var(--color-ink-soft);
+}
+
+.legal-content ul {
+  padding-left: 20px;
+  margin: 0 0 1em;
+}
+
+.legal-content li {
+  margin-bottom: 0.5em;
 }

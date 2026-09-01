@@ -12,6 +12,8 @@
    5. Count-up animation on the "Why now" stat numbers, triggered the
       moment their card is revealed
    6. A light parallax drift on the decorative hero blobs
+   7. Cookie consent banner (see README.md "Cookies & analytics") —
+      injected on every page, not just written into each HTML file
    All motion (4-6) is skipped outright under prefers-reduced-motion —
    see the isReducedMotion() check each one starts with.
    ========================================================================== */
@@ -22,6 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
   initNativeForms();
   initScrollReveal();
   initParallax();
+  initCookieBanner();
 });
 
 function isReducedMotion() {
@@ -203,5 +206,77 @@ function initNativeForms() {
         success.focus();
       }
     });
+  });
+}
+
+/**
+ * Cookie consent banner — injected into every page (not hand-written into
+ * each HTML file). No cookies/tracking actually fire yet (GA4/Hotjar are
+ * commented out in every page's <head> pending real IDs — see README.md
+ * "Analytics"), but the consent choice is captured now so that gate is
+ * ready the moment analytics goes live: real init code should check
+ * localStorage('femnest_cookie_consent') === 'accepted' (or listen for the
+ * 'femnest:cookie-consent' event this dispatches) before loading anything.
+ * A footer link with [data-cookie-settings] re-opens the banner so a
+ * visitor can change their mind later.
+ */
+function initCookieBanner() {
+  var STORAGE_KEY = 'femnest_cookie_consent';
+
+  function currentChoice() {
+    try {
+      return window.localStorage.getItem(STORAGE_KEY);
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function setChoice(value) {
+    try {
+      window.localStorage.setItem(STORAGE_KEY, value);
+    } catch (e) {
+      /* private browsing / storage blocked — banner just won't persist */
+    }
+    document.dispatchEvent(
+      new CustomEvent('femnest:cookie-consent', { detail: { choice: value } })
+    );
+  }
+
+  function showBanner() {
+    if (document.querySelector('.cookie-banner')) return;
+
+    var banner = document.createElement('div');
+    banner.className = 'cookie-banner';
+    banner.setAttribute('role', 'dialog');
+    banner.setAttribute('aria-label', 'Cookie notice');
+    banner.innerHTML =
+      '<div class="cookie-banner__inner">' +
+      '<p>We use essential cookies to run this site, and — once enabled — analytics cookies to understand how it’s used. See our <a href="privacy.html">Privacy Policy</a>.</p>' +
+      '<div class="cookie-banner__actions">' +
+      '<button type="button" class="btn btn-secondary" data-cookie-decline>Decline</button>' +
+      '<button type="button" class="btn btn-primary" data-cookie-accept>Accept</button>' +
+      '</div>' +
+      '</div>';
+    document.body.appendChild(banner);
+
+    banner.querySelector('[data-cookie-accept]').addEventListener('click', function () {
+      setChoice('accepted');
+      banner.remove();
+    });
+    banner.querySelector('[data-cookie-decline]').addEventListener('click', function () {
+      setChoice('declined');
+      banner.remove();
+    });
+  }
+
+  if (!currentChoice()) {
+    showBanner();
+  }
+
+  document.addEventListener('click', function (event) {
+    if (event.target.closest('[data-cookie-settings]')) {
+      event.preventDefault();
+      showBanner();
+    }
   });
 }

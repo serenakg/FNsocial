@@ -6,23 +6,27 @@ Static marketing site — plain HTML/CSS/JS, no build step, no framework. Two jo
 
 ```
 /femnest-site
-  index.html                          Home page
-  waitlist.html                       Waitlist page
-  events.html                         Events listing (add new event cards here)
+  index.html                          Home page — also where the Join the Waitlist Kit form lives (#join)
+  events.html                         "Community" page (nav label) — event listing + past-event gallery
   event.html                          TEMPLATE — duplicate this per event, don't publish it directly
   event-femmes-finances-freedom.html  Live event page for the flagship event
-  employer.html                       Employer pilot landing page (linked from the homepage funnel)
+  employer.html                       Employer pilot landing page — NOT linked from the homepage funnel right now (hidden, not deleted — see "Employer and investor pages")
   investors.html                      Investor relations landing page (linked from the homepage funnel)
+  privacy.html                        Privacy Policy — template content, needs legal review
+  terms.html                          Terms & Conditions — template content, needs legal review
   /assets
     /icons                            Wave favicon + wave motif/mark graphics (see "Logo" below)
     /logos                            Real FemNEST wordmark, in every brand color + layout
     /images                           Drop event/story photos here
+    /fonts                            Self-hosted Bitter variable font files (see "Editing fonts")
   /css
     styles.css                        All styling, brand colors as CSS variables at the top
   /js
-    main.js                           Mobile nav, footer year, form handling
+    main.js                           Mobile nav, footer year, form handling, cookie banner
   README.md                           This file
 ```
+
+Note: `waitlist.html` was **removed** — the waitlist is now a Kit (ConvertKit) form embedded directly on the homepage. See "Waitlist" below.
 
 Open any `.html` file directly in a browser to preview — no server or build step required.
 
@@ -96,17 +100,12 @@ Every page is a single self-contained `.html` file with plain text and HTML tags
 
 ## Waitlist: current setup and how to change it
 
-**Current default: linking out to the existing live waitlist at [campsite.bio/femnest](https://campsite.bio/femnest)**, which already has 50+ people on it. This was the default called for in the brief ("no reason to run two waitlists in parallel") since no explicit instruction was given to replace it. This shows up as a "Join the Waitlist" button on the home page and on `waitlist.html` that opens campsite.bio/femnest in a new tab.
+**Current: a real Kit (ConvertKit) inline form embedded directly on the homepage**, in the "Be part of it from the start" section (`id="join"`). This replaced both the earlier link-out-to-campsite.bio approach and the separate `waitlist.html` page (deleted — there's no reason to maintain a second page once the real form lives inline).
 
-**To confirm:** check with Serena whether this should stay as-is, or whether the native form (commented out in `waitlist.html`) should replace it.
-
-**If you decide to switch to a native form on this site instead:**
-1. Pick a form service — [Formspree](https://formspree.io), a Google Form, or Mailchimp's embeddable form all work with no backend.
-2. Create the form there and copy the endpoint URL it gives you.
-3. In `waitlist.html`, delete the `.external-waitlist` block and un-comment the native form block right below it (marked `NATIVE FORM ALTERNATIVE` in the file).
-4. Replace `REPLACE_WITH_REAL_ENDPOINT` in the form's `action` attribute with your real endpoint.
-5. Do the same on `index.html`'s waitlist section, and on the event page(s) if you want RSVPs to go to the same place.
-6. In `js/main.js`, the `initNativeForms()` function currently only shows an inline "you're in" confirmation — it doesn't send data anywhere by itself. If your form service needs JS (Formspree's plain `<form action>` doesn't, most others don't either), follow the `TODO` comment in that function.
+- The form markup, its two `<script>` loaders (`femnest.kit.com/.../index.js` and `f.convertkit.com/ckjs/ck.5.js`), and its inline styles are all Serena's real Kit embed snippet, pasted in as-is — the colors in that inline `style="..."` already happen to match the brand palette (lavender background, blue button), so no extra styling was needed beyond centering it (`.kit-form-wrap` in `css/styles.css`).
+- Every "Join the Waitlist" link across the site (nav, hero, funnel card, footer CTAs) now points to `index.html#join` (or just `#join` when already on the homepage) instead of a separate page.
+- If Kit's embed snippet is ever regenerated (e.g. a new form is created in Kit), replace the whole block between `<div class="kit-form-wrap" data-reveal>` and its closing `</div>` in `index.html` with the new snippet — don't hand-edit the generated HTML/CSS inside it.
+- `event.html` (the event template) and the event pages still link out to campsite.bio/femnest for RSVPs — that's a separate, intentionally-untouched flow (see the comment in `event.html`). Point them at the Kit form too if you want RSVPs and the waitlist unified.
 
 ## Adding a new event
 
@@ -140,7 +139,11 @@ All of this is additive CSS/JS — no build step, same file structure as before.
 
 (An earlier version of this homepage also had an abstract SVG hero illustration next to the headline — removed at Serena's request. The hero is text/gradient-blobs only now.)
 
-- **Community gallery**: real photos from FemNEST's launch event live in `assets/images/event/`, each resized to a 1200px-max-dimension JPEG. The homepage's `.community-gallery` (in "Community first") shows 4 of them, wrapped in the wave motif, as hover-flip cards. The remaining photos from that shoot are used elsewhere: one on a flip tile in the "What is FemNEST" pillars grid, and the rest in the `.past-gallery` plain photo grid on `events.html` ("From the room that started it"). The grid(s) use `object-fit: cover` on a fixed aspect ratio, so any new photo added the same way will slot in cleanly regardless of its original orientation.
+- **Community gallery**: real photos from FemNEST's launch event live in `assets/images/event/`, each resized to a 1200px-max-dimension JPEG. The homepage's `.community-gallery` (in "Community first") shows 4 of them, wrapped in the wave motif, as hover-flip cards. The rest are used in the `.past-gallery` plain photo grid on `events.html` ("From the room that started it"). The grid(s) use `object-fit: cover` on a fixed aspect ratio, so any new photo added the same way will slot in cleanly regardless of its original orientation.
+
+## The four pillars ("What is FemNEST")
+
+The homepage's pillar cards (Community / Education / Investment Tools / Advocacy) are the **exact four pillars from the pitch deck's own "Community / Education / Investment Tools / Advocacy" slide**, including its copy — this replaced an earlier, unsourced five-pillar set (Understand/Protect/Act/Belong/Grow) that wasn't drawn from any FemNEST material. Four cards divide evenly into a fixed 2x2 grid (`.pillars-grid` in `css/styles.css`), so there's no filler tile needed the way the old five-card version required one. Each is a flip card (front: doodle icon + brand-color squiggle ribbon; back: the pitch deck's description) — see the "Redesign the pillar/included cards" work earlier in this project's history for the visual system these follow.
   - **To add or swap a gallery photo**: drop a resized JPEG (long edge ~1200px keeps file size reasonable — there's no build step to do this automatically) into `assets/images/event/`, then add or edit an `<img>` line inside `.community-gallery` in `index.html`. Write real, specific alt text for each (what's happening in the shot), not a generic placeholder.
   - Only photos of people who were visibly comfortable being photographed at a public event were used; none show private information beyond a visible first-name badge. If any attendee ever asks for a photo to come down, remove that `<img>` line and its file.
 
@@ -160,21 +163,27 @@ Within each quote, one key phrase is wrapped in `<span class="highlight">...</sp
 
 ## Employer and investor pages
 
-`employer.html` and `investors.html` are the two "doors" from the homepage's Three-Door Funnel that needed real destinations (the handover doc's brief suggested `/employer` and `/investors` or a pitch-deck PDF — none of those existed, so these were built to match). They're deliberately **not** in the primary nav or footer — those are locked sections per the handover doc, and the funnel cards are the intended entry point.
+`employer.html` and `investors.html` are the two extra "doors" that needed real destinations beyond the homepage funnel (the handover doc's brief suggested `/employer` and `/investors` or a pitch-deck PDF — none of those existed, so these were built to match).
 
-- **Employer page**: pilot structure (discovery call → scoped pilot → debrief), the EU Pay Transparency Directive angle (verified, June 2027 deadline). Pilot **timeline and pricing are intentionally not stated as fixed numbers** — the handover doc suggested "3–6 months" and a pricing structure, but neither was confirmed by Serena, so the copy frames both as scoped together on the discovery call rather than inventing figures.
-- **Investor page**: company snapshot (Founded/Location/Stage — Serena's own stated facts, not third-party stats), the same four sourced market-gap figures already on the homepage, and traction claims already published elsewhere on the site (sold-out Feb 2026 launch, 50+ waitlist) — no new attendee/press/revenue numbers were introduced. **No pitch-deck PDF exists in this build**, so "Request the Deck" opens an email instead of a dead link; swap it for a direct download once a deck is hosted.
+- **Employer page**: pilot structure (discovery call → scoped pilot → debrief), the EU Pay Transparency Directive angle (verified, June 2027 deadline). Pilot **timeline and pricing are intentionally not stated as fixed numbers** — the handover doc suggested "3–6 months" and a pricing structure, but neither was confirmed by Serena, so the copy frames both as scoped together on the discovery call rather than inventing figures. **Currently hidden from the homepage's two-door funnel** (Serena's request — the funnel now shows only "I'm a woman" / "I'm an investor") but the page itself still exists at `employer.html`, just unlinked. Re-add a card in `index.html`'s `.two-door-grid` (see the `funnel-card` markup for the other two doors) to bring it back into the funnel.
+- **Investor page**: company snapshot (Founded/Location/Stage — Serena's own stated facts, not third-party stats), the same three sourced market-gap figures already on the homepage plus a still-pending market-sizing figure, and traction claims (sold-out Feb 2026 launch — 40 attendees, 130+ on the waitlist, featured in Cyprus Mail). **No pitch-deck PDF exists in this build**, so "Request the Deck" opens an email instead of a dead link; swap it for a direct download once a deck is hosted. The opportunity section states FemNEST is launching with a perimenopause/menopause-first go-to-market — that's a real positioning decision from Serena, not a placeholder.
 
 ## Testimonials: kept as the scrolling marquee
 
 The handover doc described a static grid of testimonial cards, and separately suggested a rotating carousel as an optional post-launch upgrade — but also said keeping the current presentation "works fine" if a carousel isn't built. The live site already has neither: it's a two-row, opposite-direction scrolling marquee (`.voices-marquee`, see "Community voices" above), which reads as more dynamic than either a static grid or a manual carousel and already pauses on hover for readability. Left as-is rather than downgrading it to a carousel.
 
-## Analytics
+## Cookies & analytics
 
-Not active. Both Google Analytics 4 and Hotjar snippets are written and commented out in every page's `<head>` (search for `ANALYTICS (not active`), ready to enable once Serena has:
+**Cookie banner: live.** `initCookieBanner()` in `js/main.js` injects a bottom banner into every page (not hand-written into each HTML file) the first time a visitor arrives, offering Accept/Decline. The choice is stored in `localStorage('femnest_cookie_consent')` and re-broadcast as a `femnest:cookie-consent` DOM event. A "Cookie Settings" link in every footer (`[data-cookie-settings]`) re-opens the banner so a visitor can change their mind.
 
-1. A real GA4 Measurement ID and Hotjar Site ID (the commented code has `G-REPLACE_WITH_REAL_ID` and `hjid: 0000000` placeholders — swap both in, in every file, then uncomment the block).
-2. A decision on cookie consent. FemNEST is Cyprus-based and the site's audience is EU visitors, so GDPR/ePrivacy rules apply to any tracking script — a consent banner (or a consent-gated loading pattern) should go in *before* these go live, not after.
+**Analytics: still not active.** Both Google Analytics 4 and Hotjar snippets are written and commented out in every page's `<head>` (search for `ANALYTICS (not active`). To go live:
+
+1. Get a real GA4 Measurement ID and Hotjar Site ID (the commented code has `G-REPLACE_WITH_REAL_ID` and `hjid: 0000000` placeholders — swap both in, in every file).
+2. Wire the init calls to only fire after consent — e.g. wrap them in `if (localStorage.getItem('femnest_cookie_consent') === 'accepted') { ... }`, or listen for the `femnest:cookie-consent` event, before uncommenting the block. The banner exists specifically so this gate is possible; don't uncomment the scripts without also adding the check.
+
+## Legal pages (privacy.html / terms.html)
+
+Both are **template content written to match the site's actual, current functionality** (what data is collected, that analytics isn't active yet, the Kit waitlist form, event RSVPs) — not legal advice, and each page says so at the top. **Have a lawyer review both against Cyprus/EU law (GDPR) before treating them as final** — that's flagged on the pages themselves, not just here. If analytics goes live (see above), update the "Cookies" section of `privacy.html` to describe what's actually running.
 
 ## Deploying
 
@@ -194,19 +203,22 @@ These were deliberately left as placeholders or defaults rather than invented. C
 - **Open Sauce (body/UI font)**: not supplied yet — Poppins is standing in for it. Swap it in once Serena has the real files (see "Editing fonts" above).
 - **Background color vs. the brand guide**: `FemNEST_Brand_Guidelines.pdf` lists Off-White (`#F6F7F2`) as the "Primary page background / canvas colour" and describes Soft Lime as being for "tags, callout cards, success indicators" — but this site uses lime green as its base page/header background (`--color-green`, page body, sticky header, mobile nav), a deliberate swap made earlier at Serena's explicit request (cream was the original base). **Confirmed by Serena — staying as lime.** Not a placeholder; don't "fix" this to match the guide.
 - **Body text color vs. the brand guide**: the guide lists Black (`#000000`) for "body typography," but the site uses a softer near-black (`--color-ink: #201f2b`) throughout. **Confirmed by Serena — staying as-is.**
-- **Waitlist tool**: defaulted to linking out to campsite.bio/femnest (see "Waitlist" section above). Confirm this is right, or switch to a native form.
+- **Waitlist tool**: resolved — real Kit (ConvertKit) form embedded on the homepage. See "Waitlist" above.
 - **Venue for Femmes, Finances & Freedom (31 Oct 2026)**: not yet booked — shown honestly as "Venue: to be announced" on `events.html` and the event page. Update once confirmed.
-- **Founder photo**: real photo now in place (see "Photography & imagery" above) — resolved.
-- **Community voices**: real, anonymized quotes now in place (see "Community voices" above) — resolved. No names/photos are attached to them by design.
-- **Logo**: the real FemNEST wordmark is now in use (see "Logo" section above) — this one's resolved. The browser favicon is resolved too (see "Logo" above).
-- **Lifetime wealth-lost figure** (Problem Statement, `index.html`): shown as a `.stat-pending` placeholder — no verifiable Cyprus-specific source found. Needs a real, sourced figure before publishing.
+- **Founder photo**: real photo in place — resolved.
+- **Community voices**: real, anonymized quotes in place — resolved. No names/photos attached, by design.
+- **Logo & favicon**: the real FemNEST wordmark and wave favicon are in use — resolved.
+- **Fonts**: resolved differently than earlier assumed — see "Editing fonts" above. Bitter is live (self-hosted); Poppins stands in for the brand's Open Sauce (files not supplied); Coolvetica is blocked by its desktop-only license.
+- **Lifetime wealth-lost figure** (Problem Statement, `index.html`): still a `.stat-pending` placeholder — no verifiable Cyprus-specific source found. Needs a real, sourced figure.
+- **"Meet Maria" persona** (Problem Statement, `index.html`): the card structure is built (`.persona-card`), but her actual story — from the pitch deck, per Serena's instruction — hasn't been supplied yet. It currently just says "Her story — to add from the pitch deck." Drop the real copy into the `.persona-card__body` block once available.
+- **Cyprus Mail press mention** (homepage stats section + `investors.html`): shown as plain text ("As featured in Cyprus Mail") since no article link was supplied. Add the actual URL as a link once available.
+- **"Recognition from Joise" and event sponsorship** (`investors.html`, Traction section): Serena's instruction mentioned "recognition from Joise and the sponsorship we received from the event," but who/what "Joise" refers to and the sponsor name(s) weren't specified — shown as a `.stat-pending` placeholder ("Recognition & sponsorship details to confirm") rather than guessed. Needs the actual names/details.
 - **Employer pilot timeline & pricing** (`employer.html`): not stated as fixed numbers — see "Employer and investor pages" above. Confirm real figures if you want them published.
 - **Investor market sizing** (TAM/SAM/SOM, `investors.html`): shown as a `.stat-pending` placeholder — the handover doc's "€635M market" figure wasn't sourced, so it wasn't published. Needs a real, cited figure.
 - **Pitch deck**: no PDF exists yet — `investors.html`'s "Request the Deck" button opens an email instead. Host a real deck and swap the link once one exists.
-- **Analytics**: GA4 + Hotjar are wired but commented out, pending real tracking IDs and a cookie-consent decision — see "Analytics" above.
-- **Fonts**: real brand fonts (Archivo/Bitter) now live via Google Fonts — resolved. See "Editing fonts" above.
-- **Statistics on the homepage ("Why now" section)**: re-verified via live search on 22 August 2026 before publishing, per the brief's instruction — now resolved to four confirmed, cited figures:
-  - **"Europe: women hold 77% of the wealth men do"** — CONFIRMED. Traced to WTW (Willis Towers Watson)'s 2022 Global Gender Wealth Equity Report, produced with the World Economic Forum: the average Wealth Equity Index across the 14 European countries studied is 0.77 (women on track to accumulate 77% of men's wealth by retirement). Reinstated on the site with this citation.
-  - **"Cyprus women retire with 38.2% less wealth than men"** — traced, but NOT a Cyprus statistic. The 38.2% figure appears to originate from unrelated US research (UC Berkeley Labor Center: 38.2% of *private pension wealth* in the US is held by women — a different metric, for a different country). No Cyprus-specific source produced this number at any point during verification; it looks like a mix-up in an earlier draft. Replaced on the site with Cyprus's own real, current, and more striking figure: a 29% gender pension gap for 65+ (Eurostat, 2024) — worse than the 24.5% EU average, which is also shown alongside it for contrast.
-  - The World Bank Global Findex figure (~700 million unbanked women) held up under re-verification and is used as-is, cited to Global Findex 2025.
-  - **No further action needed** on these four — all are now live-sourced and cited on the page itself.
+- **Analytics**: GA4 + Hotjar are wired but commented out, pending real tracking IDs — the cookie-consent banner itself is now live, see "Cookies & analytics" above.
+- **Legal pages**: `privacy.html` and `terms.html` are template content matched to the site's actual functionality, not legal advice — need a lawyer's review before being final. See "Legal pages" above.
+- **Statistics on the homepage ("Why now" section)**: the two pension-gap figures (29% Cyprus, 24.5% EU) that used to live here were both real and sourced (Eurostat 2024) — they were swapped out, not disproven, to make room for FemNEST's own traction numbers per Serena's instruction. The remaining two external stats are still confirmed and cited:
+  - **"Europe: women hold 77% of the wealth men do"** — CONFIRMED. WTW (Willis Towers Watson)'s 2022 Global Gender Wealth Equity Report, produced with the World Economic Forum.
+  - **~700 million unbanked women** — World Bank, Global Findex 2025.
+  - The two FemNEST traction numbers (130+ community members, 40 at the Feb 2026 launch) are Serena's own figures, not third-party research, so they carry no "Source:" citation — same treatment as the company facts on `investors.html`.
