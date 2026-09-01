@@ -1268,8 +1268,8 @@ p { margin: 0 0 1em; }
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  gap: 14px;
-  padding: 34px 20px 0;
+  gap: 28px;
+  padding: 48px 20px 0;
   text-align: center;
 }
 
@@ -1352,8 +1352,8 @@ p { margin: 0 0 1em; }
 
 .pillar-card__icon {
   position: relative;
-  width: 92px;
-  height: 92px;
+  width: 130px;
+  height: 130px;
   object-fit: contain;
   color: inherit;
 }
@@ -1361,7 +1361,7 @@ p { margin: 0 0 1em; }
 .pillar-card__face--front h3 {
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 1.3rem;
+  font-size: 1.7rem;
   color: inherit;
   position: relative;
 }
@@ -1369,8 +1369,8 @@ p { margin: 0 0 1em; }
 .pillar-card__ribbon {
   position: absolute;
   left: 50%;
-  bottom: 8%;
-  width: 132%;
+  bottom: -2%;
+  width: 190%;
   max-width: none;
   transform: translateX(-50%);
   pointer-events: none;
@@ -1489,8 +1489,8 @@ p { margin: 0 0 1em; }
   align-items: center;
   justify-content: flex-start;
   text-align: center;
-  padding: 34px 20px 0;
-  gap: 14px;
+  padding: 48px 20px 0;
+  gap: 28px;
 }
 
 .funnel-card__face--front.pillar-card--reverse-blue {
@@ -1501,7 +1501,7 @@ p { margin: 0 0 1em; }
 .funnel-card h3 {
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1.7rem;
   color: inherit;
   position: relative;
 }
