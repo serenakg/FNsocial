@@ -58,6 +58,10 @@ function initScrollReveal() {
           if (numberEl) {
             animateStatNumber(numberEl);
           }
+          var currencyEl = entry.target.querySelector('.problem-stat__figure[data-value]');
+          if (currencyEl) {
+            animateCurrencyNumber(currencyEl);
+          }
           observer.unobserve(entry.target);
         }
       });
@@ -101,6 +105,39 @@ function animateStatNumber(el) {
       window.requestAnimationFrame(frame);
     } else {
       el.textContent = target;
+    }
+  }
+
+  window.requestAnimationFrame(frame);
+}
+
+/**
+ * Counts a euro figure up from &euro;0 to its real value (e.g. "&euro;436,437"),
+ * formatting the thousands separator as it goes. Same "hold the real value
+ * in data-value" pattern as animateStatNumber, just for currency figures
+ * with commas rather than a percent/letter suffix.
+ */
+function animateCurrencyNumber(el) {
+  var endValue = parseInt(el.getAttribute('data-value'), 10);
+  if (isNaN(endValue)) return;
+
+  var duration = 1400;
+  var startTime = null;
+
+  function easeOutCubic(t) {
+    return 1 - Math.pow(1 - t, 3);
+  }
+
+  function frame(timestamp) {
+    if (startTime === null) startTime = timestamp;
+    var elapsed = timestamp - startTime;
+    var progress = Math.min(elapsed / duration, 1);
+    var current = Math.round(endValue * easeOutCubic(progress));
+    el.textContent = '€' + current.toLocaleString('en-US');
+    if (progress < 1) {
+      window.requestAnimationFrame(frame);
+    } else {
+      el.textContent = '€' + endValue.toLocaleString('en-US');
     }
   }
 

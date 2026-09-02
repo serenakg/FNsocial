@@ -107,7 +107,7 @@
         <span class="section__kicker" data-reveal>Meet Maria</span>
         <div class="problem-grid" data-reveal>
           <div class="problem-stat">
-            <span class="problem-stat__figure">&euro;436,437</span>
+            <span class="problem-stat__figure" data-value="436437">&euro;436,437</span>
             <p class="problem-stat__label">Average lifetime wealth lost by a woman in Cyprus</p>
           </div>
           <div class="problem-text">
@@ -281,20 +281,17 @@
 
           <!-- Hover/tap a pillar to flip it — front pairs a bold doodle
                icon with a chunky wave-ribbon, back is the description.
-               Two cards are white with a colored ribbon; two are
-               "reversed" (a solid brand-color card, white or lavender
-               ribbon and text) — both treatments pulled from the logo's
-               own color lockups. Education (orange) and Advocacy
-               (green) are the reversed/solid-color cards; Community and
-               Investment Tools are plain white with a colored ribbon —
-               per Serena's "green and orange, then reverse" note. -->
+               All four cards are solid brand-color, each paired with a
+               contrasting wave and icon per Serena's reference mockups:
+               Community green/orange, Education orange/green,
+               Investment Tools lavender/blue, Advocacy blue/lavender. -->
           <div class="pillars-grid" data-reveal>
             <div class="pillar-card">
               <div class="pillar-card__flip">
-                <div class="pillar-card__face pillar-card__face--front">
+                <div class="pillar-card__face pillar-card__face--front pillar-card--reverse-green">
                   <img class="pillar-card__icon" src="assets/icons/flip/chat-bubbles.png" alt="" aria-hidden="true" />
                   <h3>Community</h3>
-                  <img class="pillar-card__ribbon" src="assets/icons/wave-mark-blue.png" alt="" aria-hidden="true" />
+                  <img class="pillar-card__ribbon" src="assets/icons/wave-mark-orange.png" alt="" aria-hidden="true" />
                 </div>
                 <div class="pillar-card__face pillar-card__face--back">
                   <p>Peer &amp; professional support network — a community of women living the same transitions, supported by verified professionals, online and IRL.</p>
@@ -306,7 +303,7 @@
                 <div class="pillar-card__face pillar-card__face--front pillar-card--reverse-orange">
                   <img class="pillar-card__icon" src="assets/icons/flip/binders.png" alt="" aria-hidden="true" />
                   <h3>Education</h3>
-                  <img class="pillar-card__ribbon" src="assets/icons/wave-mark-white.png" alt="" aria-hidden="true" />
+                  <img class="pillar-card__ribbon" src="assets/icons/wave-mark-green.png" alt="" aria-hidden="true" />
                 </div>
                 <div class="pillar-card__face pillar-card__face--back">
                   <p>Financial literacy tools &amp; events — EU Pay Transparency Directive training so everyone learns their legal rights, their financial reality, and how to close the gap.</p>
@@ -315,10 +312,10 @@
             </div>
             <div class="pillar-card">
               <div class="pillar-card__flip">
-                <div class="pillar-card__face pillar-card__face--front">
+                <div class="pillar-card__face pillar-card__face--front pillar-card--reverse-lavender">
                   <img class="pillar-card__icon" src="assets/icons/flip/dashboard-pie.png" alt="" aria-hidden="true" />
                   <h3>Investment Tools</h3>
-                  <img class="pillar-card__ribbon" src="assets/icons/wave-mark-lavender.png" alt="" aria-hidden="true" />
+                  <img class="pillar-card__ribbon" src="assets/icons/wave-mark-blue.png" alt="" aria-hidden="true" />
                 </div>
                 <div class="pillar-card__face pillar-card__face--back">
                   <p>Life-health-to-finance tracking, connecting 50+ female health and life transitions to personalised financial plans. No competitor has built this — <strong>it's our owned IP</strong>.</p>
@@ -327,10 +324,10 @@
             </div>
             <div class="pillar-card">
               <div class="pillar-card__flip">
-                <div class="pillar-card__face pillar-card__face--front pillar-card--reverse-green">
+                <div class="pillar-card__face pillar-card__face--front pillar-card--reverse-blue">
                   <img class="pillar-card__icon" src="assets/icons/flip/megaphone.png" alt="" aria-hidden="true" />
                   <h3>Advocacy</h3>
-                  <img class="pillar-card__ribbon" src="assets/icons/wave-mark-white.png" alt="" aria-hidden="true" />
+                  <img class="pillar-card__ribbon" src="assets/icons/wave-mark-lavender.png" alt="" aria-hidden="true" />
                 </div>
                 <div class="pillar-card__face pillar-card__face--back">
                   <p>Data insights for employers &amp; policymakers — aggregated, anonymised data revealing the care-finance connection, powering smarter workplace and policy interventions.</p>
@@ -343,15 +340,6 @@
             <p class="coming-soon-badge__note">Your personal FemNEST assistant — it'll connect the dots between your own life transitions and your finances automatically, and flag the moments (like these four pillars) when it's time to act.</p>
           </span>
         </div>
-
-        <!-- Callback to Maria (introduced in Problem Statement above) —
-             shows the four pillars working for one real woman. From
-             Serena's pitch deck, "Solution Slide Callback". -->
-        <blockquote class="persona-callback" data-reveal>
-          <p>Maria found FemNEST during that first hard month back at work. She saw her real number for the first time — &euro;440,000 — on our retirement and lifetime-earnings calculator. She joined a cohort of women navigating the same return-to-work transition. She completed our salary negotiation program.</p>
-          <p>Eight weeks later, she&rsquo;d clawed back the pay gap and negotiated a schedule that protected her trajectory instead of derailing it.</p>
-          <cite>How the four pillars work — for Maria</cite>
-        </blockquote>
       </div>
       <div class="wave-divider" aria-hidden="true">
         <img src="assets/icons/wave-motif-blue.png" alt="" />
@@ -369,8 +357,7 @@
             <p class="founder-panel__caption">Serena Gasparini<span>Founder, FemNEST</span></p>
           </div>
           <div class="founder-panel__content">
-            <span class="section__kicker">Why FemNEST exists</span>
-            <span class="story-block__quote-mark" aria-hidden="true">&ldquo;</span>
+            <span class="section__kicker" style="font-size: 1.3rem;">Why FemNEST exists</span>
             <p class="founder-panel__quote">I founded FemNEST because I lived the gap between needing support and finding it.</p>
             <p class="founder-panel__body">I'm Serena Gasparini, and my journey to this stage wasn't paved with corporate ladders, but with life-altering pivots. After years in the corporate world, I hit a wall of burnout that forced me to reclaim my time through freelancing. But life had more in store — I was simultaneously navigating the silent battle of a lifelong PCOS diagnosis and the physical toll of fertility treatments.</p>
             <p class="founder-panel__body">When I finally held my son, the joy was met with a new challenge: he was born with a medical condition that required my full presence. In those moments, carrying the emotional weight of a &ldquo;no backup plan&rdquo; reality, I realised how quickly a woman's independence can feel like it's slipping away. I asked myself every time — why is financial stability so hard to come by for women going through life's biggest changes?</p>

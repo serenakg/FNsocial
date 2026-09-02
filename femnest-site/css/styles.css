@@ -929,16 +929,6 @@ p { margin: 0 0 1em; }
   z-index: 1;
 }
 
-.story-block__quote-mark {
-  font-family: var(--font-heading);
-  font-size: 3.4rem;
-  line-height: 1;
-  color: var(--color-orange);
-  opacity: 0.5;
-  display: block;
-  margin: 4px 0 -8px;
-}
-
 .founder-panel__quote {
   font-style: italic;
   font-size: 1.35rem;
