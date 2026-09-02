@@ -92,7 +92,7 @@ The real FemNEST wordmark is in `assets/logos/`, in both layouts and all four br
 Currently in use:
 - **Header nav**: `femnest-logo-horizontal-blue.png`
 - **Footer** (dark background): `femnest-logo-horizontal-white-outline.png`, which reads clearly against the dark footer.
-- **Favicon**: resolved — a square icon-only version of the wave mark was built (`assets/icons/favicon-wave-32.png` / `favicon-wave-180.png`) and is wired into every page's `<head>` via `<link rel="icon">` / `<link rel="apple-touch-icon">`.
+- **Favicon**: resolved — a bold "FN" monogram in the brand blue, set in Bitter (`assets/icons/favicon-fn-32.png` / `favicon-fn-180.png` / `favicon-fn-512.png`), is wired into every page's `<head>` via `<link rel="icon">` / `<link rel="apple-touch-icon">`. Replaced the earlier wave-squiggle favicon per Serena's request.
 
 To swap which color/layout shows where, just change the `<img src="...">` path in the header (`<a class="nav__brand">` block) or footer (`<p class="footer-brand">` block) of each HTML file — sizing is controlled by `.nav__brand img` / `.footer-brand img` in `css/styles.css`, so a different file at a different native size will still scale correctly.
 
