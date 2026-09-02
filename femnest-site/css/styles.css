@@ -427,7 +427,6 @@ p { margin: 0 0 1em; }
   background: var(--color-lavender);
   background-image: var(--gradient-hero-wash);
   overflow: hidden;
-  clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%);
 }
 
 .hero .blob--blue { width: 320px; height: 320px; top: -120px; right: -60px; }
@@ -1284,6 +1283,15 @@ p { margin: 0 0 1em; }
   .funnel-grid {
     grid-template-columns: repeat(3, 1fr);
   }
+}
+
+.funnel-grid.funnel-grid--stack {
+  grid-template-columns: 1fr;
+}
+
+.funnel-grid--stack .card {
+  max-width: none;
+  text-align: center;
 }
 
 /* Two-door funnel grid (homepage only) — separate from .funnel-grid
