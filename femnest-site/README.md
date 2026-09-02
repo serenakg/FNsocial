@@ -107,7 +107,7 @@ Every page is a single self-contained `.html` file with plain text and HTML tags
 - The form markup, its two `<script>` loaders (`femnest.kit.com/.../index.js` and `f.convertkit.com/ckjs/ck.5.js`), and its inline styles are all Serena's real Kit embed snippet, pasted in as-is — the colors in that inline `style="..."` already happen to match the brand palette (lavender background, blue button), so no extra styling was needed beyond centering it (`.kit-form-wrap` in `css/styles.css`).
 - Every "Join the Waitlist" link across the site (nav, hero, funnel card, footer CTAs) now points to `index.html#join` (or just `#join` when already on the homepage) instead of a separate page.
 - If Kit's embed snippet is ever regenerated (e.g. a new form is created in Kit), replace the whole block between `<div class="kit-form-wrap" data-reveal>` and its closing `</div>` in `index.html` with the new snippet — don't hand-edit the generated HTML/CSS inside it.
-- `event.html` (the event template) and the event pages still link out to campsite.bio/femnest for RSVPs — that's a separate, intentionally-untouched flow (see the comment in `event.html`). Point them at the Kit form too if you want RSVPs and the waitlist unified.
+- `event.html` (the event template) and the event pages now point their RSVP CTA at `index.html#join` too, so event RSVPs and the general waitlist share the same Kit form/list — resolved, no separate campsite.bio flow left.
 
 ## Adding a new event
 
