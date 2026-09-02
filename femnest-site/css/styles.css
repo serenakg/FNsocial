@@ -1153,6 +1153,41 @@ p { margin: 0 0 1em; }
   color: var(--color-ink);
 }
 
+.pillar-card__face--front.pillar-card--reverse-black {
+  background: #000000;
+  color: var(--color-white);
+}
+
+/* Explicit back-face colors, matching each card's own wave/front color
+   rather than the blue/orange nth-child alternation below — used where
+   a card needs a specific color tied to its identity (see the About
+   page's audience cards and the Investment Tools override). */
+.pillar-card__face--back.pillar-card--reverse-blue {
+  background: var(--color-blue);
+}
+
+.pillar-card__face--back.pillar-card--reverse-orange {
+  background: var(--color-orange);
+}
+
+.pillar-card__face--back.pillar-card--reverse-lavender {
+  background: var(--color-lavender);
+}
+
+.pillar-card__face--back.pillar-card--reverse-green {
+  background: var(--color-green);
+}
+
+.pillar-card__face--back.pillar-card--reverse-white {
+  background: var(--color-white);
+}
+
+.pillar-card__face--back.pillar-card--reverse-lavender p,
+.pillar-card__face--back.pillar-card--reverse-green p,
+.pillar-card__face--back.pillar-card--reverse-white p {
+  color: var(--color-ink);
+}
+
 /* ---- "What is FemNEST" two-column layout ----
    Intro paragraph sits beside the pillars grid on wider screens instead
    of full-width above it. */
@@ -1296,24 +1331,20 @@ p { margin: 0 0 1em; }
 
 /* Two-door funnel grid (homepage only) — separate from .funnel-grid
    above, which employer.html and investors.html also use for their own
-   3-card grids of plain .card / .pillar-card content. */
+   3-card grids of plain .card / .pillar-card content. Four cards (woman
+   / partner / investor / employer), so a clean 2x2 at wider viewports
+   rather than a 3-col breakpoint that would orphan a fourth card. */
 .two-door-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 24px;
-  max-width: 1080px;
+  max-width: 760px;
   margin: 8px auto 0;
 }
 
 @media (min-width: 640px) {
   .two-door-grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 980px) {
-  .two-door-grid {
-    grid-template-columns: repeat(3, 1fr);
   }
 }
 
