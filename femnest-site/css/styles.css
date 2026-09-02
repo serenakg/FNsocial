@@ -564,6 +564,18 @@ p { margin: 0 0 1em; }
   background: var(--color-green);
 }
 
+.section--blue {
+  background: var(--color-blue);
+}
+
+.section--blue .endorsement-quote p {
+  color: var(--color-white);
+}
+
+.section--blue .endorsement-quote cite {
+  color: var(--color-lavender);
+}
+
 .section--tilt {
   clip-path: polygon(0 4%, 100% 0, 100% 96%, 0 100%);
   margin: -40px 0;
@@ -590,6 +602,12 @@ p { margin: 0 0 1em; }
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+}
+
+.section__header-intro {
+  margin-top: 12px;
+  font-size: 1.1rem;
+  color: var(--color-ink-soft);
 }
 
 /* ---- Kit (ConvertKit) signup form ----
