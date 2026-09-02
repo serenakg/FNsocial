@@ -219,7 +219,7 @@ These were deliberately left as placeholders or defaults rather than invented. C
 - **Investor market sizing** (TAM/SAM/SOM, `investors.html`): resolved — real figures from Serena's own pricing model now shown in the `.market-sizing` block: TAM €24.8B, SAM €635M, SOM €12.8M ARR by Year 3 (with sourcing and near-term detail).
 - **Founder story** ("Why FemNEST exists", `index.html`): resolved — Serena's own words now make up the full panel (`.founder-panel__quote` pull-quote + three `.founder-panel__body` paragraphs), replacing the earlier two-paragraph third-person summary.
 - **Partner form** (`about.html`, "Partner with us"): no form URL was supplied (unlike the market research survey, which has a real Google Form link). Shown honestly as a `mailto:` fallback rather than a fabricated form — swap in a real form link once one exists.
-- **Event sponsorship** (`investors.html`, Press & recognition card): still open — see the "Recognition from Josie" entry above.
+- **Event sponsorship** (`investors.html`, Press & recognition card): resolved — NOLA (nolacy.com) and Lea Women Wellness Center (leawomencenter.com) are now named as event sponsors.
 - **Pitch deck**: no PDF exists yet — `investors.html`'s "Request the Deck" button opens an email instead. Host a real deck and swap the link once one exists.
 - **Analytics**: GA4 + Hotjar are wired but commented out, pending real tracking IDs — the cookie-consent banner itself is now live, see "Cookies & analytics" above.
 - **Legal pages**: `privacy.html` and `terms.html` carry FemNEST's actual approved Privacy Policy and Terms & Conditions. See "Legal pages" above.
