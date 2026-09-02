@@ -1163,7 +1163,6 @@ p { margin: 0 0 1em; }
 
 .idea-layout__intro {
   font-size: 1.1rem;
-  max-width: 62ch;
 }
 
 .coming-soon-badge-wrap {
@@ -1364,6 +1363,8 @@ p { margin: 0 0 1em; }
 
 .funnel-card__soon {
   display: inline-block;
+  position: relative;
+  z-index: 2;
   align-self: center;
   max-width: 100%;
   font-family: var(--font-heading);
