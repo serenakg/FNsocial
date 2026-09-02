@@ -100,11 +100,14 @@
     </section>
 
     <!-- ================= PROBLEM STATEMENT =================
-         Figure and "Meet Maria" persona are both sourced from Serena's
-         own pitch deck (Market Problem slide) — no longer placeholders. -->
+         Figure and headline are sourced from Serena's own pitch deck
+         (Market Problem slide). The "Meet Maria" persona narrative that
+         used to sit below this was cut site-wide per Serena's request —
+         see the dev brief in this project's history for the full list
+         of what was removed and why. -->
     <section class="section section--alt">
       <div class="container">
-        <span class="section__kicker" data-reveal>Meet Maria</span>
+        <span class="section__kicker" data-reveal>The problem</span>
         <div class="problem-grid" data-reveal>
           <div class="problem-stat">
             <span class="problem-stat__figure" data-value="436437">&euro;436,437</span>
@@ -115,15 +118,6 @@
             <p>A lifetime of invisible penalties. No financial platform was built to solve them.</p>
           </div>
         </div>
-        <div class="persona-card" data-reveal>
-          <span class="persona-card__avatar" aria-hidden="true">M</span>
-          <div class="persona-card__body">
-            <h4>Meet Maria, 34</h4>
-            <p>After maternity leave, she returned to a role that had quietly moved on without her: lower pay, stalled progression, no explanation. It never gets called discrimination. It just gets called &ldquo;the way things are.&rdquo;</p>
-            <p>Over her lifetime, that one transition will cost her &euro;436,437. Gone. Not spent, not saved, not invested. Just gone. That&rsquo;s the equivalent of 16 years of income, not because she stopped working, but because she was born female in a system that was never built to protect her from this.</p>
-          </div>
-        </div>
-        <p class="problem-reflection" data-reveal>Can you see yourself in Maria?</p>
       </div>
     </section>
 
@@ -183,9 +177,16 @@
             </a>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Message of support for the launch event, from Josie
-             Christodoulou, Cyprus's Commissioner for Gender Equality. -->
+    <!-- ================= ENDORSEMENT =================
+         Message of support for the launch event, from Josie
+         Christodoulou, Cyprus's Commissioner for Gender Equality. Its
+         own full-width panel/section, not a card floating inside
+         another section — per Serena's request. -->
+    <section class="section section--green">
+      <div class="container">
         <blockquote class="endorsement-quote" data-reveal>
           <p>&ldquo;Gender equality cannot be achieved by policy alone. It requires strong communities, open dialogue, and spaces where women can share knowledge, build confidence, and inspire one another. FemNEST represents exactly such a space.&rdquo;</p>
           <cite>Josie Christodoulou &middot; Commissioner for Gender Equality, Republic of Cyprus</cite>
@@ -260,15 +261,39 @@
       </div>
     </section>
 
+    <!-- ================= FOUNDER STORY =================
+         Positioned after Mind the Gap (the problem, in full) and
+         before What is FemNEST (Section, below) — per Serena's
+         requested page flow: the problem → the gaps → the founder's
+         own story → the idea (What is FemNEST), full-width, right
+         underneath this panel. -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="founder-panel" data-reveal>
+          <div class="blob blob--orange" aria-hidden="true"></div>
+          <div class="blob blob--blue" aria-hidden="true"></div>
+          <div class="founder-panel__media">
+            <img src="assets/images/serena-gasparini.jpg" alt="Serena Gasparini, founder of FemNEST" class="founder-panel__photo" />
+            <p class="founder-panel__caption">Serena Gasparini<span>Founder, FemNEST</span></p>
+          </div>
+          <div class="founder-panel__content">
+            <span class="section__kicker" style="font-size: 1.3rem;">Why FemNEST exists</span>
+            <p class="founder-panel__quote">I founded FemNEST because I lived the gap between needing support and finding it.</p>
+            <p class="founder-panel__body">I'm Serena Gasparini, and my journey to this stage wasn't paved with corporate ladders, but with life-altering pivots. After years in the corporate world, I hit a wall of burnout that forced me to reclaim my time through freelancing. But life had more in store: I was simultaneously navigating the silent battle of a lifelong PMOS diagnosis and the physical toll of fertility treatments.</p>
+            <p class="founder-panel__body">When I finally held my son, the joy was met with a new challenge: he was born with a medical condition that required my full presence. In those moments, carrying the emotional weight of a &ldquo;no backup plan&rdquo; reality, I realised how quickly a woman's independence can feel like it's slipping away. I asked myself every time: why is financial stability so hard to come by for women going through life's biggest changes?</p>
+            <p class="founder-panel__body">Through my marketing agency, Sense and Forum, I began hearing my own story reflected in hundreds of others. Whether it's health, motherhood, or career shifts, we're often one transition away from losing our footing. Based in Cyprus, where women still face systemic barriers like requiring a spouse's signature for basic banking, I built the platform I needed and couldn't find.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ================= WHAT IS FEMNEST =================
          Four pillars, straight from the pitch deck's own "Community /
          Education / Investment Tools / Advocacy" slide — replaces the
          earlier Understand/Protect/Act/Belong/Grow set, which wasn't
          sourced from any FemNEST material. Four cards divide evenly
-         (2x2), so no filler tile is needed. Positioned after Mind the
-         Gap (the problem, in full) and before Founder Story (the
-         solution's origin) — Serena's requested page flow: Meet Maria →
-         the opportunity → the gaps → then the idea. -->
+         (2x2), so no filler tile is needed. Card is full-width,
+         stacked under the founder panel above, per Serena's request. -->
     <section class="section section--alt">
       <div class="container">
         <div class="section__header" data-reveal>
@@ -343,27 +368,6 @@
       </div>
       <div class="wave-divider" aria-hidden="true">
         <img src="assets/icons/wave-motif-blue.png" alt="" />
-      </div>
-    </section>
-
-    <!-- ================= FOUNDER STORY ================= -->
-    <section class="section section--alt">
-      <div class="container">
-        <div class="founder-panel" data-reveal>
-          <div class="blob blob--orange" aria-hidden="true"></div>
-          <div class="blob blob--blue" aria-hidden="true"></div>
-          <div class="founder-panel__media">
-            <img src="assets/images/serena-gasparini.jpg" alt="Serena Gasparini, founder of FemNEST" class="founder-panel__photo" />
-            <p class="founder-panel__caption">Serena Gasparini<span>Founder, FemNEST</span></p>
-          </div>
-          <div class="founder-panel__content">
-            <span class="section__kicker" style="font-size: 1.3rem;">Why FemNEST exists</span>
-            <p class="founder-panel__quote">I founded FemNEST because I lived the gap between needing support and finding it.</p>
-            <p class="founder-panel__body">I'm Serena Gasparini, and my journey to this stage wasn't paved with corporate ladders, but with life-altering pivots. After years in the corporate world, I hit a wall of burnout that forced me to reclaim my time through freelancing. But life had more in store: I was simultaneously navigating the silent battle of a lifelong PMOS diagnosis and the physical toll of fertility treatments.</p>
-            <p class="founder-panel__body">When I finally held my son, the joy was met with a new challenge: he was born with a medical condition that required my full presence. In those moments, carrying the emotional weight of a &ldquo;no backup plan&rdquo; reality, I realised how quickly a woman's independence can feel like it's slipping away. I asked myself every time: why is financial stability so hard to come by for women going through life's biggest changes?</p>
-            <p class="founder-panel__body">Through my marketing agency, Sense and Forum, I began hearing my own story reflected in hundreds of others. Whether it's health, motherhood, or career shifts, we're often one transition away from losing our footing. Based in Cyprus, where women still face systemic barriers like requiring a spouse's signature for basic banking, I built the platform I needed and couldn't find.</p>
-          </div>
-        </div>
       </div>
     </section>
 
