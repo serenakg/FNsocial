@@ -185,7 +185,7 @@ The handover doc described a static grid of testimonial cards, and separately su
 
 ## Legal pages (privacy.html / terms.html)
 
-Both are **template content written to match the site's actual, current functionality** (what data is collected, that analytics isn't active yet, the Kit waitlist form, event RSVPs) — not legal advice, and each page says so at the top. **Have a lawyer review both against Cyprus/EU law (GDPR) before treating them as final** — that's flagged on the pages themselves, not just here. If analytics goes live (see above), update the "Cookies" section of `privacy.html` to describe what's actually running.
+Both pages now carry FemNEST's actual, Serena-approved Privacy Policy and Terms & Conditions (drafted for M. S. Project Zeus CY LTD t/a FemNEST, company number 430641, Cyprus), replacing the earlier placeholder template copy. Data-related contact on both pages points to `hello@yourfemnest.com` per the source documents, distinct from the general `serena@yourfemnest.com` used elsewhere on the site. If the site's actual functionality changes (e.g. analytics scripts go live, ticketing provider changes, the Community platform launches), these pages need a corresponding update to stay accurate — check with Serena before editing the legal text itself.
 
 ## Deploying
 
@@ -222,7 +222,7 @@ These were deliberately left as placeholders or defaults rather than invented. C
 - **Event sponsorship** (`investors.html`, Press & recognition card): still open — see the "Recognition from Josie" entry above.
 - **Pitch deck**: no PDF exists yet — `investors.html`'s "Request the Deck" button opens an email instead. Host a real deck and swap the link once one exists.
 - **Analytics**: GA4 + Hotjar are wired but commented out, pending real tracking IDs — the cookie-consent banner itself is now live, see "Cookies & analytics" above.
-- **Legal pages**: `privacy.html` and `terms.html` are template content matched to the site's actual functionality, not legal advice — need a lawyer's review before being final. See "Legal pages" above.
+- **Legal pages**: `privacy.html` and `terms.html` carry FemNEST's actual approved Privacy Policy and Terms & Conditions. See "Legal pages" above.
 - **Statistics on the homepage ("Why now" section)**: the two pension-gap figures (29% Cyprus, 24.5% EU) that used to live here were both real and sourced (Eurostat 2024) — they were swapped out, not disproven, to make room for FemNEST's own traction numbers per Serena's instruction. The remaining two external stats are still confirmed and cited:
   - **"Europe: women hold 77% of the wealth men do"** — CONFIRMED. WTW (Willis Towers Watson)'s 2022 Global Gender Wealth Equity Report, produced with the World Economic Forum.
   - **~700 million unbanked women** — World Bank, Global Findex 2025.
