@@ -493,11 +493,6 @@
 
         <!-- Closing callback to Maria — from Serena's pitch deck,
              "Closing Callback". -->
-        <blockquote class="persona-callback persona-callback--center" data-reveal>
-          <p>Maria isn&rsquo;t hypothetical. She&rsquo;s one of the 50 women we interviewed, and her story repeats itself hundreds of thousands of times across Europe.</p>
-          <p>We&rsquo;re not building a platform for Maria. We&rsquo;re building it with her.</p>
-        </blockquote>
-
         <div class="kit-form-wrap" data-reveal>
           <script async data-uid="2ece9f1f4b" src="https://femnest.kit.com/2ece9f1f4b/index.js"></script>
           <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
@@ -506,11 +501,14 @@
       </div>
     </section>
 
-    <!-- ================= TWO-DOOR FUNNEL =================
-         Employer door hidden for now (Serena's request) — employer.html
-         still exists, just not linked from here. Hover/tap flips each
-         card to show "what you get"; the CTA stays outside the flip so
-         it's always reachable on touch. -->
+    <!-- ================= ROLE FUNNEL =================
+         Expanded from two doors to five — every audience with a stake
+         in a woman's financial life, per Serena's dev brief. Employer
+         and Employee are flagged "coming soon" since their dedicated
+         flows (EOI form, workplace waitlist) don't exist yet — see
+         README.md "Open items". Hover/tap flips each card to show
+         "what you get"; the CTA stays outside the flip so it's always
+         reachable on touch. -->
     <section class="section section--lavender section--tilt">
       <div class="container">
         <div class="section__header section__header--center" data-reveal>
@@ -537,6 +535,68 @@
               </div>
             </div>
             <a class="btn btn-primary" href="#join">Express Interest</a>
+          </div>
+          <div class="funnel-card">
+            <div class="funnel-card__flip-wrap">
+              <div class="funnel-card__flip">
+                <div class="funnel-card__face funnel-card__face--front pillar-card--reverse-green">
+                  <img class="pillar-card__icon" src="assets/icons/flip/plant-growth.png" alt="" aria-hidden="true" />
+                  <h3>Partner</h3>
+                  <img class="pillar-card__ribbon" src="assets/icons/wave-mark-white.png" alt="" aria-hidden="true" />
+                </div>
+                <div class="funnel-card__face funnel-card__face--back">
+                  <h4>What you get</h4>
+                  <ul>
+                    <li>A say in what FemNEST builds next</li>
+                    <li>Early visibility into the community and its needs</li>
+                    <li>A direct line to the founder</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <a class="btn btn-primary" href="about.html#partner">Fill Out the Form</a>
+          </div>
+          <div class="funnel-card">
+            <div class="funnel-card__flip-wrap">
+              <div class="funnel-card__flip">
+                <div class="funnel-card__face funnel-card__face--front pillar-card--reverse-orange">
+                  <img class="pillar-card__icon" src="assets/icons/flip/folder.png" alt="" aria-hidden="true" />
+                  <h3>I'm an Employer</h3>
+                  <span class="funnel-card__soon" style="background: var(--color-white); color: var(--color-orange-deep);">Coming soon</span>
+                  <img class="pillar-card__ribbon" src="assets/icons/wave-mark-white.png" alt="" aria-hidden="true" />
+                </div>
+                <div class="funnel-card__face funnel-card__face--back">
+                  <h4>What you get</h4>
+                  <ul>
+                    <li>A structured pilot that gets you ahead of pay-transparency reporting</li>
+                    <li>A financial wellness benefit your people actually use</li>
+                    <li>Early access as the employer pilot launches</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <a class="btn btn-primary" href="mailto:serena@yourfemnest.com?subject=Employer%20expression%20of%20interest">Share Expression of Interest</a>
+          </div>
+          <div class="funnel-card">
+            <div class="funnel-card__flip-wrap">
+              <div class="funnel-card__flip">
+                <div class="funnel-card__face funnel-card__face--front pillar-card--reverse-lavender">
+                  <img class="pillar-card__icon" src="assets/icons/flip/clock.png" alt="" aria-hidden="true" />
+                  <h3>Employee</h3>
+                  <span class="funnel-card__soon" style="background: var(--color-white); color: var(--color-blue-deep);">Coming soon</span>
+                  <img class="pillar-card__ribbon" src="assets/icons/wave-mark-blue.png" alt="" aria-hidden="true" />
+                </div>
+                <div class="funnel-card__face funnel-card__face--back">
+                  <h4>What you get</h4>
+                  <ul>
+                    <li>Access to FemNEST through your workplace, once your employer joins the pilot</li>
+                    <li>The same community and tools, at the moments you need them most</li>
+                    <li>A place on the list for when it launches</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <a class="btn btn-primary" href="#join">Join the Waitlist</a>
           </div>
           <div class="funnel-card">
             <div class="funnel-card__flip-wrap">

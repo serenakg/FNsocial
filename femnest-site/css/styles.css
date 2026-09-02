@@ -1314,13 +1314,19 @@ p { margin: 0 0 1em; }
   display: grid;
   grid-template-columns: 1fr;
   gap: 24px;
-  max-width: 720px;
+  max-width: 1080px;
   margin: 8px auto 0;
 }
 
 @media (min-width: 640px) {
   .two-door-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 980px) {
+  .two-door-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -1377,6 +1383,35 @@ p { margin: 0 0 1em; }
 .funnel-card__face--front.pillar-card--reverse-blue {
   background: var(--color-blue);
   color: var(--color-lavender);
+}
+
+.funnel-card__soon {
+  display: inline-block;
+  align-self: center;
+  max-width: 100%;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding: 6px 14px;
+  border-radius: 999px;
+}
+
+.funnel-card__face--front.pillar-card--reverse-orange {
+  background: var(--color-orange);
+  color: var(--color-white);
+}
+
+.funnel-card__face--front.pillar-card--reverse-green {
+  background: var(--color-green);
+  color: var(--color-ink);
+}
+
+.funnel-card__face--front.pillar-card--reverse-lavender {
+  background: var(--color-lavender);
+  color: var(--color-blue-deep);
 }
 
 .funnel-card h3 {
