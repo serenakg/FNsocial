@@ -654,53 +654,6 @@ p { margin: 0 0 1em; }
   box-shadow: var(--shadow-lift);
 }
 
-/* ---- Market sizing (TAM/SAM/SOM) ----
-   Three pill rows below the main stats-grid, matching the investor
-   deck's own market-sizing slide. */
-.market-sizing {
-  margin-top: 24px;
-}
-
-.market-sizing__grid {
-  display: grid;
-  gap: 12px;
-  margin-top: 14px;
-}
-
-.market-sizing__item {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  column-gap: 18px;
-  row-gap: 4px;
-  align-items: baseline;
-  background: var(--color-white);
-  border-radius: var(--radius);
-  padding: 16px 22px;
-  box-shadow: var(--shadow-soft);
-}
-
-.market-sizing__label {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 0.85rem;
-  color: var(--color-orange-deep);
-  align-self: start;
-}
-
-.market-sizing__value {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 1.3rem;
-  color: var(--color-ink);
-}
-
-.market-sizing__note {
-  grid-column: 2;
-  color: var(--color-ink-soft);
-  font-size: 0.9rem;
-  margin: 0;
-}
-
 .stats-intro {
   max-width: 62ch;
   font-size: 1.05rem;
@@ -1299,6 +1252,12 @@ p { margin: 0 0 1em; }
   grid-template-columns: 1fr;
   gap: 24px;
   margin-top: 8px;
+}
+
+@media (min-width: 640px) {
+  .funnel-grid.funnel-grid--2col {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (min-width: 720px) {
