@@ -1163,28 +1163,33 @@ p { margin: 0 0 1em; }
    a card needs a specific color tied to its identity (see the About
    page's audience cards and the Investment Tools override). */
 .pillar-card__face--back.pillar-card--reverse-blue {
-  background: var(--color-blue);
+  background: var(--color-blue) !important;
 }
 
 .pillar-card__face--back.pillar-card--reverse-orange {
-  background: var(--color-orange);
+  background: var(--color-orange) !important;
 }
 
 .pillar-card__face--back.pillar-card--reverse-lavender {
-  background: var(--color-lavender);
+  background: var(--color-lavender) !important;
 }
 
 .pillar-card__face--back.pillar-card--reverse-green {
-  background: var(--color-green);
+  background: var(--color-green) !important;
 }
 
 .pillar-card__face--back.pillar-card--reverse-white {
-  background: var(--color-white);
+  background: var(--color-white) !important;
+}
+
+.pillar-card__face--back.pillar-card--reverse-cream {
+  background: var(--color-cream) !important;
 }
 
 .pillar-card__face--back.pillar-card--reverse-lavender p,
 .pillar-card__face--back.pillar-card--reverse-green p,
-.pillar-card__face--back.pillar-card--reverse-white p {
+.pillar-card__face--back.pillar-card--reverse-white p,
+.pillar-card__face--back.pillar-card--reverse-cream p {
   color: var(--color-ink);
 }
 
@@ -1451,6 +1456,10 @@ p { margin: 0 0 1em; }
   align-items: flex-start;
   justify-content: center;
   text-align: left;
+}
+
+.funnel-card__face--back.pillar-card--reverse-green {
+  background: var(--color-green);
 }
 
 .funnel-card__face--back h4 {
