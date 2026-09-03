@@ -1665,20 +1665,24 @@ p { margin: 0 0 1em; }
 }
 
 /* ---- One-line explainer ticker ----
-   A single, plain-English sentence explaining what FemNEST is, right
-   at the very top of the homepage, scrolling continuously. Same
-   seamless-loop technique as the community voices marquee above: two
-   duplicated sets (.explainer-ticker__set), translate exactly -50%. */
+   A few short, plain-English sentences explaining what FemNEST is,
+   under the "130+ women" proof line in the hero, scrolling
+   continuously. Same seamless-loop technique as the community voices
+   marquee above: two duplicated sets (.explainer-ticker__set),
+   translate exactly -50%. */
 .explainer-ticker {
+  position: relative;
+  z-index: 1;
   background: var(--color-blue);
   overflow: hidden;
   padding: 14px 0;
+  margin-top: 32px;
 }
 
 .explainer-ticker__track {
   display: flex;
   width: max-content;
-  animation: voices-scroll-left 34s linear infinite;
+  animation: voices-scroll-left 58s linear infinite;
 }
 
 .explainer-ticker__set {
