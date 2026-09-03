@@ -1664,6 +1664,48 @@ p { margin: 0 0 1em; }
   to { transform: translateX(0); }
 }
 
+/* ---- One-line explainer ticker ----
+   A single, plain-English sentence explaining what FemNEST is, right
+   at the very top of the homepage, scrolling continuously. Same
+   seamless-loop technique as the community voices marquee above: two
+   duplicated sets (.explainer-ticker__set), translate exactly -50%. */
+.explainer-ticker {
+  background: var(--color-blue);
+  overflow: hidden;
+  padding: 14px 0;
+}
+
+.explainer-ticker__track {
+  display: flex;
+  width: max-content;
+  animation: voices-scroll-left 34s linear infinite;
+}
+
+.explainer-ticker__set {
+  display: flex;
+  align-items: center;
+}
+
+.explainer-ticker__item {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  white-space: nowrap;
+  padding-right: 28px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--color-cream);
+}
+
+.explainer-ticker__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-orange);
+  flex: none;
+}
+
 /* ---- Waitlist / form blocks ---- */
 .form-panel {
   position: relative;
@@ -2128,6 +2170,30 @@ p { margin: 0 0 1em; }
   }
 
   .voices-track__set[aria-hidden="true"] {
+    display: none;
+  }
+
+  /* Explainer ticker: stop the scroll, show one static line, hide the
+     duplicated (aria-hidden) copy. */
+  .explainer-ticker__track {
+    animation: none;
+    transform: none;
+    width: 100%;
+  }
+
+  .explainer-ticker__set[aria-hidden="true"] {
+    display: none;
+  }
+
+  .explainer-ticker__item {
+    white-space: normal;
+    padding-right: 0;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .explainer-ticker__dot {
     display: none;
   }
 }
