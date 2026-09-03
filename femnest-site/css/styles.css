@@ -1675,8 +1675,8 @@ p { margin: 0 0 1em; }
   z-index: 1;
   background: var(--color-blue);
   overflow: hidden;
-  padding: 14px 0;
-  margin-top: 32px;
+  padding: 20px 0;
+  margin: 32px 0 -84px;
 }
 
 .explainer-ticker__track {
