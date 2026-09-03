@@ -1976,6 +1976,103 @@ p { margin: 0 0 1em; }
   font-weight: 700;
 }
 
+/* ---- Event page: tagline, meta ---- */
+.event-tagline {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--color-orange-deep);
+  margin: 4px 0 18px;
+}
+
+.event-meta {
+  font-size: 0.95rem;
+  color: var(--color-ink-soft);
+  margin-bottom: 28px;
+}
+
+.event-meta strong {
+  color: var(--color-ink);
+}
+
+/* ---- Pull quote (event/community testimonial callouts) ---- */
+.pull-quote {
+  margin: 24px 0;
+  padding: 20px 24px;
+  border-left: 4px solid var(--color-orange);
+  background: var(--color-cream);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--color-ink);
+}
+
+/* ---- Data table (event agenda, sponsor tiers, ticket prices) ---- */
+.table-wrap {
+  overflow-x: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  margin-top: 8px;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 480px;
+  background: var(--color-white);
+}
+
+.data-table th {
+  background: var(--color-blue);
+  color: var(--color-white);
+  text-align: left;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 14px 18px;
+}
+
+.data-table td {
+  padding: 14px 18px;
+  font-size: 0.95rem;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: top;
+}
+
+.data-table tr:last-child td {
+  border-bottom: none;
+}
+
+.data-table tbody tr:nth-child(even) td {
+  background: var(--color-cream);
+}
+
+/* ---- Partner logo-links row ---- */
+.partner-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.partner-links a {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--color-blue);
+  background: var(--color-white);
+  padding: 10px 18px;
+  border-radius: 999px;
+  box-shadow: var(--shadow-soft);
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.partner-links a:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lift);
+}
+
 .back-link {
   display: inline-block;
   margin-bottom: 24px;
