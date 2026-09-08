@@ -2,7 +2,7 @@
 
 > FemNEST is the first platform mapping 50+ female health and life transitions, from fertility to menopause, to their real financial outcomes, so individuals, employers, and partners can act on what matters most, instead of guessing.
 
-FemNEST is a pre-seed femtech/fintech company founded by Serena Gasparini in Cyprus in 2025. It is community-first: a live waitlist of 130+ women, a sold-out launch event (February 2026, Paphos), and a second flagship event, Femmes, Finances & Freedom (31 October 2026, Paphos), precede the MVP launch planned for Spring 2027.
+FemNEST is a pre-seed femtech/fintech company founded by Serena Gasparini in Cyprus in 2025. It is community-first: a live waitlist of 130+ women, a sold-out launch event (February 2026, Paphos), and a second flagship event, Femmes, Finances & Freedom (13 February 2027, Paphos), precede the MVP launch planned for Spring 2027.
 
 The company works with three audiences: individuals navigating their own health and life transitions, employers building a structured pilot to get ahead of the EU Pay Transparency Directive (compliance deadline June 2027), and partners/investors backing the platform pre-seed.
 
@@ -11,7 +11,7 @@ The company works with three audiences: individuals navigating their own health 
 - [Home](https://www.yourfemnest.com/): FemNEST's mission, the financial cost of the "gender data gap" in women's health and life transitions, and how to join the waitlist.
 - [About](https://www.yourfemnest.com/about.html): The platform, who it serves (individuals, employers, employees, partners), founder Serena Gasparini's story, and what FemNEST has built so far.
 - [Community](https://www.yourfemnest.com/events.html): FemNEST's in-person events, including Femmes, Finances & Freedom.
-- [Femmes, Finances & Freedom](https://www.yourfemnest.com/event-femmes-finances-freedom.html): FemNEST's flagship event, 31 October 2026 in Paphos, Cyprus — agenda, tickets, sponsorship, and speaker applications.
+- [Femmes, Finances & Freedom](https://www.yourfemnest.com/event-femmes-finances-freedom.html): FemNEST's flagship event, 13 February 2027 in Paphos, Cyprus — agenda, tickets, sponsorship, and speaker applications.
 - [Invest](https://www.yourfemnest.com/investors.html): FemNEST's pitch to investors — market opportunity, traction, and how to request the deck.
 - [Privacy Policy](https://www.yourfemnest.com/privacy.html)
 - [Terms & Conditions](https://www.yourfemnest.com/terms.html)

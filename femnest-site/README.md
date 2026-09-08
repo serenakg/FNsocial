@@ -206,7 +206,7 @@ These were deliberately left as placeholders or defaults rather than invented. C
 - **Background color vs. the brand guide**: `FemNEST_Brand_Guidelines.pdf` lists Off-White (`#F6F7F2`) as the "Primary page background / canvas colour" and describes Soft Lime as being for "tags, callout cards, success indicators" — but this site uses lime green as its base page/header background (`--color-green`, page body, sticky header, mobile nav), a deliberate swap made earlier at Serena's explicit request (cream was the original base). **Confirmed by Serena — staying as lime.** Not a placeholder; don't "fix" this to match the guide.
 - **Body text color vs. the brand guide**: the guide lists Black (`#000000`) for "body typography," but the site uses a softer near-black (`--color-ink: #201f2b`) throughout. **Confirmed by Serena — staying as-is.**
 - **Waitlist tool**: resolved — real Kit (ConvertKit) form embedded on the homepage. See "Waitlist" above.
-- **Venue for Femmes, Finances & Freedom (31 Oct 2026)**: not yet booked — shown honestly as "Venue: to be announced" on `events.html` and the event page. Update once confirmed.
+- **Venue for Femmes, Finances & Freedom (13 Feb 2027)**: not yet booked — shown honestly as "Venue: to be announced" on `events.html` and the event page. Update once confirmed.
 - **Founder photo**: real photo in place — resolved.
 - **Community voices**: real, anonymized quotes in place — resolved. No names/photos attached, by design.
 - **Logo & favicon**: the real FemNEST wordmark and wave favicon are in use — resolved.
