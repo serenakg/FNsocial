@@ -1,0 +1,829 @@
+<title>FemNEST Member Hub</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,500;0,600;0,700;1,500&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  /* Brand tokens mirror femnest-site/css/styles.css */
+  :root {
+    --blue: #295df6;
+    --blue-deep: #1c3fb0;
+    --orange: #ec6a2c;
+    --orange-deep: #c94f18;
+    --lavender: #f2cdfc;
+    --green: #deea9e;
+    --cream: #eee7ce;
+
+    --ground: #faf8f1;
+    --surface: #ffffff;
+    --surface-2: #f4efe0;
+    --ink: #201f2b;
+    --ink-soft: #4a4856;
+    --ink-faint: #7a7785;
+    --border: rgba(32, 31, 43, 0.12);
+    --chip-lav: #f2cdfc;
+    --chip-green: #deea9e;
+    --chip-cream: #eee7ce;
+    --chip-ink: #201f2b;
+    --accent-text: #1c3fb0;
+    --shadow: 0 12px 32px rgba(32, 31, 43, 0.08);
+    --ok: #2f7a3e;
+
+    --font-head: 'Bitter', Georgia, serif;
+    --font-body: 'Poppins', system-ui, -apple-system, sans-serif;
+    --radius: 20px;
+    --radius-sm: 12px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --ground: #17161f;
+      --surface: #211f2c;
+      --surface-2: #2a2837;
+      --ink: #f3efe2;
+      --ink-soft: #c9c5d4;
+      --ink-faint: #9793a6;
+      --border: rgba(243, 239, 226, 0.14);
+      --chip-lav: #4b3556;
+      --chip-green: #3e4524;
+      --chip-cream: #3d3a2e;
+      --chip-ink: #f3efe2;
+      --accent-text: #8fb0ff;
+      --shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+      --ok: #9fd38a;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --ground: #17161f;
+    --surface: #211f2c;
+    --surface-2: #2a2837;
+    --ink: #f3efe2;
+    --ink-soft: #c9c5d4;
+    --ink-faint: #9793a6;
+    --border: rgba(243, 239, 226, 0.14);
+    --chip-lav: #4b3556;
+    --chip-green: #3e4524;
+    --chip-cream: #3d3a2e;
+    --chip-ink: #f3efe2;
+    --accent-text: #8fb0ff;
+    --shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+    --ok: #9fd38a;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.55;
+  }
+  h1, h2, h3 { font-family: var(--font-head); line-height: 1.2; margin: 0; text-wrap: balance; }
+  h1 { font-size: clamp(1.6rem, 3.5vw, 2.2rem); font-weight: 700; }
+  h2 { font-size: 1.25rem; font-weight: 600; }
+  h3 { font-size: 1.05rem; font-weight: 600; }
+  p { margin: 0; }
+  button { font: inherit; cursor: pointer; }
+  :focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; border-radius: 6px; }
+
+  .proto-bar {
+    background: var(--blue);
+    color: var(--cream);
+    font-size: 12.5px;
+    padding: 8px 16px;
+    text-align: center;
+    letter-spacing: 0.02em;
+  }
+  .proto-bar strong { font-weight: 600; }
+
+  .app {
+    display: grid;
+    grid-template-columns: 240px minmax(0, 1fr);
+    min-height: calc(100% - 36px);
+  }
+
+  /* ---------- Sidebar ---------- */
+  .side {
+    border-right: 1px solid var(--border);
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    position: sticky;
+    top: env(safe-area-inset-top, 0px);
+    height: 100vh;
+  }
+  .brand { display: flex; align-items: center; gap: 10px; padding-inline: 8px; }
+  .brand-mark {
+    width: 34px; height: 34px; border-radius: 10px;
+    background: var(--blue); color: var(--cream);
+    display: grid; place-items: center;
+    font-family: var(--font-head); font-weight: 700; font-size: 15px;
+  }
+  .brand-name { font-family: var(--font-head); font-weight: 700; font-size: 1.15rem; }
+  .brand-name span { color: var(--orange); }
+  .nav { display: flex; flex-direction: column; gap: 4px; }
+  .nav button {
+    display: flex; align-items: center; gap: 12px;
+    background: none; border: 0; color: var(--ink-soft);
+    padding: 10px 12px; border-radius: var(--radius-sm);
+    text-align: left; font-weight: 500;
+  }
+  .nav button svg { width: 20px; height: 20px; flex: none; }
+  .nav button:hover { background: var(--surface-2); color: var(--ink); }
+  .nav button[aria-current="page"] { background: var(--blue); color: #fff; }
+  .nav-label {
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--ink-faint); padding: 12px 12px 4px;
+  }
+  .me {
+    margin-top: auto;
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px; border-radius: var(--radius-sm); background: var(--surface-2);
+  }
+  .me small { display: block; color: var(--ink-faint); font-size: 12px; }
+
+  .avatar {
+    width: 40px; height: 40px; border-radius: 50%;
+    display: grid; place-items: center; flex: none;
+    font-weight: 600; font-size: 14px; color: #201f2b;
+  }
+
+  /* ---------- Main ---------- */
+  main { padding-block: 32px 96px; padding-inline: clamp(16px, 4vw, 48px); min-width: 0; }
+  .view { display: flex; flex-direction: column; gap: 28px; max-width: 1080px; }
+  .view-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 16px; }
+  .view-head p { color: var(--ink-soft); max-width: 60ch; margin-top: 6px; }
+  .eyebrow {
+    font-size: 12px; text-transform: uppercase; letter-spacing: 0.12em;
+    color: var(--orange-deep); font-weight: 600;
+  }
+  [data-theme="dark"] .eyebrow { color: var(--orange); }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .eyebrow { color: var(--orange); } }
+
+  .panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 22px;
+  }
+  .panel-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 16px; }
+  .link-btn { background: none; border: 0; color: var(--accent-text); font-weight: 600; font-size: 14px; padding: 0; }
+
+  .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+
+  .chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 4px 10px; border-radius: 999px;
+    font-size: 12.5px; font-weight: 500;
+    background: var(--chip-cream); color: var(--chip-ink);
+    white-space: nowrap;
+  }
+  .chip.lav { background: var(--chip-lav); }
+  .chip.green { background: var(--chip-green); }
+  .chip.blue { background: var(--blue); color: #fff; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    border-radius: 999px; padding: 10px 18px; font-weight: 600; font-size: 14px;
+    border: 1.5px solid transparent; transition: transform .15s ease, background .15s ease;
+  }
+  .btn:active { transform: scale(0.97); }
+  .btn-primary { background: var(--orange); color: #fff; }
+  .btn-primary:hover { background: var(--orange-deep); }
+  .btn-ghost { background: transparent; color: var(--ink); border-color: var(--border); }
+  .btn-ghost:hover { background: var(--surface-2); }
+  .btn-done { background: var(--chip-green); color: var(--chip-ink); }
+
+  /* ---------- Home hero ---------- */
+  .nest-hero {
+    background: var(--blue);
+    color: var(--cream);
+    border-radius: var(--radius);
+    padding: 28px;
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    gap: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .nest-hero h1 { color: #fff; }
+  .nest-hero p { color: var(--cream); margin-top: 10px; max-width: 48ch; }
+  .nest-hero .eyebrow { color: var(--green); }
+  .wave-bg { position: absolute; right: -40px; bottom: -30px; width: 340px; opacity: 0.18; pointer-events: none; }
+  .moment {
+    background: var(--cream); color: #201f2b;
+    border-radius: var(--radius-sm); padding: 18px; position: relative;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .moment .tag { font-size: 11.5px; text-transform: uppercase; letter-spacing: .1em; font-weight: 600; color: #c94f18; }
+  .moment p { color: #201f2b; margin: 0; font-size: 14px; }
+  .moment .btn { align-self: start; }
+
+  .journey { display: flex; flex-direction: column; gap: 14px; }
+  .journey-row { display: grid; grid-template-columns: 120px minmax(0, 1fr) auto; gap: 14px; align-items: center; }
+  .journey-row b { font-weight: 600; font-size: 14px; }
+  .track { height: 10px; border-radius: 999px; background: var(--surface-2); overflow: hidden; }
+  .track i { display: block; height: 100%; border-radius: 999px; background: var(--blue); }
+  .journey-row small { color: var(--ink-faint); font-size: 12.5px; font-variant-numeric: tabular-nums; }
+
+  /* ---------- Lists ---------- */
+  .list { display: flex; flex-direction: column; }
+  .list > * + * { border-top: 1px solid var(--border); }
+  .row { display: flex; align-items: center; gap: 14px; padding-block: 12px; }
+  .row .grow { flex: 1; min-width: 0; }
+  .row .meta { color: var(--ink-faint); font-size: 13px; }
+
+  .date-tile {
+    width: 52px; flex: none; text-align: center;
+    border-radius: var(--radius-sm); background: var(--chip-lav); color: var(--chip-ink);
+    padding: 6px 0; line-height: 1.1;
+  }
+  .date-tile b { display: block; font-family: var(--font-head); font-size: 1.3rem; }
+  .date-tile span { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; }
+
+  /* ---------- Match cards ---------- */
+  .match-card { display: flex; flex-direction: column; gap: 14px; }
+  .match-top { display: flex; gap: 12px; align-items: center; }
+  .match-top .avatar { width: 52px; height: 52px; font-size: 16px; }
+  .score {
+    margin-left: auto; text-align: right; font-variant-numeric: tabular-nums;
+  }
+  .score b { font-family: var(--font-head); font-size: 1.4rem; color: var(--accent-text); display: block; line-height: 1; }
+  .score small { font-size: 11px; color: var(--ink-faint); text-transform: uppercase; letter-spacing: .08em; }
+  .why { background: var(--surface-2); border-radius: var(--radius-sm); padding: 12px 14px; font-size: 13.5px; color: var(--ink-soft); }
+  .why ul { margin: 6px 0 0; padding-left: 18px; }
+  .match-actions { display: flex; gap: 8px; margin-top: auto; flex-wrap: wrap; }
+
+  .filters { display: flex; gap: 8px; flex-wrap: wrap; }
+  .filters button {
+    border: 1.5px solid var(--border); background: var(--surface); color: var(--ink);
+    border-radius: 999px; padding: 7px 14px; font-size: 13.5px; font-weight: 500;
+  }
+  .filters button[aria-pressed="true"] { background: var(--ink); color: var(--ground); border-color: var(--ink); }
+
+  /* ---------- Circles ---------- */
+  .circle-card { display: flex; flex-direction: column; gap: 12px; }
+  .circle-card .stack { display: flex; }
+  .circle-card .stack .avatar { width: 30px; height: 30px; font-size: 11px; border: 2px solid var(--surface); margin-left: -8px; }
+  .circle-card .stack .avatar:first-child { margin-left: 0; }
+  .circle-foot { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: auto; flex-wrap: wrap; }
+  .circle-card p { color: var(--ink-soft); font-size: 14px; }
+  .prompt { border-left: 3px solid var(--orange); padding-left: 12px; font-size: 13.5px; font-style: italic; color: var(--ink-soft); }
+
+  /* ---------- Transition map ---------- */
+  .tmap { display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: 20px; align-items: start; }
+  .tlist { display: flex; flex-direction: column; gap: 6px; }
+  .tlist .stage-label { font-size: 11px; text-transform: uppercase; letter-spacing: .1em; color: var(--ink-faint); padding: 10px 4px 2px; }
+  .tlist button {
+    display: flex; justify-content: space-between; align-items: center; gap: 8px;
+    text-align: left; border: 1px solid var(--border); background: var(--surface); color: var(--ink);
+    padding: 10px 14px; border-radius: var(--radius-sm); font-weight: 500; font-size: 14px;
+  }
+  .tlist button[aria-selected="true"] { border-color: var(--blue); box-shadow: inset 0 0 0 1px var(--blue); }
+  .tlist button .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--orange); flex: none; }
+  .tdetail { display: flex; flex-direction: column; gap: 18px; }
+  .flow { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+  .flow-step { border-radius: var(--radius-sm); padding: 14px; background: var(--surface-2); }
+  .flow-step .k { font-size: 11px; text-transform: uppercase; letter-spacing: .1em; font-weight: 600; color: var(--ink-faint); }
+  .flow-step p { font-size: 14px; margin-top: 6px; }
+  .flow-step.act { background: var(--chip-green); color: var(--chip-ink); }
+  .flow-step.act .k { color: var(--chip-ink); opacity: .75; }
+  .checklist { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+  .checklist label { display: flex; gap: 10px; align-items: start; font-size: 14px; cursor: pointer; }
+  .checklist input { accent-color: var(--blue); width: 18px; height: 18px; margin-top: 2px; flex: none; }
+  .confidence { font-size: 12.5px; color: var(--ink-faint); }
+
+  /* ---------- Employer ---------- */
+  .kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+  .kpi { padding: 18px; }
+  .kpi small { color: var(--ink-faint); font-size: 12.5px; display: block; }
+  .kpi b { font-family: var(--font-head); font-size: 1.9rem; display: block; margin-top: 4px; font-variant-numeric: tabular-nums; }
+  .kpi .delta { font-size: 12.5px; color: var(--ok); font-weight: 500; }
+  .bars { display: flex; flex-direction: column; gap: 12px; }
+  .bar-row { display: grid; grid-template-columns: 170px minmax(0, 1fr) 44px; gap: 12px; align-items: center; font-size: 14px; }
+  .bar-row .track { height: 14px; }
+  .bar-row .track i { background: var(--orange); }
+  .bar-row span:last-child { text-align: right; font-variant-numeric: tabular-nums; color: var(--ink-soft); }
+  .privacy-note { font-size: 13px; color: var(--ink-soft); background: var(--surface-2); border-radius: var(--radius-sm); padding: 12px 14px; }
+  .status { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; }
+  .status::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+  .status.done { color: var(--ok); }
+  .status.todo { color: var(--orange-deep); }
+  [data-theme="dark"] .status.todo { color: var(--orange); }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .status.todo { color: var(--orange); } }
+
+  /* ---------- Toast ---------- */
+  .toast {
+    position: fixed; left: 50%; bottom: calc(88px + env(safe-area-inset-bottom, 0px));
+    transform: translateX(-50%) translateY(20px);
+    background: var(--ink); color: var(--ground);
+    padding: 12px 18px; border-radius: 999px; font-size: 14px; font-weight: 500;
+    opacity: 0; pointer-events: none; transition: opacity .2s ease, transform .2s ease;
+    max-width: calc(100% - 32px); z-index: 20;
+  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 1000px) {
+    .grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .tmap { grid-template-columns: minmax(0, 1fr); }
+    .tlist { flex-direction: row; flex-wrap: wrap; }
+    .tlist .stage-label { width: 100%; }
+  }
+  @media (max-width: 820px) {
+    .app { grid-template-columns: minmax(0, 1fr); }
+    .side {
+      position: fixed; left: 0; right: 0; bottom: 0; top: auto; height: auto; z-index: 10;
+      flex-direction: row; padding: 6px 8px calc(6px + env(safe-area-inset-bottom, 0px));
+      border-right: 0; border-top: 1px solid var(--border); background: var(--surface);
+    }
+    .brand, .me, .nav-label { display: none; }
+    .nav { flex-direction: row; justify-content: space-around; width: 100%; gap: 0; }
+    .nav button { flex-direction: column; gap: 2px; font-size: 10.5px; padding: 6px 4px; flex: 1; align-items: center; }
+    .nest-hero, .grid-2, .flow { grid-template-columns: minmax(0, 1fr); }
+    .toast { bottom: calc(84px + env(safe-area-inset-bottom, 0px)); }
+  }
+  @media (max-width: 560px) {
+    .grid-3 { grid-template-columns: minmax(0, 1fr); }
+    .journey-row { grid-template-columns: 1fr auto; }
+    .journey-row .track { grid-column: 1 / -1; grid-row: 2; }
+    .bar-row { grid-template-columns: minmax(0, 1fr) 44px; }
+    .bar-row .track { grid-column: 1 / -1; grid-row: 2; }
+    main { padding-top: 20px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
+
+<div class="proto-bar"><strong>Prototype</strong> · every name, number and event below is sample data for demo purposes</div>
+
+<div class="app">
+  <aside class="side">
+    <div class="brand">
+      <div class="brand-mark">FN</div>
+      <div class="brand-name">Fem<span>NEST</span></div>
+    </div>
+    <nav class="nav" aria-label="Hub sections">
+      <div class="nav-label">Member</div>
+      <button data-view="home" aria-current="page">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-6 8 6v8a1 1 0 0 1-1 1h-4v-6H9v6H5a1 1 0 0 1-1-1z"/></svg>
+        My nest
+      </button>
+      <button data-view="map">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12c3-4 6 4 9 0s6 4 9 0"/><path d="M3 18c3-4 6 4 9 0s6 4 9 0" opacity=".5"/><path d="M3 6c3-4 6 4 9 0s6 4 9 0" opacity=".5"/></svg>
+        Transitions
+      </button>
+      <button data-view="matches">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><circle cx="16.5" cy="10" r="2.6"/><path d="M3.5 19c.8-3.2 3-5 5.5-5s4.7 1.8 5.5 5"/><path d="M15 14.3c2.6-.4 4.6 1.2 5.5 4.2"/></svg>
+        Matches
+      </button>
+      <button data-view="circles">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="4" r="1.6" fill="currentColor"/><circle cx="19" cy="15" r="1.6" fill="currentColor"/><circle cx="5" cy="15" r="1.6" fill="currentColor"/></svg>
+        Circles
+      </button>
+      <button data-view="events">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg>
+        Events
+      </button>
+      <div class="nav-label">Partner</div>
+      <button data-view="employer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+        Employer
+      </button>
+    </nav>
+    <div class="me">
+      <div class="avatar" style="background:#f2cdfc">MA</div>
+      <div><b style="font-size:14px">Maria A.</b><small>Sample member · Limassol</small></div>
+    </div>
+  </aside>
+
+  <main id="main">
+    <!-- ================= HOME ================= -->
+    <section class="view" id="view-home">
+      <div class="nest-hero">
+        <svg class="wave-bg" viewBox="0 0 340 200" fill="none" stroke="#eee7ce" stroke-width="10" stroke-linecap="round"><path d="M10 60c40-40 80 40 120 0s80 40 120 0 60-20 80-10"/><path d="M10 110c40-40 80 40 120 0s80 40 120 0 60-20 80-10"/><path d="M10 160c40-40 80 40 120 0s80 40 120 0 60-20 80-10"/></svg>
+        <div>
+          <div class="eyebrow">Good morning, Maria</div>
+          <h1>Two transitions in motion. One money moment this week.</h1>
+          <p>You told us you're in perimenopause and caring for your mum. We've matched you with three women on the same path and one circle that meets Thursday.</p>
+        </div>
+        <div class="moment">
+          <span class="tag">Money moment</span>
+          <h3 style="color:#201f2b">Before you cut your hours, check your pension record</h3>
+          <p>Going part-time to care can reduce what you pay into your pension. Ten minutes now tells you where the gaps would be.</p>
+          <button class="btn btn-primary" data-go="map" data-transition="caregiving">Open the caregiving map</button>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="panel">
+          <div class="panel-head"><h2>Your transitions</h2><button class="link-btn" data-go="map">See all 50+</button></div>
+          <div class="journey">
+            <div class="journey-row">
+              <b>Perimenopause</b>
+              <div class="track" aria-hidden="true"><i style="width:60%"></i></div>
+              <small>3 of 5 steps</small>
+            </div>
+            <div class="journey-row">
+              <b>Caregiving</b>
+              <div class="track" aria-hidden="true"><i style="width:20%"></i></div>
+              <small>1 of 5 steps</small>
+            </div>
+            <div class="journey-row">
+              <b>Career break</b>
+              <div class="track" aria-hidden="true"><i style="width:0%"></i></div>
+              <small>Watching</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head"><h2>Coming up</h2><button class="link-btn" data-go="events">All events</button></div>
+          <div class="list" id="home-events"></div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head"><h2>Women on the same path</h2><button class="link-btn" data-go="matches">See all matches</button></div>
+        <div class="grid-3" id="home-matches"></div>
+      </div>
+    </section>
+
+    <!-- ================= TRANSITION MAP ================= -->
+    <section class="view" id="view-map" hidden>
+      <div class="view-head">
+        <div>
+          <div class="eyebrow">The transition map</div>
+          <h1>Every life change has a money side</h1>
+          <p>Pick a transition to see what usually changes financially, the best moment to act, and the questions to ask. Showing 8 of 50+.</p>
+        </div>
+      </div>
+      <div class="tmap">
+        <div class="tlist" id="tlist" role="tablist" aria-label="Transitions"></div>
+        <div class="panel tdetail" id="tdetail"></div>
+      </div>
+    </section>
+
+    <!-- ================= MATCHES ================= -->
+    <section class="view" id="view-matches" hidden>
+      <div class="view-head">
+        <div>
+          <div class="eyebrow">Matches</div>
+          <h1>Women who've been where you are</h1>
+          <p>We match on shared transitions, what stage you're at, and what you said you want: advice, company or accountability. Every intro is opt-in on both sides.</p>
+        </div>
+        <div class="filters" id="match-filters" role="group" aria-label="Filter matches">
+          <button aria-pressed="true" data-f="all">All</button>
+          <button aria-pressed="false" data-f="Perimenopause">Perimenopause</button>
+          <button aria-pressed="false" data-f="Caregiving">Caregiving</button>
+          <button aria-pressed="false" data-f="Been there">Been there</button>
+        </div>
+      </div>
+      <div class="grid-3" id="match-grid"></div>
+    </section>
+
+    <!-- ================= CIRCLES ================= -->
+    <section class="view" id="view-circles" hidden>
+      <div class="view-head">
+        <div>
+          <div class="eyebrow">Circles</div>
+          <h1>Small groups, one transition each</h1>
+          <p>8 to 12 women, a trained host, and one money question per session. Circles run for 6 weeks, then members choose to renew or graduate.</p>
+        </div>
+      </div>
+      <div class="grid-3" id="circle-grid"></div>
+    </section>
+
+    <!-- ================= EVENTS ================= -->
+    <section class="view" id="view-events" hidden>
+      <div class="view-head">
+        <div>
+          <div class="eyebrow">Events</div>
+          <h1>In the room and online</h1>
+          <p>When you register, we match you with 3 attendees who share your transitions, so you arrive already knowing who to find.</p>
+        </div>
+      </div>
+      <div class="panel"><div class="list" id="event-list"></div></div>
+    </section>
+
+    <!-- ================= EMPLOYER ================= -->
+    <section class="view" id="view-employer" hidden>
+      <div class="view-head">
+        <div>
+          <div class="eyebrow">Employer view · sample pilot</div>
+          <h1>Northshore Group pilot, week 9 of 12</h1>
+          <p>What your people are navigating, in anonymised totals only. No individual member data ever reaches the employer.</p>
+        </div>
+        <button class="btn btn-ghost" id="export-btn">Prepare pilot report</button>
+      </div>
+
+      <div class="kpis">
+        <div class="panel kpi"><small>Employees enrolled</small><b>142</b><span class="delta">+18 since week 6</span></div>
+        <div class="panel kpi"><small>Active monthly</small><b>71%</b><span class="delta">+6 pts</span></div>
+        <div class="panel kpi"><small>Circles running</small><b>9</b><span class="delta">3 waitlisted</span></div>
+        <div class="panel kpi"><small>Said "I feel more in control"</small><b>64%</b><span class="delta">from 38% at start</span></div>
+      </div>
+
+      <div class="grid-2">
+        <div class="panel">
+          <div class="panel-head"><h2>Transitions your people are in</h2></div>
+          <div class="bars" id="bars"></div>
+          <p class="confidence" style="margin-top:14px">Members can hold more than one transition. Groups under 5 people are hidden.</p>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><h2>EU Pay Transparency readiness</h2></div>
+          <div class="list">
+            <div class="row"><div class="grow">Gender pay gap baseline shared</div><span class="status done">Done</span></div>
+            <div class="row"><div class="grow">Employee pay-rights session held</div><span class="status done">Done</span></div>
+            <div class="row"><div class="grow">Career-break return policy reviewed</div><span class="status todo">In progress</span></div>
+            <div class="row"><div class="grow">Joint pay assessment support plan</div><span class="status todo">Week 11</span></div>
+          </div>
+          <p class="privacy-note" style="margin-top:14px">FemNEST supports the Directive's employee-facing side: pay-rights education and closing the gaps women meet at transitions. Your legal reporting stays with HR and counsel.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function () {
+  const COLORS = ['#f2cdfc', '#deea9e', '#eee7ce', '#ffc9a8', '#bcd0ff'];
+
+  const MATCHES = [
+    { id: 'm1', name: 'Eleni K.', init: 'EK', city: 'Nicosia', score: 94, tags: ['Perimenopause', 'Caregiving'], mode: 'Same stage',
+      why: ['Both in perimenopause, both caring for a parent', 'Both considering a 4-day week', 'Both want accountability'] },
+    { id: 'm2', name: 'Sofia P.', init: 'SP', city: 'Limassol', score: 89, tags: ['Caregiving', 'Been there'], mode: 'Been there',
+      why: ['Cared for her father for 3 years while working', 'Negotiated flexible hours without losing pension contributions', 'Offers 1 coffee a month to newer members'] },
+    { id: 'm3', name: 'Anna M.', init: 'AM', city: 'Larnaca', score: 86, tags: ['Perimenopause'], mode: 'Same stage',
+      why: ['Same transition, same age band', 'Also in finance, also rethinking her career timeline'] },
+    { id: 'm4', name: 'Christina V.', init: 'CV', city: 'Paphos', score: 82, tags: ['Perimenopause', 'Been there'], mode: 'Been there',
+      why: ['Went through menopause at work 4 years ago', 'Rebuilt her savings plan afterwards'] },
+    { id: 'm5', name: 'Maya R.', init: 'MR', city: 'Online', score: 78, tags: ['Caregiving'], mode: 'Same stage',
+      why: ['Caring for a parent with dementia', 'Wants company, not advice'] },
+    { id: 'm6', name: 'Irene L.', init: 'IL', city: 'Nicosia', score: 74, tags: ['Perimenopause'], mode: 'Same stage',
+      why: ['Tracking symptoms and sick days', 'Joining the Thursday circle too'] }
+  ];
+
+  const CIRCLES = [
+    { id: 'c1', name: 'Perimenopause & your paycheck', tag: 'Perimenopause', when: 'Thursdays, 19:00 · online', members: 9, cap: 12, host: 'Hosted by a FemNEST guide',
+      desc: 'How symptoms show up at work, what to ask HR for, and protecting your income while you figure it out.', prompt: 'This week: "What would you ask for if you knew the answer was yes?"' },
+    { id: 'c2', name: 'Caring and earning', tag: 'Caregiving', when: 'Tuesdays, 12:30 · online', members: 11, cap: 12, host: 'Hosted by a FemNEST guide',
+      desc: 'For women caring for a parent, partner or child with extra needs while holding a job.', prompt: 'This week: mapping the hidden costs of care.' },
+    { id: 'c3', name: 'Fertility & finances', tag: 'Fertility', when: 'Mondays, 19:30 · online', members: 7, cap: 10, host: 'Hosted by a FemNEST guide',
+      desc: 'Treatment costs, time off, and planning money around an uncertain timeline.', prompt: 'This week: talking to your employer about appointments.' },
+    { id: 'c4', name: 'Back from maternity leave', tag: 'Maternity', when: 'Wednesdays, 13:00 · online', members: 10, cap: 12, host: 'Hosted by a FemNEST guide',
+      desc: 'Childcare maths, going part-time, and keeping your pay progression on track.', prompt: 'This week: the real cost of part-time over 10 years.' },
+    { id: 'c5', name: 'Starting over after divorce', tag: 'Divorce', when: 'Alternate Sundays, 18:00 · Limassol', members: 6, cap: 10, host: 'Hosted by a FemNEST guide',
+      desc: 'Separating finances, rebuilding credit and a pension in your own name.', prompt: 'This week: your first solo budget.' },
+    { id: 'c6', name: 'Living with PCOS or endometriosis', tag: 'Health', when: 'Thursdays, 12:30 · online', members: 8, cap: 12, host: 'Hosted by a FemNEST guide',
+      desc: 'Managing a long-term condition at work, sick pay, and health costs.', prompt: 'This week: what to put in writing with your manager.' }
+  ];
+
+  const EVENTS = [
+    { id: 'e1', d: '02', m: 'Oct', title: 'Circle: Perimenopause & your paycheck', meta: 'Thu · 19:00 · Online', tag: 'Circle' },
+    { id: 'e2', d: '15', m: 'Oct', title: 'Ask a pension adviser: caregiving gaps', meta: 'Wed · 12:30 · Online · 45 min', tag: 'Workshop' },
+    { id: 'e3', d: '06', m: 'Nov', title: 'Money coffee: Limassol', meta: 'Fri · 08:30 · Limassol · 12 places', tag: 'Meet-up' },
+    { id: 'e4', d: '13', m: 'Feb', title: 'Femmes, Finances & Freedom', meta: 'Sat 13 Feb 2027 · Cyprus · flagship event', tag: 'Flagship', flagship: true }
+  ];
+
+  const TRANSITIONS = [
+    { id: 'perimenopause', stage: 'Health', name: 'Perimenopause', mine: true,
+      changes: 'Symptoms can mean sick days, reduced hours or stepping back from promotion.',
+      moment: 'Before you change your hours or turn down a role.',
+      outcome: 'Protected income and pension contributions through the transition.',
+      steps: ['Log symptoms and days affected for 4 weeks', 'Read your employer\'s leave and flexible-work policy', 'Ask HR about reasonable adjustments before reducing hours', 'Check how part-time would change your pension contributions', 'Join the Perimenopause & your paycheck circle'],
+      done: 3, confidence: 'Evidence: strong for workforce exit risk; Cyprus-specific data limited.' },
+    { id: 'caregiving', stage: 'Family', name: 'Caring for a parent', mine: true,
+      changes: 'Unpaid care often leads to fewer hours, a career break or leaving work, with pension gaps that last.',
+      moment: 'Before you reduce hours, and again at every care review.',
+      outcome: 'Care arranged without a permanent hit to your pension.',
+      steps: ['Write down the hours you care each week', 'Check your social insurance record for gaps', 'Ask about carer leave and flexible working', 'Split care costs fairly with siblings, in writing', 'Book a pension check before going part-time'],
+      done: 1, confidence: 'Evidence: strong across the EU for care-related pension gaps.' },
+    { id: 'fertility', stage: 'Health', name: 'Fertility treatment', mine: false,
+      changes: 'Treatment costs, time off for appointments, and an uncertain timeline.',
+      moment: 'Before the first round of treatment.',
+      outcome: 'A treatment budget that doesn\'t drain your emergency fund.',
+      steps: ['Price a full cycle, including medication', 'Check what your insurance and employer cover', 'Set a separate treatment savings pot', 'Plan how to request time off', 'Decide your financial limit in advance'],
+      done: 0, confidence: 'Evidence: moderate; costs vary widely by country.' },
+    { id: 'maternity', stage: 'Family', name: 'Maternity & return', mine: false,
+      changes: 'Lower pay during leave, then childcare costs and pressure to go part-time.',
+      moment: 'In the second trimester, before leave starts.',
+      outcome: 'A return plan that keeps your pay progression on track.',
+      steps: ['Calculate your income during leave', 'Keep up pension contributions if you can', 'Price childcare for your area', 'Agree a return-to-work conversation date', 'Model full-time vs part-time over 10 years'],
+      done: 0, confidence: 'Evidence: strong for the long-term motherhood pay penalty.' },
+    { id: 'divorce', stage: 'Relationships', name: 'Divorce or separation', mine: false,
+      changes: 'Household income splits, and pensions are often overlooked in settlements.',
+      moment: 'Before you agree any settlement.',
+      outcome: 'A fair share of pensions and a credit record in your own name.',
+      steps: ['List all joint and individual assets', 'Include pensions in the settlement discussion', 'Open an account in your own name', 'Build a solo monthly budget', 'Get independent legal and financial advice'],
+      done: 0, confidence: 'Evidence: strong; pensions left out of many settlements.' },
+    { id: 'pcos', stage: 'Health', name: 'PCOS or endometriosis', mine: false,
+      changes: 'Recurring sick days and health costs over many years.',
+      moment: 'At diagnosis, or when symptoms start affecting work.',
+      outcome: 'Adjustments in writing and a health-costs budget.',
+      steps: ['Track days and costs linked to the condition', 'Ask for adjustments in writing', 'Check sick-pay rules and insurance', 'Budget for ongoing health costs'],
+      done: 0, confidence: 'Evidence: emerging; underdiagnosis limits data.' },
+    { id: 'break', stage: 'Work', name: 'Career break', mine: false,
+      changes: 'No income or contributions, and a harder return at a lower level.',
+      moment: 'Before the break starts.',
+      outcome: 'A break with a plan to protect contributions and re-entry.',
+      steps: ['Decide how long the break can last', 'Check voluntary pension contributions', 'Keep one professional link active', 'Set a re-entry date and salary floor'],
+      done: 0, confidence: 'Evidence: strong for lifetime earnings impact.' },
+    { id: 'widowhood', stage: 'Relationships', name: 'Losing a partner', mine: false,
+      changes: 'Sudden change in income, benefits and financial responsibility.',
+      moment: 'In the first 3 months, and again at 12 months.',
+      outcome: 'Stable income and no rushed decisions.',
+      steps: ['Pause big financial decisions for 6 months', 'Check survivor pension and benefit entitlements', 'List every account and policy', 'Find one trusted adviser'],
+      done: 0, confidence: 'Evidence: moderate.' }
+  ];
+
+  const BARS = [
+    ['Perimenopause / menopause', 41], ['Caring for a parent', 33], ['Return from maternity', 24],
+    ['Fertility treatment', 11], ['Divorce or separation', 9], ['Long-term health condition', 8]
+  ];
+
+  const state = { connected: new Set(), joined: new Set(['c1']), registered: new Set(['e1']), filter: 'all', transition: 'perimenopause', checks: {} };
+  TRANSITIONS.forEach(t => { state.checks[t.id] = t.steps.map((_, i) => i < t.done); });
+
+  const $ = (s, el = document) => el.querySelector(s);
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const color = i => COLORS[i % COLORS.length];
+
+  let toastTimer;
+  function toast(msg) {
+    const t = $('#toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => t.classList.remove('show'), 2400);
+  }
+
+  function show(view) {
+    document.querySelectorAll('.view').forEach(v => { v.hidden = v.id !== 'view-' + view; });
+    document.querySelectorAll('.nav button').forEach(b => {
+      if (b.dataset.view === view) b.setAttribute('aria-current', 'page'); else b.removeAttribute('aria-current');
+    });
+    window.scrollTo(0, 0);
+    try { localStorage.setItem('fn-hub-view', view); } catch (e) {}
+  }
+
+  function matchCard(m, i) {
+    const on = state.connected.has(m.id);
+    return `<div class="panel match-card">
+      <div class="match-top">
+        <div class="avatar" style="background:${color(i)}">${m.init}</div>
+        <div><h3>${esc(m.name)}</h3><div class="meta" style="color:var(--ink-faint);font-size:13px">${esc(m.city)} · ${esc(m.mode)}</div></div>
+        <div class="score"><b>${m.score}%</b><small>fit</small></div>
+      </div>
+      <div class="chips">${m.tags.map(t => `<span class="chip ${t === 'Been there' ? 'green' : 'lav'}">${esc(t)}</span>`).join('')}</div>
+      <div class="why"><b style="color:var(--ink);font-weight:600">Why you match</b><ul>${m.why.map(w => `<li>${esc(w)}</li>`).join('')}</ul></div>
+      <div class="match-actions">
+        <button class="btn ${on ? 'btn-done' : 'btn-primary'}" data-connect="${m.id}">${on ? 'Intro requested' : 'Request intro'}</button>
+        <button class="btn btn-ghost" data-skip="${m.id}">Not now</button>
+      </div>
+    </div>`;
+  }
+
+  function renderMatches() {
+    const list = MATCHES.filter(m => state.filter === 'all' || m.tags.includes(state.filter) || m.mode === state.filter);
+    $('#match-grid').innerHTML = list.map((m, i) => matchCard(m, MATCHES.indexOf(m))).join('');
+    $('#home-matches').innerHTML = MATCHES.slice(0, 3).map((m, i) => matchCard(m, i)).join('');
+  }
+
+  function renderCircles() {
+    $('#circle-grid').innerHTML = CIRCLES.map((c, i) => {
+      const on = state.joined.has(c.id);
+      const count = c.members + (on && c.id !== 'c1' ? 1 : 0);
+      const full = count >= c.cap && !on;
+      return `<div class="panel circle-card">
+        <span class="chip lav" style="align-self:start">${esc(c.tag)}</span>
+        <h3>${esc(c.name)}</h3>
+        <p>${esc(c.desc)}</p>
+        <div class="prompt">${esc(c.prompt)}</div>
+        <div class="meta" style="color:var(--ink-faint);font-size:13px">${esc(c.when)}<br>${esc(c.host)}</div>
+        <div class="circle-foot">
+          <div style="display:flex;align-items:center;gap:8px">
+            <div class="stack">${[0,1,2].map(k => `<div class="avatar" style="background:${color(i + k)}">${'ABCDEFGHIJ'[(i + k) % 10]}</div>`).join('')}</div>
+            <span style="font-size:13px;color:var(--ink-soft);font-variant-numeric:tabular-nums">${count}/${c.cap}</span>
+          </div>
+          <button class="btn ${on ? 'btn-done' : full ? 'btn-ghost' : 'btn-primary'}" data-join="${c.id}">${on ? 'Joined' : full ? 'Join waitlist' : 'Join circle'}</button>
+        </div>
+      </div>`;
+    }).join('');
+  }
+
+  function eventRow(e) {
+    const on = state.registered.has(e.id);
+    return `<div class="row">
+      <div class="date-tile" ${e.flagship ? 'style="background:var(--orange);color:#fff"' : ''}><b>${e.d}</b><span>${e.m}</span></div>
+      <div class="grow"><b style="font-weight:600">${esc(e.title)}</b><div class="meta">${esc(e.meta)}</div></div>
+      <button class="btn ${on ? 'btn-done' : 'btn-ghost'}" data-register="${e.id}">${on ? 'Going' : 'Register'}</button>
+    </div>`;
+  }
+  function renderEvents() {
+    $('#event-list').innerHTML = EVENTS.map(eventRow).join('');
+    $('#home-events').innerHTML = EVENTS.slice(0, 3).map(eventRow).join('');
+  }
+
+  function renderMap() {
+    const stages = [...new Set(TRANSITIONS.map(t => t.stage))];
+    $('#tlist').innerHTML = stages.map(s => `<div class="stage-label">${esc(s)}</div>` +
+      TRANSITIONS.filter(t => t.stage === s).map(t =>
+        `<button role="tab" aria-selected="${t.id === state.transition}" data-t="${t.id}">${esc(t.name)}${t.mine ? '<span class="dot" title="You\'re in this transition"></span>' : ''}</button>`
+      ).join('')).join('');
+
+    const t = TRANSITIONS.find(x => x.id === state.transition);
+    const checks = state.checks[t.id];
+    const doneCount = checks.filter(Boolean).length;
+    $('#tdetail').innerHTML = `
+      <div class="panel-head" style="margin:0">
+        <div><span class="chip ${t.mine ? 'blue' : ''}">${t.mine ? 'Your transition' : esc(t.stage)}</span><h2 style="margin-top:10px;font-size:1.5rem">${esc(t.name)}</h2></div>
+        <span style="font-size:13px;color:var(--ink-soft);font-variant-numeric:tabular-nums">${doneCount} of ${checks.length} done</span>
+      </div>
+      <div class="flow">
+        <div class="flow-step"><div class="k">What changes</div><p>${esc(t.changes)}</p></div>
+        <div class="flow-step act"><div class="k">Best moment to act</div><p>${esc(t.moment)}</p></div>
+        <div class="flow-step"><div class="k">Outcome to aim for</div><p>${esc(t.outcome)}</p></div>
+      </div>
+      <div>
+        <h3 style="margin-bottom:10px">Your steps</h3>
+        <ul class="checklist">${t.steps.map((s, i) =>
+          `<li><label><input type="checkbox" id="chk-${t.id}-${i}" data-step="${i}" ${checks[i] ? 'checked' : ''}> <span>${esc(s)}</span></label></li>`).join('')}</ul>
+      </div>
+      <p class="confidence">${esc(t.confidence)}</p>`;
+  }
+
+  function renderBars() {
+    const max = 50;
+    $('#bars').innerHTML = BARS.map(([label, n]) =>
+      `<div class="bar-row"><span>${esc(label)}</span><div class="track" aria-hidden="true"><i style="width:${(n / max) * 100}%"></i></div><span>${n}</span></div>`).join('');
+  }
+
+  document.addEventListener('click', e => {
+    const b = e.target.closest('button');
+    if (!b) return;
+    if (b.dataset.view) show(b.dataset.view);
+    if (b.dataset.go) {
+      if (b.dataset.transition) { state.transition = b.dataset.transition; renderMap(); }
+      show(b.dataset.go);
+    }
+    if (b.dataset.connect) {
+      const id = b.dataset.connect, m = MATCHES.find(x => x.id === id);
+      if (state.connected.has(id)) { state.connected.delete(id); toast('Intro request withdrawn'); }
+      else { state.connected.add(id); toast(`Intro requested. ${m.name.split(' ')[0]} will see it when she next logs in.`); }
+      renderMatches();
+    }
+    if (b.dataset.skip) {
+      const m = MATCHES.find(x => x.id === b.dataset.skip);
+      toast(`Got it. We'll show fewer matches like ${m.name.split(' ')[0]}.`);
+    }
+    if (b.dataset.join) {
+      const id = b.dataset.join, c = CIRCLES.find(x => x.id === id);
+      if (state.joined.has(id)) { state.joined.delete(id); toast(`Left ${c.name}`); }
+      else { state.joined.add(id); toast(`Joined ${c.name}. First session: ${c.when.split(' · ')[0]}.`); }
+      renderCircles();
+    }
+    if (b.dataset.register) {
+      const id = b.dataset.register, ev = EVENTS.find(x => x.id === id);
+      if (state.registered.has(id)) { state.registered.delete(id); toast('Registration cancelled'); }
+      else { state.registered.add(id); toast(`You're going to ${ev.title}. We'll match you with 3 attendees a week before.`); }
+      renderEvents();
+    }
+    if (b.dataset.t) { state.transition = b.dataset.t; renderMap(); }
+    if (b.dataset.f) {
+      state.filter = b.dataset.f;
+      document.querySelectorAll('#match-filters button').forEach(x => x.setAttribute('aria-pressed', x.dataset.f === state.filter));
+      renderMatches();
+    }
+    if (b.id === 'export-btn') toast('In the real product, this builds the pilot report for your HR team.');
+  });
+
+  document.addEventListener('change', e => {
+    const i = e.target.dataset && e.target.dataset.step;
+    if (i === undefined) return;
+    state.checks[state.transition][+i] = e.target.checked;
+    renderMap();
+    const inp = document.getElementById(`chk-${state.transition}-${i}`);
+    if (inp) inp.focus();
+    if (state.checks[state.transition].every(Boolean)) toast('Every step done. That transition is covered.');
+  });
+
+  renderMatches(); renderCircles(); renderEvents(); renderMap(); renderBars();
+  let start = 'home';
+  try { start = localStorage.getItem('fn-hub-view') || 'home'; } catch (e) {}
+  const hash = (location.hash || '').slice(1);
+  if (['home', 'map', 'matches', 'circles', 'events', 'employer'].includes(hash)) start = hash;
+  if (!document.getElementById('view-' + start)) start = 'home';
+  show(start);
+})();
+</script>
