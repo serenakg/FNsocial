@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FemNEST: Οικονομική ελευθερία για τις γυναίκες, στις στιγμές που μετράνε</title>
+  <meta name="description" content="Το FemNEST χαρτογραφεί 50+ μεταβάσεις στην υγεία και τη ζωή των γυναικών και τις οικονομικές τους συνέπειες, με την κοινότητα πρώτα, φτιαγμένο με και για γυναίκες. Μπες στη λίστα αναμονής." />
+  <link rel="canonical" href="https://www.yourfemnest.com/el/" />
+  <link rel="alternate" hreflang="en" href="https://www.yourfemnest.com/" />
+  <link rel="alternate" hreflang="el" href="https://www.yourfemnest.com/el/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.yourfemnest.com/" />
+
+  <!-- ================= SOCIAL PREVIEW (Open Graph / Twitter) ================= -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="FemNEST" />
+  <meta property="og:url" content="https://www.yourfemnest.com/el/" />
+  <meta property="og:locale" content="el_GR" />
+  <meta property="og:locale:alternate" content="en_GB" />
+  <meta property="og:title" content="FemNEST: Οικονομική ελευθερία για τις γυναίκες, στις στιγμές που μετράνε" />
+  <meta property="og:description" content="Το FemNEST χαρτογραφεί 50+ μεταβάσεις στην υγεία και τη ζωή των γυναικών και τις οικονομικές τους συνέπειες, με την κοινότητα πρώτα, φτιαγμένο με και για γυναίκες. Μπες στη λίστα αναμονής." />
+  <meta property="og:image" content="https://www.yourfemnest.com/assets/images/social/femnest-og-share.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="FemNEST: Οικονομική ελευθερία για τις γυναίκες, στις στιγμές που μετράνε" />
+  <meta name="twitter:description" content="Το FemNEST χαρτογραφεί 50+ μεταβάσεις στην υγεία και τη ζωή των γυναικών και τις οικονομικές τους συνέπειες, με την κοινότητα πρώτα, φτιαγμένο με και για γυναίκες. Μπες στη λίστα αναμονής." />
+  <meta name="twitter:image" content="https://www.yourfemnest.com/assets/images/social/femnest-og-share.jpg" />
+
+  <!-- ================= STRUCTURED DATA (SEO) =================
+       Helps Google understand FemNEST as a distinct organisation/brand
+       when someone searches its name, rather than just an unrecognised
+       page of text. See README.md "SEO" for the rest of the checklist
+       (robots.txt, sitemap.xml, canonical tags on every page). -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "FemNEST",
+    "url": "https://www.yourfemnest.com/",
+    "logo": "https://www.yourfemnest.com/assets/logos/femnest-logo-horizontal-blue.png",
+    "description": "Το FemNEST χαρτογραφεί 50+ μεταβάσεις στην υγεία και τη ζωή των γυναικών και τις οικονομικές τους συνέπειες, με την κοινότητα πρώτα, φτιαγμένο με και για γυναίκες.",
+    "founder": {
+      "@type": "Person",
+      "name": "Serena Gasparini"
+    },
+    "sameAs": [
+      "https://linkedin.com/company/femnest",
+      "https://www.instagram.com/yourfemnest/"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "FemNEST",
+    "url": "https://www.yourfemnest.com/el/",
+    "inLanguage": "el"
+  }
+  </script>
+
+  <!-- Poppins loaded here as a temporary stand-in for the brand's
+       specified Open Sauce (body/UI font). Bitter (headings) is
+       self-hosted via @font-face in css/styles.css. See that file's
+       top comment and README.md "Fonts" for the full picture. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <!-- Greek pages only: Bitter and Poppins have no Greek glyphs, so Greek
+       characters fall back to Roboto Slab (headings) and Commissioner
+       (body), both Greek-complete. Latin text still renders in the brand
+       fonts. See README.md "Greek version". -->
+  <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400..700&family=Roboto+Slab:wght@400..800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="icon" href="../assets/icons/favicon-fn-32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="../assets/icons/favicon-fn-180.png" sizes="180x180" type="image/png" />
+  <link rel="apple-touch-icon" href="../assets/icons/favicon-fn-180.png" />
+
+  <!-- ================= ANALYTICS (not active — needs real IDs) =================
+       Commented out until Serena supplies real GA4/Hotjar IDs and confirms
+       a cookie-consent approach (Cyprus/EU visitors mean GDPR/ePrivacy
+       rules apply to any tracking script). See README.md "Analytics".
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-REPLACE_WITH_REAL_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-REPLACE_WITH_REAL_ID');
+  </script>
+
+  <script>
+    (function(h,o,t,j,a,r){
+        h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments); };
+        h._hjSettings = { hjid: 0000000, hjsv: 6 };
+        a = o.getElementsByTagName('head')[0];
+        r = o.createElement('script'); r.async = 1;
+        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+  </script>
+  -->
+
+  <!-- ================= VERCEL WEB ANALYTICS ================= -->
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+
+  <!-- ================= VERCEL SPEED INSIGHTS ================= -->
+  <script>
+    window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Μετάβαση στο περιεχόμενο</a>
+
+  <!-- ================= HEADER / NAV ================= -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Κύρια πλοήγηση">
+      <a class="nav__brand" href="index.html">
+        <img src="../assets/logos/femnest-logo-horizontal-blue.png" alt="FemNEST" />
+      </a>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="primaryNav">
+        <span class="visually-hidden">Μενού</span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+      </button>
+      <ul class="nav__links" id="primaryNav">
+        <li><a href="index.html" class="is-current">Αρχική</a></li>
+        <li><a href="about.html">Σχετικά</a></li>
+        <li><a href="events.html">Κοινότητα</a></li>
+        <li><a href="investors.html">Επενδύσεις</a></li>
+        <li class="nav__lang"><a href="../index.html" hreflang="en" lang="en" aria-label="English version">EN</a></li>
+        <li><a class="btn btn-primary" href="#join">Λίστα αναμονής</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+      <div class="blob blob--blue" aria-hidden="true"></div>
+      <div class="blob blob--orange" aria-hidden="true"></div>
+      <div class="blob blob--green" aria-hidden="true"></div>
+
+      <div class="container hero__inner">
+        <span class="hero__eyebrow">Πιλοτικό στάδιο · Κύπρος</span>
+        <h1>Οικονομική ελευθερία για τις γυναίκες, χαρτογραφημένη στις <span class="highlight">στιγμές που μετράνε</span></h1>
+        <p class="hero__subhead">Το FemNEST είναι η πρώτη πλατφόρμα που χαρτογραφεί 50+ μεταβάσεις στην υγεία και τη ζωή των γυναικών, από τη γονιμότητα έως την εμμηνόπαυση, και τις πραγματικές οικονομικές τους συνέπειες, ώστε άτομα, εργοδότες και συνεργάτες να δρουν σε ό,τι μετράει περισσότερο, αντί να μαντεύουν.</p>
+        <div class="hero__cta-row">
+          <img class="hero__wave-flourish" src="../assets/icons/wave-flourish-blue.png" alt="" aria-hidden="true" />
+          <div class="hero__ctas">
+            <a class="btn btn-primary" href="#join">Μπες στη λίστα αναμονής</a>
+            <a class="btn btn-secondary" href="event-femmes-finances-freedom.html">Δες την εκδήλωση</a>
+          </div>
+        </div>
+        <div class="hero__proof">
+          <div class="avatar-stack">
+            <span class="avatar-stack__item">S</span>
+            <span class="avatar-stack__item">M</span>
+            <span class="avatar-stack__item">A</span>
+            <span class="avatar-stack__item">+</span>
+          </div>
+          <span class="hero__proof-text">130+ γυναίκες ήδη μαζί μας</span>
+        </div>
+      </div>
+
+      <!-- ================= ONE-LINE EXPLAINER TICKER =================
+           What FemNEST is, in plain English, no jargon: the "explain it
+           to your gran" version. Scrolls continuously underneath the
+           "130+ women" proof line. -->
+      <div class="explainer-ticker" aria-label="Τι είναι το FemNEST">
+        <div class="explainer-ticker__track">
+          <div class="explainer-ticker__set">
+            <span class="explainer-ticker__item"><span class="explainer-ticker__dot" aria-hidden="true"></span>Το FemNEST βοηθά τις γυναίκες να φροντίζουν τα οικονομικά τους στις μεγαλύτερες αλλαγές της ζωής, όπως ένα μωρό, η απώλεια μιας δουλειάς ή η εμμηνόπαυση.</span>
+            <span class="explainer-ticker__item"><span class="explainer-ticker__dot" aria-hidden="true"></span>Ξεκίνησε από μια γυναίκα στην Κύπρο που δεν έβρισκε τη στήριξη που χρειαζόταν, και έτσι τη δημιούργησε η ίδια.</span>
+            <span class="explainer-ticker__item"><span class="explainer-ticker__dot" aria-hidden="true"></span>Είναι πρώτα απ’ όλα κοινότητα, με πάνω από 130 γυναίκες που ήδη μοιράζονται αληθινές ιστορίες και αληθινή στήριξη.</span>
+          </div>
+          <div class="explainer-ticker__set" aria-hidden="true">
+            <span class="explainer-ticker__item"><span class="explainer-ticker__dot" aria-hidden="true"></span>Το FemNEST βοηθά τις γυναίκες να φροντίζουν τα οικονομικά τους στις μεγαλύτερες αλλαγές της ζωής, όπως ένα μωρό, η απώλεια μιας δουλειάς ή η εμμηνόπαυση.</span>
+            <span class="explainer-ticker__item"><span class="explainer-ticker__dot" aria-hidden="true"></span>Ξεκίνησε από μια γυναίκα στην Κύπρο που δεν έβρισκε τη στήριξη που χρειαζόταν, και έτσι τη δημιούργησε η ίδια.</span>
+            <span class="explainer-ticker__item"><span class="explainer-ticker__dot" aria-hidden="true"></span>Είναι πρώτα απ’ όλα κοινότητα, με πάνω από 130 γυναίκες που ήδη μοιράζονται αληθινές ιστορίες και αληθινή στήριξη.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROBLEM STATEMENT =================
+         Figure and headline are sourced from Serena's own pitch deck
+         (Market Problem slide). The "Meet Maria" persona narrative that
+         used to sit below this was cut site-wide per Serena's request —
+         see the dev brief in this project's history for the full list
+         of what was removed and why. -->
+    <section class="section section--alt">
+      <div class="container">
+        <span class="section__kicker" data-reveal>Το πρόβλημα</span>
+        <div class="problem-grid" data-reveal>
+          <div class="problem-stat">
+            <span class="problem-stat__figure" data-value="436437">&euro;436.437</span>
+            <p class="problem-stat__label">Μέσος πλούτος που χάνει μια γυναίκα στην Κύπρο σε όλη της τη ζωή</p>
+          </div>
+          <div class="problem-text">
+            <h2>Οι γυναίκες κερδίζουν λιγότερα, κάνουν περισσότερα διαλείμματα στην καριέρα τους, σηκώνουν το μεγαλύτερο βάρος της φροντίδας και βγαίνουν στη σύνταξη με <strong>22% μικρότερες συντάξεις</strong>.</h2>
+            <p>Μια ζωή αόρατων ποινών. Καμία οικονομική πλατφόρμα δεν φτιάχτηκε για να τις λύσει.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= WHY NOW / STATS =================
+         Reframed as a zoom-out story — Paphos -> Cyprus -> the EU ->
+         globally — instead of four unrelated stats. The first two
+         cards are FemNEST's own traction (real numbers from Serena,
+         not third-party research — no "Source:" citation, same
+         treatment as the company-fact figures on investors.html); the
+         EU/global cards are the sourced, cited market-gap stats that
+         justify the next two rings of scale. -->
+    <section class="section section--lavender section--tilt">
+      <div class="container">
+        <div class="section__header" data-reveal>
+          <span class="section__kicker">Γιατί τώρα</span>
+          <h2>Οι αριθμοί πίσω από το FemNEST</h2>
+        </div>
+        <p class="stats-intro" data-reveal>Από μια κατάμεστη αίθουσα στην Πάφο μέχρι τη νομοθεσία που αλλάζει τον τρόπο που η Ευρώπη πληρώνει τις γυναίκες: αυτά είναι όσα χτίζουμε.</p>
+        <div class="stats-grid">
+          <div class="stat-card" data-reveal>
+            <span class="stat-card__scope">Ο αντίκτυπός μας στην Πάφο</span>
+            <span class="stat-card__number" data-value="40">40</span>
+            <p class="stat-card__label">Γυναίκες στην εκδήλωση έναρξης, με όλα τα εισιτήρια εξαντλημένα</p>
+            <p class="stat-card__source">Φεβρουάριος 2026</p>
+          </div>
+          <div class="stat-card" data-reveal>
+            <span class="stat-card__scope">Ο αντίκτυπός μας σε όλη την Κύπρο</span>
+            <span class="stat-card__number" data-value="130+">130+</span>
+            <p class="stat-card__label">Γυναίκες στην κοινότητα του FemNEST</p>
+            <p class="stat-card__source">Μεγαλώνει κάθε εβδομάδα</p>
+          </div>
+          <div class="stat-card" data-reveal>
+            <span class="stat-card__scope">Αυτό που αντιμετωπίζουμε</span>
+            <span class="stat-card__number" data-value="92%">92%</span>
+            <p class="stat-card__label">των γυναικών στην Κύπρο έχουν καθημερινές ευθύνες φροντίδας, σε ζευγάρια με παιδιά &mdash; έναντι 70% των ανδρών</p>
+            <p class="stat-card__source">Πηγή: <a href="https://eige.europa.eu/publications-resources/publications/factsheet-gender-gaps-care-cyprus?language_content_entity=en" target="_blank" rel="noopener">EIGE, Gender gaps in care: Cyprus</a></p>
+          </div>
+          <div class="stat-card" data-reveal>
+            <span class="stat-card__scope">Αυτό που αντιμετωπίζουμε</span>
+            <span class="stat-card__number" style="font-size: 1.9rem;">Ιούνιος 2027</span>
+            <p class="stat-card__label">Προθεσμία συμμόρφωσης με την Οδηγία της ΕΕ για τη Διαφάνεια των Αμοιβών</p>
+            <p class="stat-card__source">Οι μεγάλοι εργοδότες πρέπει να αναφέρουν στοιχεία για το μισθολογικό χάσμα των φύλων έως αυτή την ημερομηνία</p>
+          </div>
+        </div>
+        <div class="press-mentions" data-reveal>
+          <span class="press-mentions__label">Όπως δημοσιεύτηκε σε <strong>Cyprus Mail</strong> &amp; <strong>The Future</strong></span>
+          <div class="press-mentions__grid">
+            <a class="press-card" href="https://cyprus-mail.com/2026/02/19/femnest-empowering-women-to-build-financial-freedom-at-every-life-stage" target="_blank" rel="noopener">
+              <span class="press-card__source">Cyprus Mail &middot; 19 Φεβ 2026</span>
+              <span class="press-card__title">FemNEST: empowering women to build financial freedom at every life stage</span>
+              <span class="press-card__cta">Διάβασε το άρθρο (στα αγγλικά) &rarr;</span>
+            </a>
+            <a class="press-card" href="https://cyprus-mail.com/2026/02/02/new-platform-on-womens-financial-autonomy-launches-in-paphos" target="_blank" rel="noopener">
+              <span class="press-card__source">Cyprus Mail &middot; 2 Φεβ 2026</span>
+              <span class="press-card__title">New platform on women&rsquo;s financial autonomy launches in Paphos</span>
+              <span class="press-card__cta">Διάβασε το άρθρο (στα αγγλικά) &rarr;</span>
+            </a>
+            <a class="press-card" href="https://thefuturemedia.eu/serena-kara-gasparini-why-women-in-cyprus-cant-afford-to-rest/" target="_blank" rel="noopener">
+              <span class="press-card__source">The Future &middot; 4 Σεπ 2026</span>
+              <span class="press-card__title">Serena Kara Gasparini: why women in Cyprus can&rsquo;t afford to rest</span>
+              <span class="press-card__cta">Διάβασε το άρθρο (στα αγγλικά) &rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= UPCOMING EVENT (homepage teaser) =================
+         Same .event-card--featured markup as the featured card on
+         events.html, reused here so the two stay visually identical.
+         Links straight to the event's own page, not the events listing. -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section__header" data-reveal>
+          <span class="section__kicker">Επερχόμενη εκδήλωση</span>
+          <h2>Έλα να βρεθούμε από κοντά</h2>
+        </div>
+        <div class="card-grid" data-reveal>
+          <article class="event-card event-card--featured">
+            <div class="ticket-date" aria-hidden="true">
+              <span class="ticket-date__month">Φεβ</span>
+              <span class="ticket-date__day">13</span>
+            </div>
+            <div class="event-card__body">
+              <span class="event-card__badge">Επερχόμενη</span>
+              <h2>Femmes, Finances &amp; Freedom</h2>
+              <div class="event-card__meta">
+                <span>13 Φεβρουαρίου 2027</span>
+                <span>Πάφος, Κύπρος</span>
+                <span class="tbc">Χώρος: θα ανακοινωθεί</span>
+              </div>
+              <p>Το σώμα σου, τα χρήματά σου, η πολιτική σου. Η δεύτερη κεντρική συνάντηση του FemNEST: μια μέρα για τις γυναίκες, τα χρήματα και τις στιγμές που αλλάζουν και τα δύο.</p>
+              <a class="btn btn-primary" href="event-femmes-finances-freedom.html">Δες την εκδήλωση</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ENDORSEMENT =================
+         Message of support for the launch event, from Josie
+         Christodoulou, Cyprus's Commissioner for Gender Equality. Its
+         own full-width panel/section, not a card floating inside
+         another section — per Serena's request. -->
+    <section class="section section--blue">
+      <div class="container">
+        <blockquote class="endorsement-quote" data-reveal>
+          <p>&laquo;Η ισότητα των φύλων δεν μπορεί να επιτευχθεί μόνο με πολιτικές. Χρειάζεται ισχυρές κοινότητες, ανοιχτό διάλογο και χώρους όπου οι γυναίκες μπορούν να μοιράζονται γνώση, να χτίζουν αυτοπεποίθηση και να εμπνέουν η μία την άλλη. Το FemNEST αντιπροσωπεύει ακριβώς έναν τέτοιο χώρο.&raquo;</p>
+          <cite>Josie Christodoulou &middot; Επίτροπος για την Ισότητα των Φύλων, Κυπριακή Δημοκρατία</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ================= MIND THE GAP (life-stage framework) =================
+         Reconstructed from FemNEST's own "Mind the Gap" research slide:
+         seven life stages, bridged by six named gaps, each gap positioned
+         at the real midpoint between the two stages it spans. The wave
+         motif is the connecting line — see README.md "Wave icon". -->
+    <section class="section">
+      <div class="container">
+        <div class="section__header" data-reveal>
+          <span class="section__kicker">Το πλαίσιο</span>
+          <h2>Mind the Gap</h2>
+          <p class="section__header-intro">Η οικονομική ζωή κάθε γυναίκας περνά από τα ίδια έξι στάδια. Σε καθένα ανοίγει ένα χάσμα, που μεγαλώνει σε όλη τη διάρκεια της ζωής αν δεν εντοπιστεί νωρίς.</p>
+        </div>
+        <div class="gap-timeline" data-reveal>
+          <p class="gap-timeline__intro">Πώς συνέβη αυτό; Το σώμα και η ζωή της άλλαξαν. Το εισόδημά της ακολούθησε. Κανείς δεν συνέδεσε τα δύο.</p>
+          <p class="gap-timeline__story">Αυτή είναι η ιστορία που το FemNEST δημιουργήθηκε για να αλλάξει. Γνώρισε την ιδρύτρια που τη ζει.</p>
+
+          <!-- Six gap cards, one per life-stage transition — each pairs
+               the sourced stat with a plain-language line explaining
+               what it actually means, and reads the same way stacked
+               (phone) or in a grid (desktop). Replaces the earlier
+               absolute-positioned horizontal diagram, which needed a
+               900px-wide scroll container to render at all and had no
+               explanatory text — see README.md "Mind the Gap". -->
+          <div class="gap-cards">
+            <div class="gap-card">
+              <span class="gap-card__stage">Εφηβεία &amp; ήβη &rarr; Αρχή καριέρας</span>
+              <span class="gap-card__stat">54%</span>
+              <span class="gap-card__label">Χάσμα εκπαίδευσης</span>
+              <p class="gap-card__explain">Περισσότερες από τις μισές νέες γυναίκες μπαίνουν στην αγορά εργασίας ήδη πίσω σε οικονομικό αλφαβητισμό και αυτοπεποίθηση.</p>
+            </div>
+            <div class="gap-card">
+              <span class="gap-card__stage">Αρχή καριέρας &rarr; Γονιμότητα &amp; υγεία</span>
+              <span class="gap-card__stat">&euro;0,85</span>
+              <span class="gap-card__label">Μισθολογικό χάσμα</span>
+              <p class="gap-card__explain">Για κάθε &euro;1 που κερδίζει ένας άνδρας, μια γυναίκα που κάνει την ίδια δουλειά παίρνει &euro;0,85, ένα χάσμα που ξεκινά από την πρώτη μέρα.</p>
+            </div>
+            <div class="gap-card">
+              <span class="gap-card__stage">Γονιμότητα &amp; υγεία &rarr; Μητρότητα &amp; εγκυμοσύνη</span>
+              <span class="gap-card__stat">1 στις 4</span>
+              <span class="gap-card__label">Χάσμα υγείας</span>
+              <p class="gap-card__explain">1 στις 4 γυναίκες αντιμετωπίζει σε αυτό το στάδιο ένα θέμα γονιμότητας ή υγείας με πραγματικό οικονομικό κόστος.</p>
+            </div>
+            <div class="gap-card">
+              <span class="gap-card__stage">Μητρότητα &amp; εγκυμοσύνη &rarr; Φροντίδα</span>
+              <span class="gap-card__stat">16 χρόνια</span>
+              <span class="gap-card__label">Χάσμα αμοιβών</span>
+              <p class="gap-card__explain">Οι αμοιβές και η εξέλιξη που χάνονται γύρω από τη μητρότητα ισοδυναμούν με 16 χρόνια εισοδήματος σε όλη τη διάρκεια της ζωής.</p>
+            </div>
+            <div class="gap-card">
+              <span class="gap-card__stage">Φροντίδα &rarr; Περιεμμηνόπαυση &amp; εμμηνόπαυση</span>
+              <span class="gap-card__stat">7,7 εκ.</span>
+              <span class="gap-card__label">Χάσμα φροντίδας</span>
+              <p class="gap-card__explain">7,7 εκατομμύρια γυναίκες στην Ευρώπη αποσύρονται από την αμειβόμενη εργασία για να φροντίσουν άλλους, και οι περισσότερες δεν καλύπτουν ποτέ πλήρως την οικονομική απώλεια.</p>
+            </div>
+            <div class="gap-card">
+              <span class="gap-card__stage">Περιεμμηνόπαυση &amp; εμμηνόπαυση &rarr; Συνταξιοδότηση</span>
+              <span class="gap-card__stat">22%</span>
+              <span class="gap-card__label">Χάσμα συντάξεων &amp; πλούτου</span>
+              <p class="gap-card__explain">Κάθε προηγούμενο χάσμα συσσωρεύεται: οι γυναίκες βγαίνουν στη σύνταξη με συντάξεις 22% μικρότερες από των ανδρών.</p>
+            </div>
+          </div>
+
+          <p class="gap-timeline__source-note">Πηγές: EIGE 2025 &middot; Eurostat 2024 &middot; WEF Global Gender Gap Report 2024.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FOUNDER STORY =================
+         Positioned after Mind the Gap (the problem, in full) and
+         before What is FemNEST (Section, below) — per Serena's
+         requested page flow: the problem → the gaps → the founder's
+         own story → the idea (What is FemNEST), full-width, right
+         underneath this panel. -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="founder-panel" data-reveal>
+          <div class="blob blob--orange" aria-hidden="true"></div>
+          <div class="blob blob--blue" aria-hidden="true"></div>
+          <div class="founder-panel__media">
+            <img src="../assets/images/serena-gasparini.jpg" alt="Η Serena Gasparini, ιδρύτρια του FemNEST" class="founder-panel__photo" />
+            <p class="founder-panel__caption">Serena Gasparini<span>Ιδρύτρια, FemNEST</span></p>
+          </div>
+          <div class="founder-panel__content">
+            <span class="section__kicker" style="font-size: 1.3rem;">Γιατί υπάρχει το FemNEST</span>
+            <p class="founder-panel__quote">Ίδρυσα το FemNEST γιατί έζησα το κενό ανάμεσα στο να χρειάζεσαι στήριξη και στο να τη βρίσκεις.</p>
+            <p class="founder-panel__body">Είμαι η Serena Gasparini. Ανάμεσα στην επαγγελματική εξουθένωση, μια ισόβια διάγνωση PCOS, θεραπείες γονιμότητας και έναν γιο που γεννήθηκε με μια πάθηση που χρειαζόταν την πλήρη παρουσία μου, έμαθα πόσο γρήγορα μπορεί να χαθεί η ανεξαρτησία μιας γυναίκας όταν κανείς δεν έχει φτιάξει τα εργαλεία για να τη στηρίξει. Έτσι δημιούργησα την πλατφόρμα που χρειαζόμουν και δεν έβρισκα.</p>
+            <p class="founder-panel__body"><a href="about.html#founder">Διάβασε ολόκληρη την ιστορία της Serena &rarr;</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= WHAT IS FEMNEST =================
+         Four pillars, straight from the pitch deck's own "Community /
+         Education / Investment Tools / Advocacy" slide — replaces the
+         earlier Understand/Protect/Act/Belong/Grow set, which wasn't
+         sourced from any FemNEST material. Four cards divide evenly
+         (2x2), so no filler tile is needed. Card is full-width,
+         stacked under the founder panel above, per Serena's request. -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section__header" data-reveal>
+          <span class="section__kicker">Η ιδέα</span>
+          <h2>Τι είναι το FemNEST</h2>
+        </div>
+
+        <div class="idea-layout">
+          <p class="idea-layout__intro" data-reveal>Το FemNEST είναι η πρώτη πλατφόρμα που χαρτογραφεί τις μεταβάσεις στην υγεία και τη ζωή των γυναικών (γονιμότητα, φροντίδα, διαλείμματα καριέρας, εμμηνόπαυση, απώλεια και άλλα) και τις πραγματικές οικονομικές τους συνέπειες. Βάζει την κοινότητα πρώτα, είναι χτισμένο από βιωμένη εμπειρία και σχεδιασμένο να δίνει στις γυναίκες τη γνώση, τα εργαλεία και τους ανθρώπους γύρω τους για να παίρνουν τεκμηριωμένες οικονομικές αποφάσεις σε κάθε στάδιο της ζωής τους.</p>
+
+          <!-- Hover/tap a pillar to flip it — front pairs a bold doodle
+               icon with a chunky wave-ribbon, back is the description.
+               All four cards are solid brand-color, each paired with a
+               contrasting wave and icon per Serena's reference mockups:
+               Community green/orange, Education orange/green,
+               Investment Tools lavender/blue, Advocacy blue/lavender. -->
+          <div class="pillars-grid" data-reveal>
+            <div class="pillar-card">
+              <div class="pillar-card__flip">
+                <div class="pillar-card__face pillar-card__face--front pillar-card--reverse-green">
+                  <img class="pillar-card__icon" src="../assets/icons/flip/chat-bubbles-v2.png" alt="" aria-hidden="true" />
+                  <h3>Κοινότητα</h3>
+                  <img class="pillar-card__ribbon" src="../assets/icons/wave-flourish-white.png" alt="" aria-hidden="true" />
+                </div>
+                <div class="pillar-card__face pillar-card__face--back pillar-card--reverse-cream">
+                  <p>Δίκτυο στήριξης από ομότιμες και επαγγελματίες: μια κοινότητα γυναικών που περνούν τις ίδιες μεταβάσεις, με τη στήριξη πιστοποιημένων επαγγελματιών, online και από κοντά.</p>
+                </div>
+              </div>
+            </div>
+            <div class="pillar-card">
+              <div class="pillar-card__flip">
+                <div class="pillar-card__face pillar-card__face--front pillar-card--reverse-orange">
+                  <img class="pillar-card__icon" src="../assets/icons/flip/binders.png" alt="" aria-hidden="true" />
+                  <h3>Εκπαίδευση</h3>
+                  <img class="pillar-card__ribbon" src="../assets/icons/wave-flourish-white.png" alt="" aria-hidden="true" />
+                </div>
+                <div class="pillar-card__face pillar-card__face--back pillar-card--reverse-cream">
+                  <p>Εργαλεία &amp; εκδηλώσεις οικονομικού αλφαβητισμού: εκπαίδευση για την Οδηγία της ΕΕ για τη Διαφάνεια των Αμοιβών, ώστε όλοι να μαθαίνουν τα νόμιμα δικαιώματά τους, την οικονομική τους πραγματικότητα και πώς να κλείσουν το χάσμα.</p>
+                </div>
+              </div>
+            </div>
+            <div class="pillar-card">
+              <div class="pillar-card__flip">
+                <div class="pillar-card__face pillar-card__face--front pillar-card--reverse-lavender">
+                  <img class="pillar-card__icon" src="../assets/icons/flip/dashboard-report.png" alt="" aria-hidden="true" />
+                  <h3>Επενδυτικά εργαλεία</h3>
+                  <img class="pillar-card__ribbon" src="../assets/icons/wave-flourish-white.png" alt="" aria-hidden="true" />
+                </div>
+                <div class="pillar-card__face pillar-card__face--back pillar-card--reverse-cream">
+                  <p>Παρακολούθηση που συνδέει τη ζωή και την υγεία με τα οικονομικά: 50+ μεταβάσεις στην υγεία και τη ζωή των γυναικών, συνδεδεμένες με εξατομικευμένα οικονομικά πλάνα. Κανένας ανταγωνιστής δεν το έχει φτιάξει: <strong>είναι δική μας πνευματική ιδιοκτησία</strong>.</p>
+                </div>
+              </div>
+            </div>
+            <div class="pillar-card">
+              <div class="pillar-card__flip">
+                <div class="pillar-card__face pillar-card__face--front pillar-card--reverse-blue">
+                  <img class="pillar-card__icon" src="../assets/icons/flip/microphone-v2.png" alt="" aria-hidden="true" />
+                  <h3>Συνηγορία</h3>
+                  <img class="pillar-card__ribbon" src="../assets/icons/wave-flourish-white.png" alt="" aria-hidden="true" />
+                </div>
+                <div class="pillar-card__face pillar-card__face--back pillar-card--reverse-cream">
+                  <p>Δεδομένα για εργοδότες &amp; φορείς χάραξης πολιτικής: συγκεντρωτικά, ανωνυμοποιημένα δεδομένα που αναδεικνύουν τη σύνδεση φροντίδας και οικονομικών, για εξυπνότερες παρεμβάσεις στον χώρο εργασίας και στις πολιτικές.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= COMMUNITY ANGLE ================= -->
+    <section class="section section--green section--tilt">
+      <div class="container">
+        <div class="section__header" data-reveal>
+          <span class="section__kicker">Πρώτα η κοινότητα</span>
+          <h2>Χτισμένο μαζί με την κοινότητα, όχι απλώς γι’ αυτήν</h2>
+        </div>
+        <p data-reveal style="font-size: 1.1rem;">Το FemNEST είναι κοινότητα πριν γίνει προϊόν. Αληθινές ιστορίες μελών, μια ζωντανή λίστα αναμονής με 130+ γυναίκες και εκδηλώσεις από κοντά έρχονται πρώτα· η πλατφόρμα χτίζεται γύρω από όσα χρειάζεται πραγματικά αυτή η κοινότητα, και όχι το αντίστροφο.</p>
+
+        <!-- Real photos from FemNEST's launch event, each wrapped in the
+             wave motif — see README.md "Photography & imagery" for how
+             to add/swap. -->
+        <div class="community-gallery" data-reveal>
+          <div class="community-gallery__item">
+            <div class="community-gallery__flip">
+              <div class="community-gallery__face community-gallery__face--front">
+                <img src="../assets/images/event/event-speaking-wave.jpg" alt="Η Serena Gasparini μιλά σε εκδήλωση του FemNEST" loading="lazy" />
+              </div>
+              <div class="community-gallery__face community-gallery__face--back">
+                <span>Εκεί όπου η υγεία και ο πλούτος των γυναικών είναι μία ιστορία, όχι δύο.</span>
+              </div>
+            </div>
+          </div>
+          <div class="community-gallery__item">
+            <div class="community-gallery__flip">
+              <div class="community-gallery__face community-gallery__face--front">
+                <img src="../assets/images/event/event-listening-wave.jpg" alt="Μια γυναίκα ακούει προσεκτικά σε εκδήλωση του FemNEST" loading="lazy" />
+              </div>
+              <div class="community-gallery__face community-gallery__face--back">
+                <span>Χτισμένο πάνω σε όσα μας δίδαξαν 50+ μεταβάσεις ζωής.</span>
+              </div>
+            </div>
+          </div>
+          <div class="community-gallery__item">
+            <div class="community-gallery__flip">
+              <div class="community-gallery__face community-gallery__face--front">
+                <img src="../assets/images/event/event-panel-wave.jpg" alt="Δύο γυναίκες συζητούν σε πάνελ του FemNEST" loading="lazy" />
+              </div>
+              <div class="community-gallery__face community-gallery__face--back">
+                <span>Η οικονομική ευεξία στηρίζεται στο ανήκειν.</span>
+              </div>
+            </div>
+          </div>
+          <div class="community-gallery__item">
+            <div class="community-gallery__flip">
+              <div class="community-gallery__face community-gallery__face--front">
+                <img src="../assets/images/event/event-reflection-wave.jpg" alt="Μια γυναίκα σε μια ήσυχη στιγμή περισυλλογής σε εκδήλωση του FemNEST" loading="lazy" />
+              </div>
+              <div class="community-gallery__face community-gallery__face--back">
+                <span>Αλλάζουμε τους κανόνες, όχι τη γυναίκα.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= COMMUNITY VOICES (marquee) =================
+         Real, anonymized responses from FemNEST's community research —
+         not attributed testimonials (no names are real people we can
+         identify here), but proof of what's missing. See README.md
+         "Community voices" for how to add, edit, or remove a quote.
+         Two rows scroll in opposite directions (pure CSS, no JS);
+         hover a row to pause it and read. Falls back to a static
+         wrapped list under prefers-reduced-motion — see css/styles.css. -->
+    <section class="section section--voices">
+      <div class="container">
+        <div class="section__header" data-reveal>
+          <span class="section__kicker">Με τα δικά τους λόγια</span>
+          <h2>Τι μας λένε ξανά και ξανά οι γυναίκες</h2>
+          <p>Αληθινές, ανωνυμοποιημένες απαντήσεις από την έρευνα κοινότητας του FemNEST: όχι μαρτυρίες, αλλά απόδειξη του χάσματος.</p>
+        </div>
+      </div>
+      <div class="voices-marquee" data-reveal>
+        <div class="voices-track">
+          <div class="voices-track__set">
+            <p class="voice-pill">«<span class="highlight">1 επιπλέον ρεπό τον μήνα</span> όταν έχω περίοδο — αυτό θα είχε κάνει πραγματικά τη διαφορά για μένα.»</p>
+            <p class="voice-pill">«Οι εργοδότες συχνά δεν πιστεύουν ότι <span class="highlight">πραγματικά δεν μπορώ να δουλέψω</span> όταν έχω περίοδο, και όχι ότι είμαι τεμπέλα.»</p>
+            <p class="voice-pill">«Να καταλαβαίνεις τη γονιμότητα όταν είσαι <span class="highlight">25, όχι 35</span>. Το κόστος του να αναβάλλεις την απόκτηση παιδιού μπορεί να είναι τεράστιο — ψυχικά, οικονομικά και όχι μόνο.»</p>
+            <p class="voice-pill">«Μικροδάνεια από γυναίκες σε γυναίκες. Χωρίς ερωτήσεις. Μόνο <span class="highlight">ΕΜΠΙΣΤΟΣΥΝΗ &amp; ΧΡΗΜΑΤΟΔΟΤΗΣΗ</span>.»</p>
+            <p class="voice-pill">«Θέλεις περισσότερη οικονομική ελευθερία και επιλογές <span class="highlight">πριν σε εγκαταλείψει το σώμα σου</span> — αλλά θέλεις και σύνταξη.»</p>
+          </div>
+          <div class="voices-track__set" aria-hidden="true">
+            <p class="voice-pill">«<span class="highlight">1 επιπλέον ρεπό τον μήνα</span> όταν έχω περίοδο — αυτό θα είχε κάνει πραγματικά τη διαφορά για μένα.»</p>
+            <p class="voice-pill">«Οι εργοδότες συχνά δεν πιστεύουν ότι <span class="highlight">πραγματικά δεν μπορώ να δουλέψω</span> όταν έχω περίοδο, και όχι ότι είμαι τεμπέλα.»</p>
+            <p class="voice-pill">«Να καταλαβαίνεις τη γονιμότητα όταν είσαι <span class="highlight">25, όχι 35</span>. Το κόστος του να αναβάλλεις την απόκτηση παιδιού μπορεί να είναι τεράστιο — ψυχικά, οικονομικά και όχι μόνο.»</p>
+            <p class="voice-pill">«Μικροδάνεια από γυναίκες σε γυναίκες. Χωρίς ερωτήσεις. Μόνο <span class="highlight">ΕΜΠΙΣΤΟΣΥΝΗ &amp; ΧΡΗΜΑΤΟΔΟΤΗΣΗ</span>.»</p>
+            <p class="voice-pill">«Θέλεις περισσότερη οικονομική ελευθερία και επιλογές <span class="highlight">πριν σε εγκαταλείψει το σώμα σου</span> — αλλά θέλεις και σύνταξη.»</p>
+          </div>
+        </div>
+        <div class="voices-track voices-track--reverse">
+          <div class="voices-track__set">
+            <p class="voice-pill">«Η μητρότητα ως αυτοαπασχολούμενη ήταν τόσο δύσκολη — πρέπει να <span class="highlight">θυσιάζω χρόνο με το παιδί μου</span> μόνο και μόνο επειδή είμαι αυτοαπασχολούμενη.»</p>
+            <p class="voice-pill">«Αυτό που λείπει είναι <span class="highlight">μία αξιόπιστη πύλη</span> όπου οι γυναίκες βρίσκουν όλες τις σχετικές πληροφορίες σε ένα μέρος — όχι άλλη μία εφαρμογή.»</p>
+            <p class="voice-pill">«Στην αρχή της καριέρας, <span class="highlight">δεν αρκεί να σχεδιάζεις μόνο τη σύνταξη</span> — πρέπει να σχεδιάζεις για σύντροφο, παιδιά, διαζύγιο, φροντίδα, περιεμμηνόπαυση, τραυματισμό.»</p>
+            <p class="voice-pill">«<span class="highlight">Περισσότερη διαφάνεια</span> — αν μιλούσαμε ανοιχτά για το πόσα βγάζουμε ως γυναίκες, οι άλλες θα ήξεραν ότι μπορούν να διεκδικήσουν περισσότερα.»</p>
+            <p class="voice-pill">«Ένα φόρουμ γυναικών με κοινό τρόπο σκέψης που θέλουν να δουλέψουν και να δημιουργήσουν ευκαιρίες, όπου <span class="highlight">οι έμπειρες γυναίκες εκτιμώνται</span> και αναγνωρίζονται.»</p>
+          </div>
+          <div class="voices-track__set" aria-hidden="true">
+            <p class="voice-pill">«Η μητρότητα ως αυτοαπασχολούμενη ήταν τόσο δύσκολη — πρέπει να <span class="highlight">θυσιάζω χρόνο με το παιδί μου</span> μόνο και μόνο επειδή είμαι αυτοαπασχολούμενη.»</p>
+            <p class="voice-pill">«Αυτό που λείπει είναι <span class="highlight">μία αξιόπιστη πύλη</span> όπου οι γυναίκες βρίσκουν όλες τις σχετικές πληροφορίες σε ένα μέρος — όχι άλλη μία εφαρμογή.»</p>
+            <p class="voice-pill">«Στην αρχή της καριέρας, <span class="highlight">δεν αρκεί να σχεδιάζεις μόνο τη σύνταξη</span> — πρέπει να σχεδιάζεις για σύντροφο, παιδιά, διαζύγιο, φροντίδα, περιεμμηνόπαυση, τραυματισμό.»</p>
+            <p class="voice-pill">«<span class="highlight">Περισσότερη διαφάνεια</span> — αν μιλούσαμε ανοιχτά για το πόσα βγάζουμε ως γυναίκες, οι άλλες θα ήξεραν ότι μπορούν να διεκδικήσουν περισσότερα.»</p>
+            <p class="voice-pill">«Ένα φόρουμ γυναικών με κοινό τρόπο σκέψης που θέλουν να δουλέψουν και να δημιουργήσουν ευκαιρίες, όπου <span class="highlight">οι έμπειρες γυναίκες εκτιμώνται</span> και αναγνωρίζονται.»</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= WAITLIST CTA (embedded Kit form) =================
+         Real ConvertKit/Kit inline form embed, replacing the old
+         link-out-to-campsite.bio approach and the separate waitlist.html
+         page (removed). See README.md "Waitlist" for details. -->
+    <section class="section section--alt" id="join">
+      <div class="container">
+        <div class="section__header section__header--center" data-reveal>
+          <h2>Γίνε μέρος του από την αρχή</h2>
+          <p>Το FemNEST βάζει την κοινότητα πρώτα· η λίστα αναμονής δεν είναι απλώς μια λίστα email, είναι η πρώτη μας συνάντηση. Έλα μαζί με τις 130+ γυναίκες που είναι ήδη εδώ.</p>
+        </div>
+
+        <!-- Closing callback to Maria — from Serena's pitch deck,
+             "Closing Callback". -->
+        <div class="kit-form-wrap" data-reveal>
+          <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+<form action="https://app.kit.com/forms/8600903/subscriptions" class="seva-form formkit-form" method="post" data-sv-form="8600903" data-uid="2ece9f1f4b" data-format="inline" data-version="5" data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;Τέλεια! Τώρα έλεγξε το email σου για να επιβεβαιώσεις την εγγραφή σου.&quot;,&quot;redirect_url&quot;:&quot;&quot;},&quot;analytics&quot;:{&quot;google&quot;:null,&quot;fathom&quot;:null,&quot;facebook&quot;:null,&quot;segment&quot;:null,&quot;pinterest&quot;:null,&quot;sparkloop&quot;:null,&quot;googletagmanager&quot;:null},&quot;modal&quot;:{&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;powered_by&quot;:{&quot;show&quot;:true,&quot;url&quot;:&quot;https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic&quot;},&quot;recaptcha&quot;:{&quot;enabled&quot;:false},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;show&quot;,&quot;custom_content&quot;:&quot;&quot;},&quot;slide_in&quot;:{&quot;display_in&quot;:&quot;bottom_right&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;sticky_bar&quot;:{&quot;display_in&quot;:&quot;top&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15}},&quot;version&quot;:&quot;5&quot;}" min-width="400 500 600 700 800" style="background-color: rgb(242, 205, 252); border-radius: 10px;"><div class="formkit-background" style="opacity: 0.2;"></div><div data-style="minimal"><div class="formkit-header" data-element="header" style="color: rgb(41, 93, 246); font-weight: 700; font-size: 27px;"><h2>Γίνε μέλος της κοινότητας FemNEST</h2></div><div class="formkit-subheader" data-element="subheader" style="color: rgb(0, 0, 0); font-size: 18px;"><p><strong>Εγγράψου στο newsletter του FemNEST</strong></p><p></p><p>Έλα στην κοινότητά μας που μεγαλώνει, για εμπνευσμένα νέα, πρακτικά εργαλεία και αληθινές ιστορίες, κατευθείαν στο inbox σου.</p></div><ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul><div data-element="fields" data-stacked="true" class="seva-fields formkit-fields"><div class="formkit-field"><input class="formkit-input" aria-label="Όνομα" name="fields[first_name]" required="" placeholder="Όνομα" type="text" style="color: rgb(236, 106, 44); background-color: rgb(247, 247, 247); border-radius: 5px; font-weight: 400; border-color: rgb(227, 227, 227);"></div><div class="formkit-field"><input class="formkit-input" name="email_address" aria-label="Διεύθυνση email" placeholder="Διεύθυνση email" required="" type="email" style="color: rgb(236, 106, 44); background-color: rgb(247, 247, 247); border-radius: 5px; font-weight: 400; border-color: rgb(227, 227, 227);"></div><button data-element="submit" class="formkit-submit formkit-submit" style="color: rgb(255, 255, 255); background-color: rgb(41, 93, 246); border-radius: 5px; font-weight: 700;"><div class="formkit-spinner"><div></div><div></div><div></div></div><span class="">Έλα μαζί μας</span></button></div><div class="formkit-guarantee" data-element="guarantee" style="color: rgb(77, 77, 77); font-size: 13px; font-weight: 400;"><p>Μηδέν spam - 100% ενέργεια FemNEST</p><p>Σεβόμαστε το απόρρητό σου. Μπορείς να διαγραφείς ανά πάσα στιγμή.</p></div><div class="formkit-powered-by-convertkit-container"><a href="https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic" data-element="powered-by" class="formkit-powered-by-convertkit" data-variant="dark" target="_blank" rel="nofollow noopener">Built with Kit</a></div></div><style>.formkit-form[data-uid="2ece9f1f4b"] *{box-sizing:border-box;}.formkit-form[data-uid="2ece9f1f4b"]{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}.formkit-form[data-uid="2ece9f1f4b"] legend{border:none;font-size:inherit;margin-bottom:10px;padding:0;position:relative;display:table;}.formkit-form[data-uid="2ece9f1f4b"] fieldset{border:0;padding:0.01em 0 0 0;margin:0;min-width:0;}.formkit-form[data-uid="2ece9f1f4b"] body:not(:-moz-handler-blocked) fieldset{display:table-cell;}.formkit-form[data-uid="2ece9f1f4b"] h1,.formkit-form[data-uid="2ece9f1f4b"] h2,.formkit-form[data-uid="2ece9f1f4b"] h3,.formkit-form[data-uid="2ece9f1f4b"] h4,.formkit-form[data-uid="2ece9f1f4b"] h5,.formkit-form[data-uid="2ece9f1f4b"] h6{color:inherit;font-size:inherit;font-weight:inherit;}.formkit-form[data-uid="2ece9f1f4b"] h2{font-size:1.5em;margin:1em 0;}.formkit-form[data-uid="2ece9f1f4b"] h3{font-size:1.17em;margin:1em 0;}.formkit-form[data-uid="2ece9f1f4b"] p{color:inherit;font-size:inherit;font-weight:inherit;}.formkit-form[data-uid="2ece9f1f4b"] ol:not([template-default]),.formkit-form[data-uid="2ece9f1f4b"] ul:not([template-default]),.formkit-form[data-uid="2ece9f1f4b"] blockquote:not([template-default]){text-align:left;}.formkit-form[data-uid="2ece9f1f4b"] p:not([template-default]),.formkit-form[data-uid="2ece9f1f4b"] hr:not([template-default]),.formkit-form[data-uid="2ece9f1f4b"] blockquote:not([template-default]),.formkit-form[data-uid="2ece9f1f4b"] ol:not([template-default]),.formkit-form[data-uid="2ece9f1f4b"] ul:not([template-default]){color:inherit;font-style:initial;}.formkit-form[data-uid="2ece9f1f4b"] .ordered-list,.formkit-form[data-uid="2ece9f1f4b"] .unordered-list{list-style-position:outside !important;padding-left:1em;}.formkit-form[data-uid="2ece9f1f4b"] .list-item{padding-left:0;}.formkit-form[data-uid="2ece9f1f4b"][data-format="modal"]{display:none;}.formkit-form[data-uid="2ece9f1f4b"][data-format="slide in"]{display:none;}.formkit-form[data-uid="2ece9f1f4b"][data-format="sticky bar"]{display:none;}.formkit-sticky-bar .formkit-form[data-uid="2ece9f1f4b"][data-format="sticky bar"]{display:block;}.formkit-form[data-uid="2ece9f1f4b"] .formkit-input,.formkit-form[data-uid="2ece9f1f4b"] .formkit-select,.formkit-form[data-uid="2ece9f1f4b"] .formkit-checkboxes{width:100%;}.formkit-form[data-uid="2ece9f1f4b"] .formkit-button,.formkit-form[data-uid="2ece9f1f4b"] .formkit-submit{border:0;border-radius:5px;color:#ffffff;cursor:pointer;display:inline-block;text-align:center;font-size:15px;font-weight:500;cursor:pointer;margin-bottom:15px;overflow:hidden;padding:0;position:relative;vertical-align:middle;}.formkit-form[data-uid="2ece9f1f4b"] .formkit-button:hover,.formkit-form[data-uid="2ece9f1f4b"] .formkit-submit:hover,.formkit-form[data-uid="2ece9f1f4b"] .formkit-button:focus,.formkit-form[data-uid="2ece9f1f4b"] .formkit-submit:focus{outline:none;}.formkit-form[data-uid="2ece9f1f4b"] .formkit-button:hover > span,.formkit-form[data-uid="2ece9f1f4b"] .formkit-submit:hover > span,.formkit-form[data-uid="2ece9f1f4b"] .formkit-button:focus > span,.formkit-form[data-uid="2ece9f1f4b"] .formkit-submit:focus > span{background-color:rgba(0,0,0,0.1);}.formkit-form[data-uid="2ece9f1f4b"] .formkit-button > span,.formkit-form[data-uid="2ece9f1f4b"] .formkit-submit > span{display:block;-webkit-transition:all 300ms ease-in-out;transition:all 300ms ease-in-out;padding:12px 24px;}.formkit-form[data-uid="2ece9f1f4b"] .formkit-input{background:#ffffff;font-size:15px;padding:12px;border:1px solid #e3e3e3;-webkit-flex:1 0 auto;-ms-flex:1 0 auto;flex:1 0 auto;line-height:1.4;margin:0;-webkit-transition:border-color ease-out 300ms;transition:border-color ease-out 300ms;}.formkit-form[data-uid="2ece9f1f4b"] .formkit-input:focus{outline:none;border-color:#1677be;-webkit-transition:border-color ease 300ms;transition:border-color ease 300ms;}.formkit-form[data-uid="2ece9f1f4b"] .formkit-input::-webkit-input-placeholder{color:inherit;opacity:0.8;}.formkit-form[data-uid="2ece9f1f4b"] .formkit-input::-moz-placeholder{color:inherit;opacity:0.8;}.formkit-form[data-uid="2ece9f1f4b"] .formkit-input:-ms-input-placeholder{color:inherit;opacity:0.8;}.formkit-form[data-uid="2ece9f1f4b"] .formkit-input::placeholder{color:inherit;opacity:0.8;}.formkit-form[data-uid="2ece9f1f4b"] [data-group="dropdown"]{position:relative;display:inline-block;width:100%;}.formkit-form[data-uid="2ece9f1f4b"] [data-group="dropdown"]::before{content:"";top:calc(50% - 2.5px);right:10px;position:absolute;pointer-events:none;border-color:#4f4f4f transparent transparent transparent;border-style:solid;border-width:6px 6px 0 6px;height:0;width:0;z-index:999;}.formkit-form[data-uid="2ece9f1f4b"] [data-group="dropdown"] select{height:auto;width:100%;cursor:pointer;color:#333333;line-height:1.4;margin-bottom:0;padding:0 6px;-webkit-appearance:none;-moz-appearance:none;appearance:none;font-size:15px;padding:12px;padding-right:25px;border:1px solid #e3e3e3;background:#ffffff;}.formkit-form[data-uid="2ece9f1f4b"] [data-group="dropdown"] select:focus{outline:none;}.formkit-form[data-uid="2ece9f1f4b"] [data-group="checkboxes"]{text-align:left;margin:0;}.formkit-form[data-uid="2ece9f1f4b"] [data-group="checkboxes"] [data-group="checkbox"]{margin-bottom:10px;}.formkit-form[data-uid="2ece9f1f4b"] [data-group="checkboxes"] [data-group="checkbox"] *{cursor:pointer;}.formkit-form[data-uid="2ece9f1f4b"] [data-group="checkboxes"] [data-group="checkbox"]:last-of-type{margin-bottom:0;}.formkit-form[data-uid="2ece9f1f4b"] [data-group="checkboxes"] [data-group="checkbox"] input[type="checkbox"]{display:none;}.formkit-form[data-uid="2ece9f1f4b"] [data-group="checkboxes"] [data-group="checkbox"] input[type="checkbox"] + label::after{content:none;}.formkit-form[data-uid="2ece9f1f4b"] [data-group="checkboxes"] [data-group="checkbox"] input[type="checkbox"]:checked + label::after{border-color:#ffffff;content:"";}.formkit-form[data-uid="2ece9f1f4b"] [data-group="checkboxes"] [data-group="checkbox"] input[type="checkbox"]:checked + label::before{background:#10bf7a;border-color:#10bf7a;}.formkit-form[data-uid="2ece9f1f4b"] [data-group="checkboxes"] [data-group="checkbox"] label{position:relative;display:inline-block;padding-left:28px;}.formkit-form[data-uid="2ece9f1f4b"] [data-group="checkboxes"] [data-group="checkbox"] label::before,.formkit-form[data-uid="2ece9f1f4b"] [data-group="checkboxes"] [data-group="checkbox"] label::after{position:absolute;content:"";display:inline-block;}.formkit-form[data-uid="2ece9f1f4b"] [data-group="checkboxes"] [data-group="checkbox"] label::before{height:16px;width:16px;border:1px solid #e3e3e3;background:#ffffff;left:0px;top:3px;}.formkit-form[data-uid="2ece9f1f4b"] [data-group="checkboxes"] [data-group="checkbox"] label::after{height:4px;width:8px;border-left:2px solid #4d4d4d;border-bottom:2px solid #4d4d4d;-webkit-transform:rotate(-45deg);-ms-transform:rotate(-45deg);transform:rotate(-45deg);left:4px;top:8px;}.formkit-form[data-uid="2ece9f1f4b"] .formkit-alert{background:#f9fafb;border:1px solid #e3e3e3;border-radius:5px;-webkit-flex:1 0 auto;-ms-flex:1 0 auto;flex:1 0 auto;list-style:none;margin:25px auto;padding:12px;text-align:center;width:100%;}.formkit-form[data-uid="2ece9f1f4b"] .formkit-alert:empty{display:none;}.formkit-form[data-uid="2ece9f1f4b"] .formkit-alert-success{background:#d3fbeb;border-color:#10bf7a;color:#0c905c;}.formkit-form[data-uid="2ece9f1f4b"] .formkit-alert-error{background:#fde8e2;border-color:#f2643b;color:#ea4110;}.formkit-form[data-uid="2ece9f1f4b"] .formkit-spinner{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;height:0px;width:0px;margin:0 auto;position:absolute;top:0;left:0;right:0;width:0px;overflow:hidden;text-align:center;-webkit-transition:all 300ms ease-in-out;transition:all 300ms ease-in-out;}.formkit-form[data-uid="2ece9f1f4b"] .formkit-spinner > div{margin:auto;width:12px;height:12px;background-color:#fff;opacity:0.3;border-radius:100%;display:inline-block;-webkit-animation:formkit-bouncedelay-formkit-form-data-uid-2ece9f1f4b- 1.4s infinite ease-in-out both;animation:formkit-bouncedelay-formkit-form-data-uid-2ece9f1f4b- 1.4s infinite ease-in-out both;}.formkit-form[data-uid="2ece9f1f4b"] .formkit-spinner > div:nth-child(1){-webkit-animation-delay:-0.32s;animation-delay:-0.32s;}.formkit-form[data-uid="2ece9f1f4b"] .formkit-spinner > div:nth-child(2){-webkit-animation-delay:-0.16s;animation-delay:-0.16s;}.formkit-form[data-uid="2ece9f1f4b"] .formkit-submit[data-active] .formkit-spinner{opacity:1;height:100%;width:50px;}.formkit-form[data-uid="2ece9f1f4b"] .formkit-submit[data-active] .formkit-spinner ~ span{opacity:0;}.formkit-form[data-uid="2ece9f1f4b"] .formkit-powered-by[data-active="false"]{opacity:0.35;}.formkit-form[data-uid="2ece9f1f4b"] .formkit-powered-by-convertkit-container{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;margin:10px 0;position:relative;}.formkit-form[data-uid="2ece9f1f4b"] .formkit-powered-by-convertkit-container[data-active="false"]{opacity:0.35;}.formkit-form[data-uid="2ece9f1f4b"] .formkit-powered-by-convertkit{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;background-color:#ffffff;border-radius:9px;color:#3d3d3d;cursor:pointer;display:block;height:36px;margin:0 auto;opacity:0.95;padding:0;-webkit-text-decoration:none;text-decoration:none;text-indent:100%;-webkit-transition:ease-in-out all 200ms;transition:ease-in-out all 200ms;white-space:nowrap;overflow:hidden;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:157px;background-repeat:no-repeat;background-position:center;background-image:url("data:image/svg+xml;charset=utf8,%3Csvg width='133' height='36' viewBox='0 0 133 36' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.861 25.5C0.735 25.5 0.651 25.416 0.651 25.29V10.548C0.651 10.422 0.735 10.338 0.861 10.338H6.279C9.072 10.338 10.668 11.451 10.668 13.824C10.668 15.819 9.219 16.932 8.001 17.226C7.707 17.268 7.707 17.625 8.022 17.688C9.912 18.108 11.088 19.116 11.088 21.321C11.088 23.715 9.429 25.5 6.426 25.5H0.861ZM5.397 23.085C6.825 23.085 7.518 22.224 7.518 21.006C7.518 19.683 6.825 18.948 5.397 18.948H4.2V23.085H5.397ZM5.313 16.617C6.51 16.617 7.245 15.945 7.245 14.601C7.245 13.383 6.51 12.753 5.25 12.753H4.2V16.617H5.313ZM17.9758 23.883C17.9758 23.568 17.6608 23.505 17.5348 23.799C17.0308 24.954 16.1698 25.731 14.5528 25.731C12.8728 25.731 12.0958 24.471 12.0958 22.707V14.937C12.0958 14.811 12.1798 14.727 12.3058 14.727H15.2248C15.3508 14.727 15.4348 14.811 15.4348 14.937V21.657C15.4348 22.581 15.7708 23.022 16.4638 23.022C17.1778 23.022 17.6188 22.581 17.6188 21.657V14.937C17.6188 14.811 17.7028 14.727 17.8288 14.727H20.7478C20.8738 14.727 20.9578 14.811 20.9578 14.937V25.29C20.9578 25.416 20.8738 25.5 20.7478 25.5H18.1858C18.0598 25.5 17.9758 25.416 17.9758 25.29V23.883ZM25.6141 25.29C25.6141 25.416 25.5301 25.5 25.4041 25.5H22.4851C22.3591 25.5 22.2751 25.416 22.2751 25.29V14.937C22.2751 14.811 22.3591 14.727 22.4851 14.727H25.4041C25.5301 14.727 25.6141 14.811 25.6141 14.937V25.29ZM23.9131 13.74C22.8001 13.74 22.0441 12.942 22.0441 11.934C22.0441 10.926 22.8001 10.107 23.9131 10.107C25.0051 10.107 25.7611 10.926 25.7611 11.934C25.7611 12.942 25.0051 13.74 23.9131 13.74ZM26.7883 10.548C26.7883 10.422 26.8723 10.338 26.9983 10.338H29.9173C30.0433 10.338 30.1273 10.422 30.1273 10.548V22.056C30.1273 22.749 30.2533 23.085 30.8203 23.085C31.0093 23.085 31.1983 23.043 31.3663 23.001C31.5133 22.959 31.6183 22.959 31.6183 23.127V25.059C31.6183 25.164 31.5763 25.269 31.4923 25.311C30.9673 25.521 30.2953 25.71 29.5813 25.71C27.7123 25.71 26.7883 24.639 26.7883 22.476V10.548ZM32.4237 14.727C32.8227 14.727 32.9277 14.538 32.9697 14.055L33.1167 12.039C33.1167 11.913 33.2217 11.829 33.3477 11.829H35.8887C36.0147 11.829 36.0987 11.913 36.0987 12.039V14.517C36.0987 14.643 36.1827 14.727 36.3087 14.727H38.2827C38.4087 14.727 38.4927 14.811 38.4927 14.937V16.659C38.4927 16.785 38.4087 16.869 38.2827 16.869H36.0777V22.056C36.0777 22.875 36.5397 23.085 37.0647 23.085C37.4847 23.085 37.9467 22.938 38.3247 22.707C38.4717 22.623 38.5767 22.665 38.5767 22.833V24.828C38.5767 24.933 38.5347 25.017 38.4507 25.08C37.8417 25.458 36.9807 25.71 36.0357 25.71C34.2927 25.71 32.7387 24.912 32.7387 22.476V16.869H31.8567C31.7307 16.869 31.6467 16.785 31.6467 16.659V14.937C31.6467 14.811 31.7307 14.727 31.8567 14.727H32.4237ZM51.3808 14.727C51.5068 14.727 51.5908 14.79 51.6118 14.916L52.3888 19.851L52.5778 21.174C52.6198 21.468 52.9558 21.468 52.9768 21.174C53.0398 20.712 53.0818 20.271 53.1658 19.83L53.8798 14.916C53.9008 14.79 53.9848 14.727 54.1108 14.727H56.6728C56.8198 14.727 56.8828 14.811 56.8618 14.958L54.6778 25.311C54.6568 25.437 54.5728 25.5 54.4468 25.5H51.3178C51.1918 25.5 51.1078 25.437 51.0868 25.311L50.1208 20.082L49.8898 18.633C49.8688 18.444 49.6588 18.444 49.6378 18.633L49.4068 20.103L48.5458 25.311C48.5248 25.437 48.4408 25.5 48.3148 25.5H45.2068C45.0808 25.5 44.9968 25.437 44.9758 25.311L42.8128 14.958C42.7918 14.811 42.8548 14.727 43.0018 14.727H45.9628C46.0888 14.727 46.1728 14.79 46.1938 14.916L46.9288 19.83C47.0128 20.271 47.0758 20.754 47.1388 21.195C47.2018 21.51 47.4748 21.531 47.5378 21.195L47.7478 19.872L48.6088 14.916C48.6298 14.79 48.7138 14.727 48.8398 14.727H51.3808ZM61.1582 25.29C61.1582 25.416 61.0742 25.5 60.9482 25.5H58.0292C57.9032 25.5 57.8192 25.416 57.8192 25.29V14.937C57.8192 14.811 57.9032 14.727 58.0292 14.727H60.9482C61.0742 14.727 61.1582 14.811 61.1582 14.937V25.29ZM59.4572 13.74C58.3442 13.74 57.5882 12.942 57.5882 11.934C57.5882 10.926 58.3442 10.107 59.4572 10.107C60.5492 10.107 61.3052 10.926 61.3052 11.934C61.3052 12.942 60.5492 13.74 59.4572 13.74ZM62.8154 14.727C63.2144 14.727 63.3194 14.538 63.3614 14.055L63.5084 12.039C63.5084 11.913 63.6134 11.829 63.7394 11.829H66.2804C66.4064 11.829 66.4904 11.913 66.4904 12.039V14.517C66.4904 14.643 66.5744 14.727 66.7004 14.727H68.6744C68.8004 14.727 68.8844 14.811 68.8844 14.937V16.659C68.8844 16.785 68.8004 16.869 68.6744 16.869H66.4694V22.056C66.4694 22.875 66.9314 23.085 67.4564 23.085C67.8764 23.085 68.3384 22.938 68.7164 22.707C68.8634 22.623 68.9684 22.665 68.9684 22.833V24.828C68.9684 24.933 68.9264 25.017 68.8424 25.08C68.2334 25.458 67.3724 25.71 66.4274 25.71C64.6844 25.71 63.1304 24.912 63.1304 22.476V16.869H62.2484C62.1224 16.869 62.0384 16.785 62.0384 16.659V14.937C62.0384 14.811 62.1224 14.727 62.2484 14.727H62.8154ZM73.4298 16.323C73.4298 16.638 73.7868 16.68 73.9128 16.407C74.3748 15.315 75.1308 14.496 76.6008 14.496C78.2178 14.496 78.9528 15.609 78.9528 17.373V25.29C78.9528 25.416 78.8688 25.5 78.7428 25.5H75.8238C75.6978 25.5 75.6138 25.416 75.6138 25.29V18.633C75.6138 17.709 75.2778 17.268 74.5848 17.268C73.8708 17.268 73.4298 17.709 73.4298 18.633V25.29C73.4298 25.416 73.3458 25.5 73.2198 25.5H70.3008C70.1748 25.5 70.0908 25.416 70.0908 25.29V10.548C70.0908 10.422 70.1748 10.338 70.3008 10.338H73.2198C73.3458 10.338 73.4298 10.422 73.4298 10.548V16.323Z' fill='%231E1E1E'/%3E%3Cpath d='M100.132 16.3203C105.58 17.3761 107.272 22.4211 107.318 27.4961C107.318 27.6101 107.226 27.7041 107.112 27.7041H100.252C100.138 27.7041 100.046 27.6121 100.046 27.5001C100.026 23.5629 99.3877 20.0896 95.4865 19.9396C95.3705 19.9356 95.2725 20.0276 95.2725 20.1456V27.5001C95.2725 27.6141 95.1806 27.7061 95.0666 27.7061H88.206C88.092 27.7061 88 27.6141 88 27.5001V8.75585C88 8.64187 88.092 8.54989 88.206 8.54989H95.0686C95.1826 8.54989 95.2745 8.64187 95.2745 8.75585V15.7764C95.2745 15.8804 95.3585 15.9644 95.4625 15.9644C95.5445 15.9644 95.6185 15.9104 95.6425 15.8324C97.4081 10.0416 100.709 8.58588 106.07 8.55189C106.184 8.55189 106.276 8.64387 106.276 8.75785V15.7604C106.276 15.8744 106.184 15.9664 106.07 15.9664H100.166C100.066 15.9664 99.9856 16.0464 99.9856 16.1464C99.9856 16.2304 100.048 16.3043 100.132 16.3203ZM118.918 20.7095V16.1704C118.918 16.0564 119.01 15.9644 119.124 15.9644H124.173C124.273 15.9644 124.353 15.8844 124.353 15.7844C124.353 15.6985 124.291 15.6245 124.207 15.6085C120.256 14.8246 118.432 12.5511 118.37 8.75585C118.368 8.64387 118.458 8.54989 118.572 8.54989H125.986C126.1 8.54989 126.192 8.64187 126.192 8.75585V11.9532C126.192 12.0672 126.284 12.1592 126.398 12.1592H130.649C130.763 12.1592 130.855 12.2511 130.855 12.3651V15.7624C130.855 15.8764 130.763 15.9684 130.649 15.9684H126.398C126.284 15.9684 126.192 16.0604 126.192 16.1744V19.8356C126.192 21.1294 126.986 21.5553 128.04 21.5553C129.692 21.5553 131.323 20.8114 131.977 20.4735C132.113 20.4035 132.277 20.5015 132.277 20.6555V26.3543C132.277 26.5063 132.193 26.6463 132.059 26.7183C131.413 27.0582 129.418 28 127.136 28C122.435 27.996 118.918 26.0824 118.918 20.7095ZM109.266 27.4981V16.1704C109.266 16.0564 109.358 15.9644 109.472 15.9644H116.334C116.448 15.9644 116.54 16.0564 116.54 16.1704V27.4981C116.54 27.6121 116.448 27.7041 116.334 27.7041H109.472C109.358 27.7021 109.266 27.6101 109.266 27.4981ZM108.876 11.4913C108.876 13.4189 110.238 14.9826 112.853 14.9826C115.469 14.9826 116.83 13.4189 116.83 11.4913C116.83 9.56369 115.471 8 112.853 8C110.238 8 108.876 9.56369 108.876 11.4913Z' fill='%231E1E1E'/%3E%3C/svg%3E");}.formkit-form[data-uid="2ece9f1f4b"] .formkit-powered-by-convertkit:hover,.formkit-form[data-uid="2ece9f1f4b"] .formkit-powered-by-convertkit:focus{background-color:#ffffff;-webkit-transform:scale(1.025) perspective(1px);-ms-transform:scale(1.025) perspective(1px);transform:scale(1.025) perspective(1px);opacity:1;}.formkit-form[data-uid="2ece9f1f4b"] .formkit-powered-by-convertkit[data-variant="dark"],.formkit-form[data-uid="2ece9f1f4b"] .formkit-powered-by-convertkit[data-variant="light"]{background-color:transparent;border-color:transparent;width:133px;}.formkit-form[data-uid="2ece9f1f4b"] .formkit-powered-by-convertkit[data-variant="light"]{color:#ffffff;background-image:url("data:image/svg+xml;charset=utf8,%3Csvg width='133' height='36' viewBox='0 0 133 36' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.861 25.5C0.735 25.5 0.651 25.416 0.651 25.29V10.548C0.651 10.422 0.735 10.338 0.861 10.338H6.279C9.072 10.338 10.668 11.451 10.668 13.824C10.668 15.819 9.219 16.932 8.001 17.226C7.707 17.268 7.707 17.625 8.022 17.688C9.912 18.108 11.088 19.116 11.088 21.321C11.088 23.715 9.429 25.5 6.426 25.5H0.861ZM5.397 23.085C6.825 23.085 7.518 22.224 7.518 21.006C7.518 19.683 6.825 18.948 5.397 18.948H4.2V23.085H5.397ZM5.313 16.617C6.51 16.617 7.245 15.945 7.245 14.601C7.245 13.383 6.51 12.753 5.25 12.753H4.2V16.617H5.313ZM17.9758 23.883C17.9758 23.568 17.6608 23.505 17.5348 23.799C17.0308 24.954 16.1698 25.731 14.5528 25.731C12.8728 25.731 12.0958 24.471 12.0958 22.707V14.937C12.0958 14.811 12.1798 14.727 12.3058 14.727H15.2248C15.3508 14.727 15.4348 14.811 15.4348 14.937V21.657C15.4348 22.581 15.7708 23.022 16.4638 23.022C17.1778 23.022 17.6188 22.581 17.6188 21.657V14.937C17.6188 14.811 17.7028 14.727 17.8288 14.727H20.7478C20.8738 14.727 20.9578 14.811 20.9578 14.937V25.29C20.9578 25.416 20.8738 25.5 20.7478 25.5H18.1858C18.0598 25.5 17.9758 25.416 17.9758 25.29V23.883ZM25.6141 25.29C25.6141 25.416 25.5301 25.5 25.4041 25.5H22.4851C22.3591 25.5 22.2751 25.416 22.2751 25.29V14.937C22.2751 14.811 22.3591 14.727 22.4851 14.727H25.4041C25.5301 14.727 25.6141 14.811 25.6141 14.937V25.29ZM23.9131 13.74C22.8001 13.74 22.0441 12.942 22.0441 11.934C22.0441 10.926 22.8001 10.107 23.9131 10.107C25.0051 10.107 25.7611 10.926 25.7611 11.934C25.7611 12.942 25.0051 13.74 23.9131 13.74ZM26.7883 10.548C26.7883 10.422 26.8723 10.338 26.9983 10.338H29.9173C30.0433 10.338 30.1273 10.422 30.1273 10.548V22.056C30.1273 22.749 30.2533 23.085 30.8203 23.085C31.0093 23.085 31.1983 23.043 31.3663 23.001C31.5133 22.959 31.6183 22.959 31.6183 23.127V25.059C31.6183 25.164 31.5763 25.269 31.4923 25.311C30.9673 25.521 30.2953 25.71 29.5813 25.71C27.7123 25.71 26.7883 24.639 26.7883 22.476V10.548ZM32.4237 14.727C32.8227 14.727 32.9277 14.538 32.9697 14.055L33.1167 12.039C33.1167 11.913 33.2217 11.829 33.3477 11.829H35.8887C36.0147 11.829 36.0987 11.913 36.0987 12.039V14.517C36.0987 14.643 36.1827 14.727 36.3087 14.727H38.2827C38.4087 14.727 38.4927 14.811 38.4927 14.937V16.659C38.4927 16.785 38.4087 16.869 38.2827 16.869H36.0777V22.056C36.0777 22.875 36.5397 23.085 37.0647 23.085C37.4847 23.085 37.9467 22.938 38.3247 22.707C38.4717 22.623 38.5767 22.665 38.5767 22.833V24.828C38.5767 24.933 38.5347 25.017 38.4507 25.08C37.8417 25.458 36.9807 25.71 36.0357 25.71C34.2927 25.71 32.7387 24.912 32.7387 22.476V16.869H31.8567C31.7307 16.869 31.6467 16.785 31.6467 16.659V14.937C31.6467 14.811 31.7307 14.727 31.8567 14.727H32.4237ZM51.3808 14.727C51.5068 14.727 51.5908 14.79 51.6118 14.916L52.3888 19.851L52.5778 21.174C52.6198 21.468 52.9558 21.468 52.9768 21.174C53.0398 20.712 53.0818 20.271 53.1658 19.83L53.8798 14.916C53.9008 14.79 53.9848 14.727 54.1108 14.727H56.6728C56.8198 14.727 56.8828 14.811 56.8618 14.958L54.6778 25.311C54.6568 25.437 54.5728 25.5 54.4468 25.5H51.3178C51.1918 25.5 51.1078 25.437 51.0868 25.311L50.1208 20.082L49.8898 18.633C49.8688 18.444 49.6588 18.444 49.6378 18.633L49.4068 20.103L48.5458 25.311C48.5248 25.437 48.4408 25.5 48.3148 25.5H45.2068C45.0808 25.5 44.9968 25.437 44.9758 25.311L42.8128 14.958C42.7918 14.811 42.8548 14.727 43.0018 14.727H45.9628C46.0888 14.727 46.1728 14.79 46.1938 14.916L46.9288 19.83C47.0128 20.271 47.0758 20.754 47.1388 21.195C47.2018 21.51 47.4748 21.531 47.5378 21.195L47.7478 19.872L48.6088 14.916C48.6298 14.79 48.7138 14.727 48.8398 14.727H51.3808ZM61.1582 25.29C61.1582 25.416 61.0742 25.5 60.9482 25.5H58.0292C57.9032 25.5 57.8192 25.416 57.8192 25.29V14.937C57.8192 14.811 57.9032 14.727 58.0292 14.727H60.9482C61.0742 14.727 61.1582 14.811 61.1582 14.937V25.29ZM59.4572 13.74C58.3442 13.74 57.5882 12.942 57.5882 11.934C57.5882 10.926 58.3442 10.107 59.4572 10.107C60.5492 10.107 61.3052 10.926 61.3052 11.934C61.3052 12.942 60.5492 13.74 59.4572 13.74ZM62.8154 14.727C63.2144 14.727 63.3194 14.538 63.3614 14.055L63.5084 12.039C63.5084 11.913 63.6134 11.829 63.7394 11.829H66.2804C66.4064 11.829 66.4904 11.913 66.4904 12.039V14.517C66.4904 14.643 66.5744 14.727 66.7004 14.727H68.6744C68.8004 14.727 68.8844 14.811 68.8844 14.937V16.659C68.8844 16.785 68.8004 16.869 68.6744 16.869H66.4694V22.056C66.4694 22.875 66.9314 23.085 67.4564 23.085C67.8764 23.085 68.3384 22.938 68.7164 22.707C68.8634 22.623 68.9684 22.665 68.9684 22.833V24.828C68.9684 24.933 68.9264 25.017 68.8424 25.08C68.2334 25.458 67.3724 25.71 66.4274 25.71C64.6844 25.71 63.1304 24.912 63.1304 22.476V16.869H62.2484C62.1224 16.869 62.0384 16.785 62.0384 16.659V14.937C62.0384 14.811 62.1224 14.727 62.2484 14.727H62.8154ZM73.4298 16.323C73.4298 16.638 73.7868 16.68 73.9128 16.407C74.3748 15.315 75.1308 14.496 76.6008 14.496C78.2178 14.496 78.9528 15.609 78.9528 17.373V25.29C78.9528 25.416 78.8688 25.5 78.7428 25.5H75.8238C75.6978 25.5 75.6138 25.416 75.6138 25.29V18.633C75.6138 17.709 75.2778 17.268 74.5848 17.268C73.8708 17.268 73.4298 17.709 73.4298 18.633V25.29C73.4298 25.416 73.3458 25.5 73.2198 25.5H70.3008C70.1748 25.5 70.0908 25.416 70.0908 25.29V10.548C70.0908 10.422 70.1748 10.338 70.3008 10.338H73.2198C73.3458 10.338 73.4298 10.422 73.4298 10.548V16.323Z' fill='white'/%3E%3Cpath d='M100.132 16.3203C105.58 17.3761 107.272 22.4211 107.318 27.4961C107.318 27.6101 107.226 27.7041 107.112 27.7041H100.252C100.138 27.7041 100.046 27.6121 100.046 27.5001C100.026 23.5629 99.3877 20.0896 95.4865 19.9396C95.3705 19.9356 95.2725 20.0276 95.2725 20.1456V27.5001C95.2725 27.6141 95.1806 27.7061 95.0666 27.7061H88.206C88.092 27.7061 88 27.6141 88 27.5001V8.75585C88 8.64187 88.092 8.54989 88.206 8.54989H95.0686C95.1826 8.54989 95.2745 8.64187 95.2745 8.75585V15.7764C95.2745 15.8804 95.3585 15.9644 95.4625 15.9644C95.5445 15.9644 95.6185 15.9104 95.6425 15.8324C97.4081 10.0416 100.709 8.58588 106.07 8.55189C106.184 8.55189 106.276 8.64387 106.276 8.75785V15.7604C106.276 15.8744 106.184 15.9664 106.07 15.9664H100.166C100.066 15.9664 99.9856 16.0464 99.9856 16.1464C99.9856 16.2304 100.048 16.3043 100.132 16.3203ZM118.918 20.7095V16.1704C118.918 16.0564 119.01 15.9644 119.124 15.9644H124.173C124.273 15.9644 124.353 15.8844 124.353 15.7844C124.353 15.6985 124.291 15.6245 124.207 15.6085C120.256 14.8246 118.432 12.5511 118.37 8.75585C118.368 8.64387 118.458 8.54989 118.572 8.54989H125.986C126.1 8.54989 126.192 8.64187 126.192 8.75585V11.9532C126.192 12.0672 126.284 12.1592 126.398 12.1592H130.649C130.763 12.1592 130.855 12.2511 130.855 12.3651V15.7624C130.855 15.8764 130.763 15.9684 130.649 15.9684H126.398C126.284 15.9684 126.192 16.0604 126.192 16.1744V19.8356C126.192 21.1294 126.986 21.5553 128.04 21.5553C129.692 21.5553 131.323 20.8114 131.977 20.4735C132.113 20.4035 132.277 20.5015 132.277 20.6555V26.3543C132.277 26.5063 132.193 26.6463 132.059 26.7183C131.413 27.0582 129.418 28 127.136 28C122.435 27.996 118.918 26.0824 118.918 20.7095ZM109.266 27.4981V16.1704C109.266 16.0564 109.358 15.9644 109.472 15.9644H116.334C116.448 15.9644 116.54 16.0564 116.54 16.1704V27.4981C116.54 27.6121 116.448 27.7041 116.334 27.7041H109.472C109.358 27.7021 109.266 27.6101 109.266 27.4981ZM108.876 11.4913C108.876 13.4189 110.238 14.9826 112.853 14.9826C115.469 14.9826 116.83 13.4189 116.83 11.4913C116.83 9.56369 115.471 8 112.853 8C110.238 8 108.876 9.56369 108.876 11.4913Z' fill='white'/%3E%3C/svg%3E");}@-webkit-keyframes formkit-bouncedelay-formkit-form-data-uid-2ece9f1f4b-{0%,80%,100%{-webkit-transform:scale(0);-ms-transform:scale(0);transform:scale(0);}40%{-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1);}}@keyframes formkit-bouncedelay-formkit-form-data-uid-2ece9f1f4b-{0%,80%,100%{-webkit-transform:scale(0);-ms-transform:scale(0);transform:scale(0);}40%{-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1);}}.formkit-form[data-uid="2ece9f1f4b"] blockquote{padding:10px 20px;margin:0 0 20px;border-left:5px solid #e1e1e1;}.formkit-form[data-uid="2ece9f1f4b"] .seva-custom-content{padding:15px;font-size:16px;color:#fff;mix-blend-mode:difference;}.formkit-form[data-uid="2ece9f1f4b"] .formkit-modal.guard{max-width:420px;width:100%;} .formkit-form[data-uid="2ece9f1f4b"]{border:1px solid #e3e3e3;max-width:700px;position:relative;overflow:hidden;}.formkit-form[data-uid="2ece9f1f4b"] .formkit-background{width:100%;height:100%;position:absolute;top:0;left:0;background-size:cover;background-position:center;opacity:0.3;}.formkit-form[data-uid="2ece9f1f4b"] [data-style="minimal"]{padding:20px;width:100%;position:relative;}.formkit-form[data-uid="2ece9f1f4b"] .formkit-header{margin:0 0 27px 0;text-align:center;}.formkit-form[data-uid="2ece9f1f4b"] .formkit-subheader{margin:18px 0;text-align:center;}.formkit-form[data-uid="2ece9f1f4b"] .formkit-guarantee{font-size:13px;margin:10px 0 15px 0;text-align:center;}.formkit-form[data-uid="2ece9f1f4b"] .formkit-guarantee > p{margin:0;}.formkit-form[data-uid="2ece9f1f4b"] .formkit-powered-by-convertkit-container{margin-bottom:0;}.formkit-form[data-uid="2ece9f1f4b"] .formkit-fields{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;margin:25px auto 0 auto;}.formkit-form[data-uid="2ece9f1f4b"] .formkit-field{min-width:220px;}.formkit-form[data-uid="2ece9f1f4b"] .formkit-field,.formkit-form[data-uid="2ece9f1f4b"] .formkit-submit{margin:0 0 15px 0;-webkit-flex:1 0 100%;-ms-flex:1 0 100%;flex:1 0 100%;}.formkit-form[data-uid="2ece9f1f4b"][min-width~="600"] [data-style="minimal"]{padding:40px;}.formkit-form[data-uid="2ece9f1f4b"][min-width~="600"] .formkit-fields[data-stacked="false"]{margin-left:-5px;margin-right:-5px;}.formkit-form[data-uid="2ece9f1f4b"][min-width~="600"] .formkit-fields[data-stacked="false"] .formkit-field,.formkit-form[data-uid="2ece9f1f4b"][min-width~="600"] .formkit-fields[data-stacked="false"] .formkit-submit{margin:0 5px 15px 5px;}.formkit-form[data-uid="2ece9f1f4b"][min-width~="600"] .formkit-fields[data-stacked="false"] .formkit-field{-webkit-flex:100 1 auto;-ms-flex:100 1 auto;flex:100 1 auto;}.formkit-form[data-uid="2ece9f1f4b"][min-width~="600"] .formkit-fields[data-stacked="false"] .formkit-submit{-webkit-flex:1 1 auto;-ms-flex:1 1 auto;flex:1 1 auto;} </style></form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ROLE FUNNEL =================
+         Four audiences with a stake in a woman's financial life: woman,
+         partner, investor, employer (the standalone Employee card was
+         removed per Serena's request — the Employees pillar still lives
+         on about.html). Employer is flagged "coming soon" since its
+         dedicated flow (EOI form) is the pilot pipeline, not a live
+         product yet. Hover/tap flips each card to show "what you get";
+         the CTA stays outside the flip so it's always reachable on
+         touch. -->
+    <section class="section section--lavender section--tilt">
+      <div class="container">
+        <div class="section__header section__header--center" data-reveal>
+          <span class="section__kicker">Για ποιους είναι</span>
+          <h2>Ποιος είναι ο ρόλος σου;</h2>
+        </div>
+        <div class="two-door-grid" data-reveal>
+          <div class="funnel-card">
+            <div class="funnel-card__flip-wrap">
+              <div class="funnel-card__flip">
+                <div class="funnel-card__face funnel-card__face--front">
+                  <img class="pillar-card__icon" src="../assets/icons/flip/woman-at-desk.png" alt="" aria-hidden="true" />
+                  <h3>Είμαι γυναίκα<br /><span style="font-size: 0.85rem; font-weight: 600; letter-spacing: 0.02em;">(Άκου τον βρυχηθμό μου)</span></h3>
+                  <img class="pillar-card__ribbon" src="../assets/icons/wave-flourish-lavender.png" alt="" aria-hidden="true" />
+                </div>
+                <div class="funnel-card__face funnel-card__face--back">
+                  <h4>Τι κερδίζεις</h4>
+                  <ul>
+                    <li>Έρευνα και εκπαίδευση προσαρμοσμένες στο στάδιο της ζωής σου</li>
+                    <li>Εκδηλώσεις από κοντά, ξεκινώντας με το Femmes, Finances &amp; Freedom</li>
+                    <li>Μια κοινότητα που σε καταλαβαίνει</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <a class="btn btn-primary" href="#join">Εκδήλωσε ενδιαφέρον</a>
+          </div>
+          <div class="funnel-card">
+            <div class="funnel-card__flip-wrap">
+              <div class="funnel-card__flip">
+                <div class="funnel-card__face funnel-card__face--front">
+                  <img class="pillar-card__icon" src="../assets/icons/flip/handshake.png" alt="" aria-hidden="true" />
+                  <h3>Συνεργάτης</h3>
+                  <img class="pillar-card__ribbon" src="../assets/icons/wave-flourish-green.png" alt="" aria-hidden="true" />
+                </div>
+                <div class="funnel-card__face funnel-card__face--back pillar-card--reverse-green">
+                  <h4>Τι κερδίζεις</h4>
+                  <ul>
+                    <li>Λόγο σε ό,τι θα χτίσει στη συνέχεια το FemNEST</li>
+                    <li>Έγκαιρη εικόνα της κοινότητας και των αναγκών της</li>
+                    <li>Απευθείας επικοινωνία με την ιδρύτρια</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <a class="btn btn-primary" href="about.html#partner">Συμπλήρωσε τη φόρμα</a>
+          </div>
+          <div class="funnel-card">
+            <div class="funnel-card__flip-wrap">
+              <div class="funnel-card__flip">
+                <div class="funnel-card__face funnel-card__face--front">
+                  <img class="pillar-card__icon" src="../assets/icons/flip/money-bag.png" alt="" aria-hidden="true" />
+                  <h3>Θέλω να επενδύσω</h3>
+                  <img class="pillar-card__ribbon" src="../assets/icons/wave-flourish-blue.png" alt="" aria-hidden="true" />
+                </div>
+                <div class="funnel-card__face funnel-card__face--back">
+                  <h4>Τι κερδίζεις</h4>
+                  <ul>
+                    <li>Έγκαιρη εικόνα της πορείας και του πλάνου ανάπτυξης</li>
+                    <li>Απευθείας επικοινωνία με την ιδρύτρια</li>
+                    <li>Πρώτη ματιά στην παρουσίαση για επενδυτές</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <a class="btn btn-primary" href="investors.html">Επικοινώνησε μαζί μας</a>
+          </div>
+          <div class="funnel-card">
+            <div class="funnel-card__flip-wrap">
+              <div class="funnel-card__flip">
+                <div class="funnel-card__face funnel-card__face--front">
+                  <img class="pillar-card__icon" src="../assets/icons/flip/folder.png" alt="" aria-hidden="true" />
+                  <h3>Είμαι εργοδότης</h3>
+                  <span class="funnel-card__soon" style="background: var(--color-orange); color: var(--color-white);">Έρχεται σύντομα</span>
+                  <img class="pillar-card__ribbon" src="../assets/icons/wave-flourish-orange.png" alt="" aria-hidden="true" />
+                </div>
+                <div class="funnel-card__face funnel-card__face--back">
+                  <h4>Τι κερδίζεις</h4>
+                  <ul>
+                    <li>Ένα δομημένο πιλοτικό πρόγραμμα που σε προετοιμάζει για τις αναφορές διαφάνειας αμοιβών</li>
+                    <li>Ένα προνόμιο οικονομικής ευεξίας που οι άνθρωποί σου χρησιμοποιούν πραγματικά</li>
+                    <li>Πρώιμη πρόσβαση με την έναρξη του πιλοτικού προγράμματος για εργοδότες</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSekTeGV9NsWbKmE4z5IYsKoPc0hPIeIOcT1OTMgKwTG7mKHsQ/viewform" target="_blank" rel="noopener">Εκδήλωσε ενδιαφέρον</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-brand"><img src="../assets/logos/femnest-logo-horizontal-white-outline.png" alt="FemNEST" /></p>
+          <p class="footer-pilot-note">Το FemNEST βρίσκεται σε πιλοτικό στάδιο: το MVP ξεκινά την άνοιξη του 2027.</p>
+        </div>
+        <div>
+          <ul class="footer-links">
+            <li><a href="index.html">Αρχική</a></li>
+            <li><a href="events.html">Κοινότητα</a></li>
+            <li><a href="about.html">Σχετικά</a></li>
+            <li><a href="privacy.html">Πολιτική Απορρήτου</a></li>
+            <li><a href="terms.html">Όροι &amp; Προϋποθέσεις</a></li>
+            <li><a href="#" data-cookie-settings>Ρυθμίσεις cookies</a></li>
+          </ul>
+        </div>
+        <div>
+          <ul class="footer-links">
+            <li><a href="mailto:serena@yourfemnest.com">serena@yourfemnest.com</a></li>
+            <li><a href="https://linkedin.com/company/femnest" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://www.instagram.com/yourfemnest/" target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; <span data-current-year></span> FemNEST. Με την επιφύλαξη παντός δικαιώματος.
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

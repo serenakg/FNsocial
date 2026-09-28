@@ -27,6 +27,15 @@ document.addEventListener('DOMContentLoaded', function () {
   initCookieBanner();
 });
 
+/**
+ * True on the Greek pages (el/*.html carry <html lang="el">). Used for the
+ * few strings/formats JS generates itself: the cookie banner copy and the
+ * thousands separator in the euro count-up.
+ */
+function isGreek() {
+  return (document.documentElement.lang || '').toLowerCase().indexOf('el') === 0;
+}
+
 function isReducedMotion() {
   return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 }
@@ -123,6 +132,7 @@ function animateCurrencyNumber(el) {
 
   var duration = 1400;
   var startTime = null;
+  var locale = isGreek() ? 'el-GR' : 'en-US';
 
   function easeOutCubic(t) {
     return 1 - Math.pow(1 - t, 3);
@@ -133,11 +143,11 @@ function animateCurrencyNumber(el) {
     var elapsed = timestamp - startTime;
     var progress = Math.min(elapsed / duration, 1);
     var current = Math.round(endValue * easeOutCubic(progress));
-    el.textContent = '€' + current.toLocaleString('en-US');
+    el.textContent = '€' + current.toLocaleString(locale);
     if (progress < 1) {
       window.requestAnimationFrame(frame);
     } else {
-      el.textContent = '€' + endValue.toLocaleString('en-US');
+      el.textContent = '€' + endValue.toLocaleString(locale);
     }
   }
 
@@ -282,16 +292,30 @@ function initCookieBanner() {
   function showBanner() {
     if (document.querySelector('.cookie-banner')) return;
 
+    var copy = isGreek()
+      ? {
+          label: 'Ειδοποίηση για cookies',
+          text: 'Χρησιμοποιούμε απαραίτητα cookies για τη λειτουργία της ιστοσελίδας και — μόλις ενεργοποιηθούν — cookies ανάλυσης για να καταλαβαίνουμε πώς χρησιμοποιείται. Δες την <a href="privacy.html">Πολιτική Απορρήτου</a> μας.',
+          decline: 'Απόρριψη',
+          accept: 'Αποδοχή'
+        }
+      : {
+          label: 'Cookie notice',
+          text: 'We use essential cookies to run this site, and — once enabled — analytics cookies to understand how it’s used. See our <a href="privacy.html">Privacy Policy</a>.',
+          decline: 'Decline',
+          accept: 'Accept'
+        };
+
     var banner = document.createElement('div');
     banner.className = 'cookie-banner';
     banner.setAttribute('role', 'dialog');
-    banner.setAttribute('aria-label', 'Cookie notice');
+    banner.setAttribute('aria-label', copy.label);
     banner.innerHTML =
       '<div class="cookie-banner__inner">' +
-      '<p>We use essential cookies to run this site, and — once enabled — analytics cookies to understand how it’s used. See our <a href="privacy.html">Privacy Policy</a>.</p>' +
+      '<p>' + copy.text + '</p>' +
       '<div class="cookie-banner__actions">' +
-      '<button type="button" class="btn btn-secondary" data-cookie-decline>Decline</button>' +
-      '<button type="button" class="btn btn-primary" data-cookie-accept>Accept</button>' +
+      '<button type="button" class="btn btn-secondary" data-cookie-decline>' + copy.decline + '</button>' +
+      '<button type="button" class="btn btn-primary" data-cookie-accept>' + copy.accept + '</button>' +
       '</div>' +
       '</div>';
     document.body.appendChild(banner);

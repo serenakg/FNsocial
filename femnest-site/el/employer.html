@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Πιλοτικό πρόγραμμα για εργοδότες: FemNEST</title>
+  <meta name="description" content="Φέρτε το FemNEST στον χώρο εργασίας σας. Ένα δομημένο πιλοτικό πρόγραμμα για να στηρίξετε τους ανθρώπους σας στις μεγαλύτερες οικονομικές μεταβάσεις της ζωής και να προετοιμαστείτε για την Οδηγία της ΕΕ για τη Διαφάνεια των Αμοιβών." />
+  <!-- Unlinked page: the employer door is hidden from navigation for
+       now per Serena's request (see css/styles.css "Two-door funnel"
+       comment). noindex keeps it out of search while it's not part of
+       the live funnel — remove this tag when the door is reinstated. -->
+  <meta name="robots" content="noindex, nofollow" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <!-- Greek pages only: Bitter and Poppins have no Greek glyphs, so Greek
+       characters fall back to Roboto Slab (headings) and Commissioner
+       (body), both Greek-complete. Latin text still renders in the brand
+       fonts. See README.md "Greek version". -->
+  <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400..700&family=Roboto+Slab:wght@400..800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="icon" href="../assets/icons/favicon-fn-32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="../assets/icons/favicon-fn-180.png" sizes="180x180" type="image/png" />
+  <link rel="apple-touch-icon" href="../assets/icons/favicon-fn-180.png" />
+
+  <!-- ================= ANALYTICS (not active — needs real IDs) =================
+       Commented out until Serena supplies real GA4/Hotjar IDs and confirms
+       a cookie-consent approach (Cyprus/EU visitors mean GDPR/ePrivacy
+       rules apply to any tracking script). See README.md "Analytics".
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-REPLACE_WITH_REAL_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-REPLACE_WITH_REAL_ID');
+  </script>
+
+  <script>
+    (function(h,o,t,j,a,r){
+        h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments); };
+        h._hjSettings = { hjid: 0000000, hjsv: 6 };
+        a = o.getElementsByTagName('head')[0];
+        r = o.createElement('script'); r.async = 1;
+        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+  </script>
+  -->
+
+  <!-- ================= VERCEL WEB ANALYTICS ================= -->
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+
+  <!-- ================= VERCEL SPEED INSIGHTS ================= -->
+  <script>
+    window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Μετάβαση στο περιεχόμενο</a>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Κύρια πλοήγηση">
+      <a class="nav__brand" href="index.html">
+        <img src="../assets/logos/femnest-logo-horizontal-blue.png" alt="FemNEST" />
+      </a>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="primaryNav">
+        <span class="visually-hidden">Μενού</span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+      </button>
+      <ul class="nav__links" id="primaryNav">
+        <li><a href="index.html">Αρχική</a></li>
+        <li><a href="about.html">Σχετικά</a></li>
+        <li><a href="events.html">Κοινότητα</a></li>
+        <li><a href="investors.html">Επενδύσεις</a></li>
+        <li class="nav__lang"><a href="../employer.html" hreflang="en" lang="en" aria-label="English version">EN</a></li>
+        <li><a class="btn btn-primary" href="index.html#join">Λίστα αναμονής</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" style="padding-bottom: 40px;">
+      <div class="blob blob--blue" aria-hidden="true"></div>
+      <div class="blob blob--orange" aria-hidden="true"></div>
+      <div class="container hero__inner" style="text-align: center;">
+        <a class="back-link" href="index.html">Πίσω στην αρχική</a>
+        <h1>Φέρτε το FemNEST στον χώρο εργασίας σας</h1>
+        <p class="hero__subhead" style="margin-left: auto; margin-right: auto;">Ένα δομημένο πιλοτικό πρόγραμμα για να στηρίξετε τους ανθρώπους σας στις μεγαλύτερες οικονομικές μεταβάσεις της ζωής και να προετοιμαστείτε για την Οδηγία της ΕΕ για τη Διαφάνεια των Αμοιβών.</p>
+      </div>
+    </section>
+
+    <!-- ================= WHY NOW ================= -->
+    <section class="section section--alt">
+      <div class="container" style="text-align: center;">
+        <div class="section__header section__header--center" data-reveal>
+          <span class="section__kicker">Γιατί τώρα</span>
+          <h2>Η Οδηγία αλλάζει τα δεδομένα</h2>
+        </div>
+        <p data-reveal style="font-size: 1.1rem;">Οι μεγάλοι εργοδότες πρέπει να αναφέρουν στοιχεία για το μισθολογικό χάσμα των φύλων βάσει της Οδηγίας της ΕΕ για τη Διαφάνεια των Αμοιβών έως τον Ιούνιο του 2027. Μια αναφορά από μόνη της δεν κλείνει ένα χάσμα· απλώς το μετρά. Το πιλοτικό πρόγραμμα του FemNEST δίνει στον οργανισμό σας πραγματική στήριξη για τις μεταβάσεις που προκαλούν αυτό το χάσμα: γονιμότητα, φροντίδα, εμμηνόπαυση, διαλείμματα καριέρας και άλλα.</p>
+      </div>
+    </section>
+
+    <!-- ================= WHAT'S INCLUDED ================= -->
+    <section class="section section--lavender">
+      <div class="container">
+        <div class="section__header" data-reveal>
+          <span class="section__kicker">Τι περιλαμβάνει</span>
+          <h2>Χτισμένο γύρω από τους ανθρώπους σας, όχι ένα γενικό προνόμιο</h2>
+        </div>
+        <div class="funnel-grid" data-reveal style="align-items: stretch;">
+          <div class="pillar-card">
+            <div class="pillar-card__flip">
+              <div class="pillar-card__face pillar-card__face--front">
+                <img class="pillar-card__icon" src="../assets/icons/flip/binders.png" alt="" aria-hidden="true" />
+                <h3>Εκπαίδευση</h3>
+                <img class="pillar-card__ribbon" src="../assets/icons/wave-flourish-white.png" alt="" aria-hidden="true" />
+              </div>
+              <div class="pillar-card__face pillar-card__face--back">
+                <p>Συνεδρίες και υλικό για τον οικονομικό αντίκτυπο των μεταβάσεων ζωής που περνά πραγματικά το προσωπικό σας.</p>
+              </div>
+            </div>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-card__flip">
+              <div class="pillar-card__face pillar-card__face--front pillar-card--reverse-orange">
+                <img class="pillar-card__icon" src="../assets/icons/flip/chat-bubbles.png" alt="" aria-hidden="true" />
+                <h3>Κοινότητα</h3>
+                <img class="pillar-card__ribbon" src="../assets/icons/wave-flourish-white.png" alt="" aria-hidden="true" />
+              </div>
+              <div class="pillar-card__face pillar-card__face--back">
+                <p>Πρόσβαση των εργαζομένων στην κοινότητα του FemNEST και σε στήριξη από ομότιμες, μαζί με γυναίκες που περνούν τα ίδια στάδια ζωής.</p>
+              </div>
+            </div>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-card__flip">
+              <div class="pillar-card__face pillar-card__face--front">
+                <img class="pillar-card__icon" src="../assets/icons/flip/folder.png" alt="" aria-hidden="true" />
+                <h3>Υποστήριξη αναφορών</h3>
+                <img class="pillar-card__ribbon" src="../assets/icons/wave-flourish-white.png" alt="" aria-hidden="true" />
+              </div>
+              <div class="pillar-card__face pillar-card__face--back">
+                <p>Δομημένα στοιχεία για τις αναφορές μισθολογικού χάσματος και τις πρωτοβουλίες ευεξίας σας πριν από την προθεσμία του Ιουνίου 2027.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= HOW IT WORKS =================
+         Timeline and pricing are intentionally not stated as fixed
+         numbers here — the handover doc suggested "3-6 months" and a
+         pricing structure, but neither was confirmed by Serena, so
+         they're framed as scoped-together rather than invented. See
+         README.md "Open items". -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section__header" data-reveal>
+          <span class="section__kicker">Πώς λειτουργεί</span>
+          <h2>Ένα πιλοτικό πρόγραμμα στα μέτρα του οργανισμού σας</h2>
+        </div>
+        <div class="funnel-grid" data-reveal>
+          <div class="card">
+            <span class="section__kicker">Βήμα 1</span>
+            <h3 style="margin: 10px 0 8px;">Κλήση γνωριμίας</h3>
+            <p style="color: var(--color-ink-soft);">Μαθαίνουμε το μέγεθος της ομάδας σας, τα δημογραφικά στοιχεία του προσωπικού σας και τι πρέπει να σημαίνει για εσάς το «έτοιμοι για την Οδηγία».</p>
+          </div>
+          <div class="card">
+            <span class="section__kicker">Βήμα 2</span>
+            <h3 style="margin: 10px 0 8px;">Πιλοτικό, σχεδιασμένο μαζί</h3>
+            <p style="color: var(--color-ink-soft);">Το χρονοδιάγραμμα και η τιμολόγηση ορίζονται μαζί σας, δεν είναι προκαθορισμένα· το σημείο εκκίνησης κάθε οργανισμού είναι διαφορετικό.</p>
+          </div>
+          <div class="card">
+            <span class="section__kicker">Βήμα 3</span>
+            <h3 style="margin: 10px 0 8px;">Απολογισμός &amp; πλάνο εφαρμογής</h3>
+            <p style="color: var(--color-ink-soft);">Τι λειτούργησε, τι χρειάζονται στη συνέχεια οι άνθρωποί σας και πώς αυτό τροφοδοτεί τις αναφορές σας και τη διατήρηση του προσωπικού.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CTA ================= -->
+    <section class="section section--lavender" id="pilot">
+      <div class="container">
+        <div class="external-waitlist" data-reveal>
+          <h2 style="margin-bottom: 8px;">Ξεκινήστε ένα πιλοτικό</h2>
+          <p>Πείτε μας για τον οργανισμό σας και θα κανονίσουμε μια κλήση γνωριμίας.</p>
+          <a class="btn btn-primary btn-block" href="mailto:serena@yourfemnest.com?subject=Employer%20pilot%20inquiry">Ξεκινήστε ένα πιλοτικό</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-brand"><img src="../assets/logos/femnest-logo-horizontal-white-outline.png" alt="FemNEST" /></p>
+          <p class="footer-pilot-note">Το FemNEST βρίσκεται σε πιλοτικό στάδιο: το MVP ξεκινά την άνοιξη του 2027.</p>
+        </div>
+        <div>
+          <ul class="footer-links">
+            <li><a href="index.html">Αρχική</a></li>
+            <li><a href="events.html">Κοινότητα</a></li>
+            <li><a href="about.html">Σχετικά</a></li>
+            <li><a href="privacy.html">Πολιτική Απορρήτου</a></li>
+            <li><a href="terms.html">Όροι &amp; Προϋποθέσεις</a></li>
+            <li><a href="#" data-cookie-settings>Ρυθμίσεις cookies</a></li>
+          </ul>
+        </div>
+        <div>
+          <ul class="footer-links">
+            <li><a href="mailto:serena@yourfemnest.com">serena@yourfemnest.com</a></li>
+            <li><a href="https://linkedin.com/company/femnest" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://www.instagram.com/yourfemnest/" target="_blank" rel="noopener">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; <span data-current-year></span> FemNEST. Με την επιφύλαξη παντός δικαιώματος.
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -84,6 +84,16 @@
   font-display: swap;
 }
 
+/* Greek pages (el/*.html, <html lang="el">): neither Bitter nor Poppins
+   has Greek glyphs, so each stack gets a Greek-complete fallback, loaded
+   from Google Fonts in the Greek pages' <head> only. The browser picks
+   per character: Latin (e.g. "FemNEST") stays in the brand fonts, Greek
+   falls through to Roboto Slab (headings) / Commissioner (body). */
+html[lang="el"] {
+  --font-heading: 'Bitter', 'Roboto Slab', Georgia, serif;
+  --font-body: 'Poppins', 'Commissioner', system-ui, -apple-system, sans-serif;
+}
+
 /* ---- Reset ---- */
 *,
 *::before,
@@ -310,6 +320,30 @@ p { margin: 0 0 1em; }
 
 .nav__links a.is-current::after {
   background: var(--color-blue);
+}
+
+/* EN / ΕΛ language switcher — a small outlined pill next to the CTA.
+   Points at the same page in the other language (el/ holds the Greek
+   copies). */
+.nav__links .nav__lang a {
+  display: inline-block;
+  padding: 4px 12px;
+  border: 2px solid var(--color-blue);
+  border-radius: 999px;
+  color: var(--color-blue);
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+}
+
+.nav__links .nav__lang a::after {
+  display: none;
+}
+
+.nav__links .nav__lang a:hover,
+.nav__links .nav__lang a:focus-visible {
+  background: var(--color-blue);
+  color: var(--color-white);
 }
 
 /* ---- Buttons ---- */

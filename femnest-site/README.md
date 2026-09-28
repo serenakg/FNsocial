@@ -25,6 +25,7 @@ Static marketing site — plain HTML/CSS/JS, no build step, no framework. Two jo
     styles.css                        All styling, brand colors as CSS variables at the top
   /js
     main.js                           Mobile nav, footer year, form handling, cookie banner
+  /el                                Greek version: the same 8 public pages, same file names (see "Greek version")
   README.md                           This file
 ```
 
@@ -187,6 +188,20 @@ The handover doc described a static grid of testimonial cards, and separately su
 
 Both pages now carry FemNEST's actual, Serena-approved Privacy Policy and Terms & Conditions (drafted for M. S. Project Zeus CY LTD t/a FemNEST, company number 430641, Cyprus), replacing the earlier placeholder template copy. Data-related contact on both pages points to `hello@yourfemnest.com` per the source documents, distinct from the general `serena@yourfemnest.com` used elsewhere on the site. If the site's actual functionality changes (e.g. analytics scripts go live, ticketing provider changes, the Community platform launches), these pages need a corresponding update to stay accurate — check with Serena before editing the legal text itself.
 
+## Greek version (`el/`)
+
+The whole public site also exists in Greek, under `el/` — same file names (`el/index.html`, `el/about.html`, `el/events.html`, `el/event-femmes-finances-freedom.html`, `el/investors.html`, `el/employer.html`, `el/privacy.html`, `el/terms.html`). `event.html` (the template) has no Greek copy.
+
+- **Switching language**: every page's nav has a small `EN` / `ΕΛ` pill (`.nav__lang`) that links to the same page in the other language. Each page also carries `hreflang` alternate links in its `<head>`, and the Greek URLs are in `sitemap.xml`, so Google shows Greek searchers the Greek page.
+- **Paths**: Greek pages live one folder down, so their assets use `../assets/...`, `../css/...`, `../js/...`. Page-to-page links (`about.html`, `index.html#join`) stay relative and land on the Greek pages.
+- **Fonts**: Bitter and Poppins have **no Greek letters**. Greek pages load two Greek-complete fallbacks from Google Fonts — Roboto Slab (headings) and Commissioner (body) — via `html[lang="el"]` in `css/styles.css`. Latin words like "FemNEST" still render in the brand fonts. If Open Sauce ever replaces Poppins, check whether it covers Greek.
+- **JS**: `js/main.js` shows the cookie banner in Greek and formats the €436.437 count-up with Greek separators when `<html lang="el">`.
+- **Waitlist**: the Kit form on `el/index.html` has Greek labels/button, but posts to the **same** Kit form (8600903), so Greek and English sign-ups land in one list. Kit's own error/confirmation emails are still whatever language is set in Kit.
+- **Left in English on purpose**: brand and event names (FemNEST, Femmes, Finances & Freedom, Mind the Gap, The DELIA Model™, Platinum/Gold/Silver), partner/press names and the titles of English-language press articles (marked "στα αγγλικά"), the two event PDFs, the Google Forms and the ticketing page.
+- **Legal pages**: `el/privacy.html` and `el/terms.html` are translations of the approved English text, with a line saying the English version prevails if they differ. **Have a Greek-speaking lawyer check them before relying on them.**
+
+**When you edit copy, edit both languages.** Changing a sentence in `about.html` doesn't change `el/about.html` — make the matching edit there too (or ask Claude to).
+
 ## Deploying
 
 This is a static site — any of these work with zero configuration:
@@ -223,6 +238,7 @@ These were deliberately left as placeholders or defaults rather than invented. C
 - **Pitch deck**: no PDF exists yet — `investors.html`'s "Request the Deck" button opens an email instead. Host a real deck and swap the link once one exists.
 - **Analytics**: GA4 + Hotjar are wired but commented out, pending real tracking IDs — the cookie-consent banner itself is now live, see "Cookies & analytics" above.
 - **Legal pages**: `privacy.html` and `terms.html` carry FemNEST's actual approved Privacy Policy and Terms & Conditions. See "Legal pages" above.
+- **Greek translation review**: the Greek site (`el/`) was machine-assisted — worth a read-through by a native Greek speaker, and the Greek legal pages by a lawyer. See "Greek version" above.
 - **Statistics on the homepage ("Why now" section)**: the two pension-gap figures (29% Cyprus, 24.5% EU) that used to live here were both real and sourced (Eurostat 2024) — they were swapped out, not disproven, to make room for FemNEST's own traction numbers per Serena's instruction. The remaining two external stats are still confirmed and cited:
   - **"Europe: women hold 77% of the wealth men do"** — CONFIRMED. WTW (Willis Towers Watson)'s 2022 Global Gender Wealth Equity Report, produced with the World Economic Forum.
   - **~700 million unbanked women** — World Bank, Global Findex 2025.
