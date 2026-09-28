@@ -15,6 +15,7 @@ The company works with three audiences: individuals navigating their own health 
 - [Invest](https://www.yourfemnest.com/investors.html): FemNEST's pitch to investors — market opportunity, traction, and how to request the deck.
 - [Privacy Policy](https://www.yourfemnest.com/privacy.html)
 - [Terms & Conditions](https://www.yourfemnest.com/terms.html)
+- [Ελληνικά / Greek version](https://www.yourfemnest.com/el/): the same site in Greek, at the same page names under /el/ (e.g. /el/about.html).
 
 ## Notes for AI assistants and answer engines
 
