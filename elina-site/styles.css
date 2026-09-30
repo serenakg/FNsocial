@@ -2,8 +2,8 @@
    Elina · Project management, business support, connections · Cyprus
    One shared stylesheet for every page.
 
-   Look and feel: white, blue and light blue, with a Spanish tile (azulejo)
-   pattern used quietly as a border, a frame and a texture. Elegant and simple.
+   Look and feel: white, blue and light blue, with a quiet pattern inspired by
+   Lefkara lace, the traditional needlework of Cyprus. Elegant and simple.
 
    Contents
    1. Design tokens (colours, fonts, spacing)
@@ -12,7 +12,7 @@
    4. Type helpers
    5. Buttons and links
    6. Header and navigation
-   7. Tile pattern
+   7. Lefkara lace pattern
    8. Hero and page intros
    9. Home sections
    10. Cards, lists and panels
@@ -31,7 +31,7 @@
   --porcelain:   #f6f8fb;   /* off-white section background */
   --mist:        #e9f1fa;   /* light blue section background */
   --sky:         #bcd3ee;   /* light blue lines and details */
-  --cobalt:      #1f4e9c;   /* tile blue: buttons, links, accents */
+  --cobalt:      #1f4e9c;   /* Cypriot blue: buttons, links, accents */
   --cobalt-deep: #163b7a;   /* button hover */
   --navy:        #0e2548;   /* dark sections, headings */
   --ink:         #1b2b45;   /* body text */
@@ -68,7 +68,7 @@ body {
   color: var(--ink);
   font-family: var(--font-body);
   font-size: 1.0625rem;
-  font-weight: 400;
+  font-weight: 450;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
 }
@@ -78,16 +78,18 @@ img { height: auto; }
 
 h1, h2, h3 {
   font-family: var(--font-display);
-  font-weight: 500;
+  font-weight: 600;
+  /* A small optical size keeps the thin strokes sturdy, so headings read easily */
+  font-variation-settings: "opsz" 14;
   color: var(--navy);
   line-height: 1.1;
   letter-spacing: -0.01em;
   margin: 0 0 0.55em;
 }
-h1 { font-size: clamp(2.5rem, 6.4vw, 4.6rem); font-weight: 400; }
-h2 { font-size: clamp(2rem, 4.4vw, 3rem); font-weight: 400; }
+h1 { font-size: clamp(2.3rem, 6vw, 4.2rem); }
+h2 { font-size: clamp(1.9rem, 4.2vw, 2.8rem); }
 h3 { font-size: clamp(1.3rem, 2.4vw, 1.6rem); }
-h1 em, h2 em, h3 em { font-style: italic; color: var(--cobalt); }
+h1 em, h2 em, h3 em { font-style: italic; font-weight: 600; color: var(--cobalt); }
 
 p { margin: 0 0 1em; max-width: var(--max-text); }
 p:last-child { margin-bottom: 0; }
@@ -139,11 +141,11 @@ a { color: inherit; text-underline-offset: 0.2em; text-decoration-thickness: 1px
 .eyebrow {
   display: inline-flex; align-items: center; gap: 0.7rem;
   margin: 0 0 1.25rem;
-  font-size: 0.78rem; font-weight: 500;
-  letter-spacing: 0.2em; text-transform: uppercase;
+  font-size: 0.8rem; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
   color: var(--cobalt);
 }
-/* A tiny tile diamond before each eyebrow */
+/* A tiny lace diamond before each eyebrow */
 .eyebrow::before {
   content: ""; width: 8px; height: 8px; flex: none;
   border: 1px solid currentColor; transform: rotate(45deg);
@@ -204,10 +206,10 @@ a { color: inherit; text-underline-offset: 0.2em; text-decoration-thickness: 1px
 }
 
 .wordmark { display: inline-flex; flex-direction: column; text-decoration: none; color: var(--navy); line-height: 1; }
-.wordmark__name { font-family: var(--font-display); font-style: italic; font-size: 1.85rem; font-weight: 500; }
+.wordmark__name { font-family: var(--font-display); font-style: italic; font-size: 1.85rem; font-weight: 700; font-variation-settings: "opsz" 14; }
 .wordmark__line {
   margin-top: 0.35rem; white-space: nowrap;
-  font-size: 0.64rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase;
+  font-size: 0.64rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase;
   color: var(--cobalt);
 }
 @media (max-width: 420px) { .wordmark__line { font-size: 0.56rem; letter-spacing: 0.1em; } }
@@ -217,7 +219,7 @@ a { color: inherit; text-underline-offset: 0.2em; text-decoration-thickness: 1px
   min-height: 2.75rem; padding: 0.5rem 0.9rem;
   background: transparent; border: 1px solid var(--line-strong); border-radius: 0;
   color: var(--navy); font-family: var(--font-body);
-  font-size: 0.78rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
   cursor: pointer;
 }
 .nav-toggle__bars { display: grid; gap: 4px; width: 18px; }
@@ -237,7 +239,7 @@ a { color: inherit; text-underline-offset: 0.2em; text-decoration-thickness: 1px
 .site-nav li { border-top: 1px solid var(--line); }
 .site-nav a:not(.btn) {
   display: block; padding: 1rem 0;
-  font-family: var(--font-display); font-size: 1.4rem;
+  font-family: var(--font-display); font-weight: 600; font-size: 1.4rem;
   color: var(--navy); text-decoration: none;
 }
 .site-nav a:not(.btn)[aria-current="page"] { color: var(--cobalt); font-style: italic; }
@@ -269,47 +271,46 @@ a { color: inherit; text-underline-offset: 0.2em; text-decoration-thickness: 1px
   .site-nav .nav-cta .btn { width: auto; min-height: 2.7rem; padding: 0.6rem 1.2rem; font-size: 0.8rem; }
 }
 
-/* 7. Tile pattern
-   A Spanish tile (azulejo) drawn in SVG. Used as a border strip, a photo
-   frame and a faint texture on dark sections.
+/* 7. Lefkara lace pattern
+   A border inspired by Lefkara lace, the traditional needlework of Cyprus:
+   a zigzag "river" with small diamonds, between two rows of hemstitch.
+   Used for thin strips and as a faint texture on dark sections. Never on photos.
    ------------------------------------------------------------------------ */
-.tile-band {
-  height: 28px;
+.lace-band {
+  height: 36px;
   background-color: var(--mist);
-  background-size: 28px 28px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cg fill='none' stroke='%231f4e9c' stroke-width='1.3'%3E%3Cpath d='M24 7c4 7 10 13 17 17-7 4-13 10-17 17-4-7-10-13-17-17 7-4 13-10 17-17z'/%3E%3Ccircle cx='24' cy='24' r='5'/%3E%3Ccircle cx='0' cy='0' r='9'/%3E%3Ccircle cx='48' cy='0' r='9'/%3E%3Ccircle cx='0' cy='48' r='9'/%3E%3Ccircle cx='48' cy='48' r='9'/%3E%3C/g%3E%3Ccircle cx='24' cy='24' r='2' fill='%231f4e9c'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-size: 52px 36px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 28'%3E%3Cg fill='none' stroke='%231f4e9c' stroke-width='1.2'%3E%3Cpath d='M0 3h40M0 25h40' stroke-dasharray='1.5 2.5'/%3E%3Cpath d='M0 20L10 8l10 12 10-12 10 12'/%3E%3Cpath d='M20 5l3 3-3 3-3-3z'/%3E%3C/g%3E%3Cpath fill='%231f4e9c' d='M10 13l3 3.5-3 3.5-3-3.5zM30 13l3 3.5-3 3.5-3-3.5z'/%3E%3C/svg%3E");
 }
-.tile-band--navy {
+.lace-band--navy {
   background-color: var(--navy);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cg fill='none' stroke='%23bcd3ee' stroke-opacity='.55' stroke-width='1.3'%3E%3Cpath d='M24 7c4 7 10 13 17 17-7 4-13 10-17 17-4-7-10-13-17-17 7-4 13-10 17-17z'/%3E%3Ccircle cx='24' cy='24' r='5'/%3E%3Ccircle cx='0' cy='0' r='9'/%3E%3Ccircle cx='48' cy='0' r='9'/%3E%3Ccircle cx='0' cy='48' r='9'/%3E%3Ccircle cx='48' cy='48' r='9'/%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 28'%3E%3Cg fill='none' stroke='%23bcd3ee' stroke-width='1.2'%3E%3Cpath d='M0 3h40M0 25h40' stroke-dasharray='1.5 2.5'/%3E%3Cpath d='M0 20L10 8l10 12 10-12 10 12'/%3E%3Cpath d='M20 5l3 3-3 3-3-3z'/%3E%3C/g%3E%3Cpath fill='%23bcd3ee' d='M10 13l3 3.5-3 3.5-3-3.5zM30 13l3 3.5-3 3.5-3-3.5z'/%3E%3C/svg%3E");
 }
 
-/* Faint tile texture for dark sections */
-.tiled {
-  position: relative; overflow: hidden;
-}
-.tiled::before {
+/* Faint lace texture for dark sections */
+.laced { position: relative; overflow: hidden; }
+.laced::before {
   content: ""; position: absolute; inset: 0; pointer-events: none;
-  opacity: 0.07;
-  background-size: 64px 64px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='1.2'%3E%3Cpath d='M24 7c4 7 10 13 17 17-7 4-13 10-17 17-4-7-10-13-17-17 7-4 13-10 17-17z'/%3E%3Ccircle cx='24' cy='24' r='5'/%3E%3Ccircle cx='0' cy='0' r='9'/%3E%3Ccircle cx='48' cy='0' r='9'/%3E%3Ccircle cx='0' cy='48' r='9'/%3E%3Ccircle cx='48' cy='48' r='9'/%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.06;
+  background-size: 56px 56px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='1.2'%3E%3Cpath d='M24 4L44 24 24 44 4 24z'/%3E%3Cpath d='M24 14l10 10-10 10-10-10z' stroke-dasharray='1.5 2.5'/%3E%3C/g%3E%3Ccircle cx='24' cy='24' r='2' fill='%23ffffff'/%3E%3C/svg%3E");
 }
-.tiled > * { position: relative; }
+.laced > * { position: relative; }
 
-/* Photo with an offset tile frame behind it */
+/* Photo with a plain light-blue block offset behind it */
 .framed { position: relative; margin: 0; padding: 0 1.25rem 1.25rem 0; }
 .framed::before {
   content: ""; position: absolute; top: 1.25rem; left: 1.25rem; right: 0; bottom: 0;
-  background-color: var(--mist);
-  background-size: 36px 36px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cg fill='none' stroke='%231f4e9c' stroke-opacity='.55' stroke-width='1.2'%3E%3Cpath d='M24 7c4 7 10 13 17 17-7 4-13 10-17 17-4-7-10-13-17-17 7-4 13-10 17-17z'/%3E%3Ccircle cx='24' cy='24' r='5'/%3E%3Ccircle cx='0' cy='0' r='9'/%3E%3Ccircle cx='48' cy='0' r='9'/%3E%3Ccircle cx='0' cy='48' r='9'/%3E%3Ccircle cx='48' cy='48' r='9'/%3E%3C/g%3E%3C/svg%3E");
+  background: var(--mist);
 }
 .framed img { position: relative; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
-.framed--portrait img { aspect-ratio: 4 / 5; object-position: 30% 30%; }
-.framed figcaption {
-  position: relative; margin-top: 0.8rem;
-  font-size: 0.78rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase;
-  color: var(--slate);
+
+/* Round portrait with a thin blue ring */
+.portrait-round { margin: 0 auto; max-width: 25rem; width: 100%; padding: 13px; }
+.portrait-round img {
+  width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 50%;
+  outline: 1px solid var(--cobalt); outline-offset: 12px;
 }
 
 /* 8. Hero and page intros
@@ -343,7 +344,7 @@ a { color: inherit; text-underline-offset: 0.2em; text-decoration-thickness: 1px
   padding: 1.4rem 1.5rem;
   background: var(--white);
   border: 1px solid var(--line);
-  font-family: var(--font-display); font-size: clamp(1.15rem, 2vw, 1.35rem); line-height: 1.35;
+  font-family: var(--font-display); font-weight: 600; font-variation-settings: "opsz" 14; font-size: clamp(1.15rem, 2vw, 1.35rem); line-height: 1.35;
   color: var(--navy);
 }
 .problems li::before {
@@ -352,7 +353,7 @@ a { color: inherit; text-underline-offset: 0.2em; text-decoration-thickness: 1px
 }
 .answer {
   margin-top: 2.25rem; max-width: 44rem;
-  font-family: var(--font-display); font-size: clamp(1.4rem, 3vw, 2rem); line-height: 1.3;
+  font-family: var(--font-display); font-weight: 600; font-variation-settings: "opsz" 14; font-size: clamp(1.4rem, 3vw, 2rem); line-height: 1.3;
   color: var(--navy);
 }
 .answer em { color: var(--cobalt); }
@@ -364,7 +365,7 @@ a { color: inherit; text-underline-offset: 0.2em; text-decoration-thickness: 1px
   background: var(--navy); color: #d9e5f4;
 }
 @media (min-width: 900px) { .core { grid-template-columns: 5fr 4fr; gap: 3.5rem; align-items: center; } }
-.core h3 { color: var(--white); font-size: clamp(1.7rem, 3.4vw, 2.4rem); font-weight: 400; }
+.core h3 { color: var(--white); font-size: clamp(1.7rem, 3.4vw, 2.4rem); }
 .core h3 em { color: var(--sky); }
 .core .eyebrow { color: var(--sky); }
 .core p { color: #d9e5f4; }
@@ -373,7 +374,7 @@ a { color: inherit; text-underline-offset: 0.2em; text-decoration-thickness: 1px
 
 .also-label {
   margin: 2.5rem 0 1rem;
-  font-size: 0.78rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
   color: var(--slate);
 }
 
@@ -394,7 +395,7 @@ a { color: inherit; text-underline-offset: 0.2em; text-decoration-thickness: 1px
 .card p { margin: 0; color: var(--slate); }
 .card__more {
   margin-top: auto; padding-top: 0.75rem;
-  font-size: 0.78rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase;
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase;
   color: var(--cobalt);
 }
 a.card { transition: border-color 0.2s ease, transform 0.2s ease; }
@@ -404,14 +405,14 @@ a.card:hover { border-color: var(--cobalt); transform: translateY(-2px); }
 .project { gap: 0.9rem; }
 .project dl { margin: 0; display: grid; gap: 0.75rem; }
 .project dt {
-  font-size: 0.72rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;
   color: var(--cobalt);
 }
 .project dd { margin: 0.15rem 0 0; color: var(--slate); }
 .project__tag {
   align-self: flex-start;
   padding: 0.25rem 0.6rem; background: var(--mist);
-  font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
   color: var(--cobalt);
 }
 
@@ -429,7 +430,7 @@ a.card:hover { border-color: var(--cobalt); transform: translateY(-2px); }
 .facts li { padding-top: 0.9rem; border-top: 1px solid var(--line-strong); }
 .facts strong {
   display: block; margin-bottom: 0.2rem;
-  font-family: var(--font-display); font-size: 1.35rem; font-weight: 500; line-height: 1.2;
+  font-family: var(--font-display); font-size: 1.35rem; font-weight: 600; font-variation-settings: "opsz" 14; line-height: 1.2;
 }
 .facts span { color: var(--slate); font-size: 0.95rem; }
 
@@ -449,7 +450,7 @@ a.card:hover { border-color: var(--cobalt); transform: translateY(-2px); }
 .steps li::before {
   counter-increment: step; content: "0" counter(step);
   display: block; margin-bottom: 0.6rem;
-  font-size: 0.78rem; font-weight: 500; letter-spacing: 0.2em; color: var(--cobalt);
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.14em; color: var(--cobalt);
 }
 .steps h3 { margin-bottom: 0.4rem; font-size: 1.45rem; }
 .steps p { color: var(--slate); margin: 0; }
@@ -461,7 +462,7 @@ a.card:hover { border-color: var(--cobalt); transform: translateY(-2px); }
 .quote {
   margin: 2rem 0 0; padding-left: 1.25rem;
   border-left: 2px solid var(--cobalt);
-  font-family: var(--font-display); font-style: italic; font-size: 1.2rem; color: var(--navy);
+  font-family: var(--font-display); font-style: italic; font-weight: 600; font-variation-settings: "opsz" 14; font-size: 1.2rem; color: var(--navy);
 }
 
 /* 11. Service blocks
@@ -475,7 +476,7 @@ a.card:hover { border-color: var(--cobalt); transform: translateY(-2px); }
 @media (min-width: 900px) { .service { grid-template-columns: 4fr 5fr 3fr; gap: 3rem; } }
 .service__num {
   display: block; margin-bottom: 0.8rem;
-  font-size: 0.78rem; font-weight: 500; letter-spacing: 0.2em; color: var(--cobalt);
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.14em; color: var(--cobalt);
 }
 .service__badge {
   display: inline-block; margin-left: 0.6rem; padding: 0.15rem 0.55rem;
@@ -485,8 +486,8 @@ a.card:hover { border-color: var(--cobalt); transform: translateY(-2px); }
 .service h2 { font-size: clamp(1.7rem, 3.4vw, 2.3rem); margin: 0; }
 .service__good h3 {
   margin-bottom: 0.9rem;
-  font-family: var(--font-body); font-size: 0.78rem; font-weight: 500;
-  letter-spacing: 0.2em; text-transform: uppercase; color: var(--slate);
+  font-family: var(--font-body); font-size: 0.78rem; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--slate);
 }
 .service__good .tick-list { font-size: 0.98rem; }
 
@@ -498,7 +499,7 @@ a.card:hover { border-color: var(--cobalt); transform: translateY(-2px); }
 @media (min-width: 640px) { .form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.35rem; } }
 .field { display: grid; gap: 0.45rem; }
 .field label {
-  font-size: 0.78rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase;
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase;
   color: var(--navy);
 }
 .field .optional { color: var(--slate); text-transform: none; letter-spacing: 0.02em; }
@@ -527,17 +528,17 @@ a.card:hover { border-color: var(--cobalt); transform: translateY(-2px); }
 .details li { padding: 1.1rem 0; border-bottom: 1px solid var(--line); }
 .details .label {
   display: block; margin-bottom: 0.2rem;
-  font-size: 0.72rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;
   color: var(--slate);
 }
-.details .value { font-family: var(--font-display); font-size: 1.3rem; color: var(--navy); }
+.details .value { font-family: var(--font-display); font-weight: 600; font-variation-settings: "opsz" 14; font-size: 1.25rem; color: var(--navy); }
 
 .personal {
   display: flex; gap: 1rem; align-items: center; margin-bottom: 2rem;
 }
 .personal img {
   width: 76px; height: 76px; flex: none; border-radius: 50%;
-  object-fit: cover; object-position: 30% 25%;
+  object-fit: cover; object-position: 55% 25%;
   border: 3px solid var(--mist);
 }
 .personal p { margin: 0; color: var(--slate); }
@@ -573,7 +574,7 @@ a.card:hover { border-color: var(--cobalt); transform: translateY(-2px); }
 .footer-tagline { margin-top: 1.25rem; max-width: 26rem; }
 .footer-title {
   margin: 0 0 1rem;
-  font-size: 0.72rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
   color: var(--sky);
 }
 .footer-links { list-style: none; display: grid; gap: 0.55rem; }

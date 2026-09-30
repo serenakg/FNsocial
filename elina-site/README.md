@@ -15,8 +15,8 @@ No framework, no build step, nothing to install.
 | `styles.css` | All the design: colours, fonts, spacing |
 | `main.js` | Mobile menu, sticky header, gentle scroll fade-in |
 | `favicon.svg` | The small icon in the browser tab |
-| `elina.jpg` | Main photo (Home hero) |
-| `elina-painting.jpg` | Second photo (Meet Elina, and the small round photo on Get in touch) |
+| `elina-portrait.jpg` | Black and white portrait (Home hero, and the small round photo on Get in touch) |
+| `elina.jpg` | Photo of Elina holding her board (Meet Elina, and link previews) |
 
 ## How to edit text
 
@@ -41,7 +41,8 @@ Change a colour there and it updates everywhere.
 - Colours: white, light blues, cobalt (`--cobalt`, used for buttons and links) and navy.
   By choice there is no yellow, orange or purple.
 - Fonts: **Bodoni Moda** for headings, **Jost** for text. Both come from Google Fonts.
-- The Spanish tile pattern is drawn in code (section 7 of `styles.css`), so there is no image file to manage.
+- The lace pattern is inspired by Lefkara lace, the traditional needlework of Cyprus. It is drawn in code
+  (section 7 of `styles.css`), so there is no image file to manage. It is never used on photos.
 
 ## How to add a photo
 
