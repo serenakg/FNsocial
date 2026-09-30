@@ -41,8 +41,10 @@ Change a colour there and it updates everywhere.
 - Colours: white, light blues, cobalt (`--cobalt`, used for buttons and links) and navy.
   By choice there is no yellow, orange or purple.
 - Fonts: **Bodoni Moda** for headings, **Jost** for text. Both come from Google Fonts.
-- The lace pattern is inspired by Lefkara lace, the traditional needlework of Cyprus. It is drawn in code
-  (section 7 of `styles.css`), so there is no image file to manage. It is never used on photos.
+- The lace pattern is drawn from Lefkara lace, the traditional needlework of Cyprus: satin-stitch stars
+  and cutwork diamonds joined by hemstitch lines. It is drawn in code (section 7 of `styles.css`), so
+  there is no image file to manage. It appears in three places only: one ribbon under the Home hero,
+  one above the footer, and faintly on the dark blue sections. Never on photos.
 
 ## How to add a photo
 
