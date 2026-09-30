@@ -3,24 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact · Elina, Connector in Cyprus</title>
-  <meta name="description" content="Tell me what is stuck. A short chat is enough to know if I can help. Based in Cyprus, replying within two working days.">
+  <title>Get in touch · Elina</title>
+  <meta name="description" content="Tell me what is stuck. A short chat is enough to know if I can help. I reply within two working days.">
 
-  <!-- Open Graph (for link previews). Replace [Add site URL] with the live address once it exists. -->
+  <!-- Open Graph (link previews). Replace [Add site URL] with the live address once it exists. -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Elina">
-  <meta property="og:title" content="Contact · Elina, Connector in Cyprus">
-  <meta property="og:description" content="Tell me what is stuck. A short chat is enough to know if I can help.">
+  <meta property="og:title" content="Get in touch · Elina">
+  <meta property="og:description" content="Tell me what is stuck. A short chat is enough to know if I can help. I reply within two working days.">
   <meta property="og:image" content="elina.jpg">
   <meta property="og:url" content="[Add site URL]">
   <meta property="og:locale" content="en_GB">
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts: Bodoni Moda (headings) and Jost (text) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;500&family=Archivo:wght@400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..600&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -32,7 +32,7 @@
     <div class="container header-inner">
       <a class="wordmark" href="index.html" aria-label="Elina, home">
         <span class="wordmark__name">Elina</span>
-        <span class="wordmark__line">Connector &amp; Investigator · Cyprus</span>
+        <span class="wordmark__line">Project management &amp; business support</span>
       </a>
 
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
@@ -42,32 +42,34 @@
 
       <nav id="site-nav" class="site-nav" aria-label="Main">
         <ul>
-          <li><a href="services.html">How can I help</a></li>
+          <li><a href="services.html">How I help</a></li>
           <li><a href="csr.html">CSR</a></li>
           <li><a href="collabs.html">Collabs</a></li>
-          <li><a href="contact.html" aria-current="page">Contact us</a></li>
-          <li class="nav-cta"><a class="btn btn--primary" href="contact.html">Get in touch</a></li>
+          <li class="nav-cta"><a class="btn btn--primary" href="contact.html" aria-current="page">Get in touch</a></li>
         </ul>
       </nav>
     </div>
   </header>
+  <div class="tile-band" aria-hidden="true"></div>
 
   <main id="main">
 
     <!-- ============ PAGE INTRO ============ -->
     <section class="page-intro" aria-labelledby="page-title">
       <div class="container">
-        <p class="eyebrow">Contact us</p>
+        <p class="eyebrow">Get in touch</p>
         <h1 id="page-title">Tell me what is stuck. <em>A short chat is enough to know if I can help.</em></h1>
       </div>
     </section>
 
     <!-- ============ FORM AND DETAILS ============ -->
-    <section class="section" aria-label="Contact form and details">
-      <div class="container split">
-
-        <!-- Direct details -->
+    <section class="section section--porcelain" aria-label="Contact form and details">
+      <div class="container split split--top">
         <div class="reveal">
+          <div class="personal">
+            <img src="elina-painting.jpg" width="1280" height="1280" alt="Elina, smiling.">
+            <p>You will hear back from me personally, not a team or an assistant.</p>
+          </div>
           <h2>Direct details</h2>
           <ul class="details">
             <li>
@@ -91,7 +93,6 @@
           </ul>
         </div>
 
-        <!-- Contact form -->
         <div class="form-wrap reveal">
           <!--
             FORM SETTINGS
@@ -100,7 +101,6 @@
           -->
           <form class="form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
             <input type="hidden" name="_subject" value="New enquiry from the website">
-
             <div class="form__row">
               <div class="field">
                 <label for="name">Name</label>
@@ -111,51 +111,46 @@
                 <input id="email" name="email" type="email" autocomplete="email" required>
               </div>
             </div>
-
             <div class="field">
               <label for="organisation">Organisation <span class="optional">(optional)</span></label>
               <input id="organisation" name="organisation" type="text" autocomplete="organization">
             </div>
-
             <div class="field">
               <label for="topic">What do you need help with?</label>
               <select id="topic" name="topic" required>
                 <option value="" selected disabled>Choose one</option>
                 <option>Project Management</option>
+                <option>Business Support</option>
                 <option>Networking and Connecting</option>
                 <option>Research</option>
                 <option>Local Liaison</option>
-                <option>Business Development and Support</option>
                 <option>CSR</option>
                 <option>Collaboration</option>
                 <option>Something else</option>
               </select>
             </div>
-
             <div class="field">
               <label for="message">Message</label>
               <textarea id="message" name="message" rows="6" required></textarea>
             </div>
-
             <p class="form__note">A few lines is plenty. Tell me the problem, not the solution.</p>
-
             <button class="btn btn--primary" type="submit">Send message <span class="arrow" aria-hidden="true"></span></button>
           </form>
         </div>
-
       </div>
     </section>
 
   </main>
 
   <!-- ============ FOOTER (same on every page) ============ -->
+  <div class="tile-band tile-band--navy" aria-hidden="true"></div>
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
         <div>
           <a class="wordmark" href="index.html" aria-label="Elina, home">
             <span class="wordmark__name">Elina</span>
-            <span class="wordmark__line">Connector &amp; Investigator · Cyprus</span>
+            <span class="wordmark__line">Project management &amp; business support</span>
           </a>
           <p class="footer-tagline">Based in Cyprus. Working with founders and organisations anywhere.</p>
         </div>
@@ -163,24 +158,24 @@
           <p class="footer-title">Pages</p>
           <ul class="footer-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">How can I help</a></li>
+            <li><a href="services.html">How I help</a></li>
             <li><a href="csr.html">CSR</a></li>
             <li><a href="collabs.html">Collabs</a></li>
-            <li><a href="contact.html">Contact us</a></li>
+            <li><a href="contact.html">Get in touch</a></li>
           </ul>
         </nav>
         <div>
           <p class="footer-title">Contact</p>
           <ul class="footer-links">
-            <!-- Replace [Add email] with the real address, in both places on this line -->
+            <!-- Replace [Add email] with the real address (for example hello@yourdomain.com), in both places on this line -->
             <li><a href="mailto:[Add email]">[Add email]</a></li>
             <li>Cyprus</li>
           </ul>
         </div>
       </div>
       <div class="footer-base">
-        <p>© Elina</p>
-        <p>Find · Check · Connect</p>
+        <p>&copy; Elina</p>
+        <p>Project management &middot; Business support &middot; Connections</p>
       </div>
     </div>
   </footer>

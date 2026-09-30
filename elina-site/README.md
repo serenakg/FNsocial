@@ -8,14 +8,15 @@ No framework, no build step, nothing to install.
 | File | What it is |
 |---|---|
 | `index.html` | Home |
-| `services.html` | How can I help |
+| `services.html` | How I help |
 | `csr.html` | CSR |
 | `collabs.html` | Collabs |
-| `contact.html` | Contact us |
+| `contact.html` | Get in touch |
 | `styles.css` | All the design: colours, fonts, spacing |
 | `main.js` | Mobile menu, sticky header, gentle scroll fade-in |
 | `favicon.svg` | The small icon in the browser tab |
-| `elina.jpg` | Photo used on the Home page |
+| `elina.jpg` | Main photo (Home hero) |
+| `elina-painting.jpg` | Second photo (Meet Elina, and the small round photo on Get in touch) |
 
 ## How to edit text
 
@@ -37,8 +38,16 @@ Tips:
 Open `styles.css`. The first block, `:root`, lists every colour.
 Change a colour there and it updates everywhere.
 
-`--terracotta` is the action colour. `--terracotta-ink` is a slightly deeper version
-used for buttons and link text, so the text stays readable (WCAG AA contrast).
+- Colours: white, light blues, cobalt (`--cobalt`, used for buttons and links) and navy.
+  By choice there is no yellow, orange or purple.
+- Fonts: **Bodoni Moda** for headings, **Jost** for text. Both come from Google Fonts.
+- The Spanish tile pattern is drawn in code (section 7 of `styles.css`), so there is no image file to manage.
+
+## How to add a photo
+
+1. Put the photo file in this folder, for example `csr-tree-planting.jpg`.
+2. Find the placeholder, for example `<div class="placeholder placeholder--photo">[Add photo: tree planting]</div>`.
+3. Replace the whole line with: `<img src="csr-tree-planting.jpg" alt="Short description of the photo">`.
 
 ## How to swap in the real form ID
 
@@ -72,13 +81,16 @@ near the top of each page, and change `og:image` to the full address of the phot
 
 ## Placeholders still to fill in
 
+Placeholders are dashed boxes or text in square brackets, like `[Add partner]`.
+They mark where real content still needs to go. Search the files for `[Add` to find them all.
+
 | Placeholder | Where |
 |---|---|
-| `[Add email]` | Footer on all five pages, and the Direct details block on `contact.html` |
-| `[Add LinkedIn]` and `[Add LinkedIn URL]` | `contact.html`, Direct details (optional, delete the line if not needed) |
-| `YOUR_FORM_ID` | `contact.html` and `collabs.html` form `action` |
-| `[Add testimonial]` | `index.html`, the "Why me" section |
-| `[Add CSR project or photo]` | `csr.html`, the volunteer background section |
-| `[Add partner]` (x6) | `collabs.html`, Trusted partners grid |
-| `[Add site URL]` | `og:url` line in the head of all five pages |
-| `og:image` full URL | Head of all five pages, once the site is live |
+| `[Add email]` | Footer on all five pages, and Direct details on `contact.html` |
+| `YOUR_FORM_ID` | Forms on `contact.html` and `collabs.html` |
+| `[Add project title]`, `[Add sector]`, `[Add the problem]`, `[Add what you did]`, `[Add the result]` (x3) | `index.html`, Selected projects |
+| `[Add testimonial]` | `index.html`, Meet Elina |
+| `[Add photo: ...]` (x3) | `csr.html`, Close to my heart |
+| `[Add partner]` (x6) | `collabs.html`, Trusted partners |
+| `[Add LinkedIn]` / `[Add LinkedIn URL]` | `contact.html` (optional, delete the line if not needed) |
+| `[Add site URL]` and full `og:image` link | Head of all five pages, once the site is live |
